@@ -34,7 +34,9 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
  d3.csv("data/test1.csv",function (d) {
  	d.population = +d.population;
  	return d;
- },
+ }, function(error, data) {
+  if (error) throw error;
+
  	x.domain(data.map(function (d) {return d.city}));
  	y.domain([0, d3.max(data, function(d) { return d.population; })]);
 
@@ -61,7 +63,7 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
       .attr("y", function(d) { return y(d.population); })
       .attr("width", x.bandwidth())
       .attr("height", function(d) { return height - y(d.population); });
-);
+});
 
 
 
