@@ -37,7 +37,7 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
  }, function(error, data) {
   if (error) throw error;
 
- 	x.domain(data.map(function (d) {return d.city}));
+ 	x.domain(data.map(function (d) {return "A"}));
  	y.domain([0, d3.max(data, function(d) { return d.population; })]);
 
    g.append("g")
