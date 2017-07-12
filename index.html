@@ -29,6 +29,7 @@ var z = d3.scaleOrdinal()
 
 d3.csv("data.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+    console.log(t);
   d.total = t;
   return d;
 }, function(error, data) {
