@@ -35,7 +35,7 @@ d3.csv("data.csv", function(d, i, columns) {
   if (error) throw error;
 
   var keys = data.columns.slice(1);
-  console.logs(keys);
+  console.log(keys);
 
   //data.sort(function(a, b) { return b.total - a.total; });
   x.domain(data.map(function(d) { return d.State; }));
