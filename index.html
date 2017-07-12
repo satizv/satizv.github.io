@@ -17,7 +17,7 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleBand()
-    .rangeRound([0, width])
+    .rangeRound([0, width-100])
     .paddingInner(0.05)
     .align(0.1);
 
