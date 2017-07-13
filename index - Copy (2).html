@@ -5,18 +5,8 @@
   display: none;
 }
 
-#tooltip {
-    opacity: 0;
-    position: absolute;
-    text-align: center;
-    width: 60px; height: 40px;
-    background: white;
-    border: 0px;
-}
-
 </style>
 <svg width="660" height="500"></svg>
-<div id="tooltip"></div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -52,8 +42,6 @@ d3.csv("data.csv", function(d, i, columns) {
   y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
   z.domain(keys);
 
-  var tooltip = d3.select("#tooltip");
-
   g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
@@ -65,14 +53,7 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("x", function(d) { return x(d.data.season); })
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth())
-      .on("mouseover", function(d,i) {
-        tooltip.style("opacity", 1)
-               .style("left",(d3.event.pageX)+"px")
-               .style("top",(d3.event.pageY)+"px")
-               .html("Item #"+i+" is "+d);
-      })
-      .on("mouseout", function() { tooltip.style("opacity", 0) });
+      .attr("width", x.bandwidth());
 
   g.append("g")
       .attr("class", "axis")
