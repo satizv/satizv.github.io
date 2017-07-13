@@ -63,7 +63,6 @@ d3.csv("data.csv", function(d, i, columns) {
     .data(function(d) { return d; })
     .enter().append("rect").transition()
     .duration(300)
-    .ease("CubicInOut")
       .attr("x", function(d) { return x(d.data.season); })
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
