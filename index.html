@@ -105,6 +105,8 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("height",0)
       .attr("width", x.bandwidth())
       .attr("pointer-events", "none")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
       .transition()
       .duration(700)
       .ease(easement)
