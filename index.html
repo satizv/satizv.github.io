@@ -53,7 +53,7 @@ d3.csv("data.csv", function(d, i, columns) {
   z.domain(keys);
 
   var tooltip = d3.select("#tooltip");
-
+  var easement = d3.easeCubic;
   g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
@@ -68,7 +68,7 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("width", x.bandwidth())
       .transition()
       .duration(700)
-      .ease("linear")
+      .ease(easement)
       .attr("x", function(d) { return x(d.data.season); })
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
