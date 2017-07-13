@@ -52,6 +52,12 @@ d3.csv("data.csv", function(d, i, columns) {
   y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
   z.domain(keys);
 
+  g.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+
   var tooltip = d3.select("#tooltip");
   var easement = d3.easeCubic;
   g.append("g")
@@ -81,11 +87,7 @@ d3.csv("data.csv", function(d, i, columns) {
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) });
 
-  g.append("g")
-      .attr("class", "axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
+  
   g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"))
