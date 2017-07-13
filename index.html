@@ -57,37 +57,6 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-
-  var tooltip = d3.select("#tooltip");
-  var easement = d3.easeCubic;
-  g.append("g")
-    .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
-    .enter().append("g")
-      .attr("fill", function(d) { return z(d.key); })
-    .selectAll("rect")
-    .data(function(d) { return d; })
-    .enter().append("rect")
-      .attr("x", function(d) { return x(d.data.season); })
-      .attr("y", function(d) { return y(d[0]); })
-      .attr("height",0)
-      .attr("width", x.bandwidth())
-      .transition()
-      .duration(700)
-      .ease(easement)
-      .attr("x", function(d) { return x(d.data.season); })
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth())
-      .on("mouseover", function(d,i) {
-        tooltip.style("opacity", 1)
-               .style("left",(d3.event.pageX)+"px")
-               .style("top",(d3.event.pageY)+"px")
-               .html(d[0]-d[1]);
-      })
-      .on("mouseout", function() { tooltip.style("opacity", 0) });
-
-  
   g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"))
@@ -120,6 +89,38 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("y", 9.5)
       .attr("dy", "0.32em")
       .text(function(d) { return d; });
+
+  var tooltip = d3.select("#tooltip");
+  var easement = d3.easeCubic;
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+      .attr("fill", function(d) { return z(d.key); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      .attr("x", function(d) { return x(d.data.season); })
+      .attr("y", function(d) { return y(d[0]); })
+      .attr("height",0)
+      .attr("width", x.bandwidth())
+      .transition()
+      .duration(700)
+      .ease(easement)
+      .attr("x", function(d) { return x(d.data.season); })
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      .attr("width", x.bandwidth())
+      .on("mouseover", function(d,i) {
+        tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html(d[0]-d[1]);
+      })
+      .on("mouseout", function() { tooltip.style("opacity", 0) });
+
+  
+
 });
 
 </script>
