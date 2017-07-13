@@ -104,6 +104,7 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("y", function(d) { return y(d[0]); })
       .attr("height",0)
       .attr("width", x.bandwidth())
+      .attr('pointer-events', 'none')
       .transition()
       .duration(700)
       .ease(easement)
@@ -111,6 +112,7 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
+      .transition().attr('pointer-events', '')
       .on("mouseover", function(d,i) {
         tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
