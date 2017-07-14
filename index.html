@@ -43,14 +43,22 @@ d3.csv("data.csv", function(d, i, columns) {
   return d; 
 }, function(error, data) {
   if (error) throw error;
-  console.log(data);
-  console.log(Object.keys(data).length);
-  for (i=1; i<Object.keys(data).length; i++) {
-    setTimeout(function(){
+  setTimeout(function(){
       draw(data);
-    }, i * 300);
-  }
+    }, 300);
   
+  
+});
+
+d3.csv("data1.csv", function(d, i, columns) {
+  for (i = 1, t = 0; i < columns.length; ++i) { console.log(d[columns[i]]); t += d[columns[i]] = +d[columns[i]]; console.log(t);}
+  d.total = t;
+  return d; 
+}, function(error, data) {
+  if (error) throw error;
+  setTimeout(function(){
+      draw(data);
+    }, 3000);
   
 });
 
