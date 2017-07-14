@@ -44,7 +44,7 @@ d3.csv("data.csv", function(d, i, columns) {
 }, function(error, data) {
   if (error) throw error;
   console.log(data);
-  console.log(object.keys(data).length);
+  console.log(Object.keys(data).length);
   draw(data);
   
 });
