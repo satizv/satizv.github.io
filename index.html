@@ -43,10 +43,10 @@ d3.csv("data.csv", function(d, i, columns) {
   return d; 
 }, function(error, data) {
   if (error) throw error;
+  console.log(data);
+  console.log(object.keys(a).length);
+  draw(data);
   
-  setTimeout(function(){
-      draw(data);
-    }, index * 300);
 });
 
 function draw(data) {
