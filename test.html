@@ -112,7 +112,7 @@ console.log(keys);
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
     .enter().append("g")
-      .attr("fill", function(d) { return z(d.key); })
+      .attr("fill", function(d) { return z(d.Category); })
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
