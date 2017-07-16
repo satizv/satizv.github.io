@@ -63,7 +63,7 @@ body {
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("data/shark.csv", function(d, i, columns) {
+d3.csv("data/Shark.csv", function(d, i, columns) {
   console.log(d);
   return d; 
 }, function(error, data) {
