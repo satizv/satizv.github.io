@@ -117,6 +117,7 @@ console.log(keys);
     .data(function(d) { return d; })
     .enter().append("rect")
       //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", function(d) { return z(d.data.Category); })
       .attr("x",0)
       .attr("y", function(d) { return y(d.data.Category); })
       .attr("width", function(d) { return x(d.data.Closed); })
