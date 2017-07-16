@@ -155,12 +155,14 @@ console.log(keys);
 
   var tot = d3.sum(data, function(d) { return d.Closed; });
   console.log(tot);
-  
+
+  var pcnt = angle/tot;
+
   var arc =  d3.arc()
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
-            .endAngle(2);
+            .endAngle(pcnt*2*3.141592653589793);
 
     g.append("g")
     .attr("transform", "translate(450,250)")
