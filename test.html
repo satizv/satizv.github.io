@@ -86,12 +86,34 @@ var y = d3.scaleLinear()
 var z = d3.scaleOrdinal()
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
 
-console.log(data.columns);
-console.log(data.columns[0]);
-console.log(data.columns[1]);
-console.log(data.rows);
-console.log(data.rows[0]);
-console.log(data.rows[1]);
+
+console.log(data.map(function(d) { return d.Category; }));
+console.log(data.map(function(d) { return d.Closed; }));
+
+var keys = data.map(function(d) { return d.Category; })
+  
+console.log(keys);
+
+  x.domain(data.map(function(d) { return d.Category; }));
+  y.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
+  z.domain(keys);
+
+  g.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+    .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Closed Deals");
 }
 
 </script>
