@@ -13,7 +13,7 @@ a {
 	text-decoration: none;
 	font: 12px georgia, serif;
 }
-ta {
+.ta {
 	color: black;
 	text-decoration: none;
 	font: 12px georgia, serif;
@@ -21,10 +21,19 @@ ta {
 a:hover {
 	text-decoration: underline;
 }
-axistext {
+.axistext {
   color: black;
   text-decoration: none;
   font: 8px Arial;
+}
+
+.arc {
+    fill: #ACC7D1;
+}
+
+
+.darc {
+    fill: #4A8393;
 }
 
 body {
@@ -144,7 +153,7 @@ console.log(keys);
     .attr("transform", "translate(450,250)")
     .append ("path")
     .attr("d", arc)
-    .fill("fill","#ACC7D1");
+    .attr("class", "arc");
 
 
   console.log(values[0]);
@@ -161,7 +170,7 @@ console.log(keys);
     .attr("transform", "translate(450,250)")
     .append ("path")
     .attr("d", arc)
-    .fill("fill","#4A8393");
+    .attr("class", "darc");
 
 }
 
