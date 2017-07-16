@@ -141,8 +141,8 @@ console.log(keys);
             .endAngle(2 * 3.141592653589793);
 
     g.append("g")
-    .selectAll("arc")
     .attr("transform", "translate(200,200)")
+    .selectAll("g")
     .append ("path")
     .attr("d", arc);
 
