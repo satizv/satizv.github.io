@@ -98,18 +98,6 @@ console.log(keys);
   x.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
   z.domain(keys);
 
-  g.append("g")
-      .attr("class", "axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x))
-      .append("text")
-      .attr("x", x(x.ticks().pop()) + 0.5)
-      .attr("y", 2)
-      .attr("dy", "0.32em")
-      .attr("fill", "#000")
-      .attr("font-weight", "bold")
-      .attr("text-anchor", "start")
-      .text("Closed Deals");
 
   g.append("g")
       .attr("class", "axis")
