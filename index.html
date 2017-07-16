@@ -14,7 +14,15 @@
     border: 0px;
 }
 
+header {
+  background-image:url('background.jpg');
+}
+
 </style>
+<header>
+    <img src="Shark Tank 640x180.png" alt="Shark Tank" align="middle"  height="50%">
+    <img src="analysis.png" alt="Shark Tank" align="right" >
+</header>
 <svg width="660" height="500"></svg>
 <div id="tooltip"></div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -22,7 +30,7 @@
 
 var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 300 - margin.left - margin.right,
+    width = 500 - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
