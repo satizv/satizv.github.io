@@ -58,7 +58,7 @@ body {
 <script>
 
 	var svg = d3.select("svg"),
-    margin = {top: 20, right: 20, bottom: 60, left: 20},
+    margin = {top: 20, right: 20, bottom: 20, left: 60},
     width = 500 - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -75,13 +75,13 @@ d3.csv("data/Shark.csv", function(d, i, columns) {
 function load(data)
 {
 
-var x = d3.scaleBand()
-    .rangeRound([0, width-100])
+var y = d3.scaleBand()
+    .rangeRound([0, height])
     .paddingInner(0.05)
     .align(0.1);
 
-var y = d3.scaleLinear()
-    .rangeRound([height, 0]);
+var x = d3.scaleLinear()
+    .rangeRound([width - 100, 0]);
 
 var z = d3.scaleOrdinal()
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
@@ -94,27 +94,27 @@ var keys = data.map(function(d) { return d.Category; })
   
 console.log(keys);
 
-  x.domain(data.map(function(d) { return d.Category; }));
-  y.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
+  x.domain(data.map(function(d) { return d.Closed; }));
+  y.domain([0, d3.max(data, function(d) { return d.Categories; })]).nice();
   z.domain(keys);
 
   g.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  g.append("g")
-      .attr("class", "axis")
-      .call(d3.axisLeft(y).ticks(null, "s"))
-    .append("text")
+      .call(d3.axisBottom(x))
+      .append("text")
       .attr("x", 2)
       .attr("y", y(y.ticks().pop()) + 0.5)
       .attr("dy", "0.32em")
-      .attr("transform", "rotate(-90)")
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
       .text("Closed Deals");
+
+  g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"));
+    
 }
 
 </script>
