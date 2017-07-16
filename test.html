@@ -21,6 +21,11 @@ ta {
 a:hover {
 	text-decoration: underline;
 }
+axistext {
+  color: black;
+  text-decoration: none;
+  font: 10px georgia, serif;
+}
 
 body {
 
@@ -102,7 +107,8 @@ console.log(keys);
   g.append("g")
     .append("text")
     .attr("x", "150")
-    .attr("y", "300")
+    .attr("y", "390")
+    .attr("class","axistext")
     .text("Closed Deals");
 
   g.append("g")
