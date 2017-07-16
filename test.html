@@ -87,8 +87,10 @@ var z = d3.scaleOrdinal()
 
 var keys = data.columns.slice(1);
 console.log(keys);
-var values = data.columns.slice(2);
+var values = data.columns[1].slice(2);
 console.log(values);
+console.log(d3.max(data, function(d) { return d.closed; }));
+
 x.domain(data.map(function(d) { return d.category; }));
 y.domain([0, d3.max(data, function(d) { return d.closed; })]).nice();
 z.domain(keys);
