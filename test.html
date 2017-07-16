@@ -117,7 +117,7 @@ console.log(keys);
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
-
+/*
     g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
@@ -132,7 +132,7 @@ console.log(keys);
       .attr("y", function(d) { return y(d.data.Category); })
       .attr("width", function(d) { return x(d.data.Closed); })
       .attr("height", y.bandwidth());
-
+*/
   
   var arc =  d3.svg.arc()
             .innerRadius(30)
@@ -141,6 +141,7 @@ console.log(keys);
             .endAngle(2 * 3.141592653589793);
 
     g.append("g")
+    .selectAll("arc")
     .attr("transform", "translate(200,200)")
     .append ("path")
     .attr("d", arc);
