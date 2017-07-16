@@ -86,10 +86,12 @@ var y = d3.scaleLinear()
 var z = d3.scaleOrdinal()
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
 
-
-console.log(data.map(function(d) { return d.Category; }));
-console.log(data.map(function(d) { return d.Closed; }));
-
+console.log(data.columns);
+console.log(data.columns[0]);
+console.log(data.columns[1]);
+console.log(data.rows);
+console.log(data.rows[0]);
+console.log(data.rows[1]);
 }
 
 </script>
