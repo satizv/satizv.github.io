@@ -68,7 +68,7 @@ d3.csv("data/Shark.csv", function(d, i, columns) {
   return d; 
 }, function(error, data) {
   if (error) throw error;  
-
+  load(data);
 });
 
 function load(data)
