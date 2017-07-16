@@ -97,7 +97,7 @@ console.log(keys);
   y.domain(data.map(function(d) { return d.Category; }));
   x.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
   z.domain(keys);
-
+  console.log(z("Food"));
 
   g.append("g")
       .attr("class", "axis")
@@ -112,7 +112,7 @@ console.log(keys);
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
     .enter().append("g")
-      .attr("fill", function(d) { return z(d.Category); })
+      .attr("fill", function(d) { console.log(z.(d.key)); console.log(z.(d.Category)); return z(d.Category); })
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
