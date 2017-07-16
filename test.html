@@ -133,6 +133,18 @@ console.log(keys);
       .attr("width", function(d) { return x(d.data.Closed); })
       .attr("height", y.bandwidth());
 
+  
+  var arc =  d3.svg.arc()
+            .innerRadius(30)
+            .outerRadius(50)
+            .startAngle(0)
+            .endAngle(2 * 3.141592653589793);
+
+    g.append("g")
+    .append ("path")
+    .attr("d", arc)
+    .attr("x", 200)
+    .attr("y", 200);
 }
 
 </script>
