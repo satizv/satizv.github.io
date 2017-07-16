@@ -20,6 +20,12 @@ a {
   font: 8px Arial;
 }
 
+.sidebar {
+  color: black;
+  text-decoration: none;
+  font: 14px georgia, serif;
+}
+
 .arc {
     fill: #ACC7D1;
 }
@@ -77,7 +83,7 @@ d3.csv("data/Shark.csv", function(d, i, columns) {
   if (error) throw error;  
   
   load(data);
-});
+}); 
 
 function load(data)
 {
@@ -142,11 +148,31 @@ console.log(keys);
             .startAngle(0)
             .endAngle(2 * 3.141592653589793);
 
+  
+
+  var tot = d3.sum(data, function(d) { return d.Closed; });
+  console.log(tot);
+
+    console.log(values[0]);
+    var angle = +values[0] + +values[1] + +values[2];
+    console.log(angle);
+
+  
+    g.append("g")
+    .attr("transform", "translate(450,100)")
+    .append ("text")
+    .text(tot + " Closed Deals in 8 seasons.")
+    .attr("class", "sidebar");
+
+
+
     g.append("g")
     .attr("transform", "translate(450,250)")
     .append ("path")
     .attr("d", arc)
     .attr("class", "arc");
+
+
 
 
   console.log(values[0]);
