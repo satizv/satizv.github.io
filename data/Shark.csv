@@ -1,2 +1,11 @@
-Category,Food,Fashion,Lifestyle,Education,Fitness,Tech,Healthcare,Pets,Entertainment,Other
-Closed,75,69,60,43,40,24,14,14,10,22
+Category,Closed
+Food,75
+Fashion,69
+Lifestyle,60
+Education,43
+Fitness,40
+Tech,24
+Healthcare,14
+Pets,14
+Entertainment,10
+Other,22
