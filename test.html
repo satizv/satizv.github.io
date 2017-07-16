@@ -134,17 +134,17 @@ console.log(keys);
       .attr("height", y.bandwidth());
 */
   
-  var arc =  d3.svg.arc()
+  var arc =  d3.arc()
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
             .endAngle(2 * 3.141592653589793);
 
     g.append("g")
-    .attr("transform", "translate(200,200)")
     .selectAll("g")
     .append ("path")
-    .attr("d", arc);
+    .attr("d", arc)
+    .attr("transform", "translate(200,200)");
 
 }
 
