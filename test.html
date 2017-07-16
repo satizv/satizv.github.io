@@ -94,8 +94,8 @@ var keys = data.map(function(d) { return d.Category; })
   
 console.log(keys);
 
-  x.domain(data.map(function(d) { return d.Closed; }));
-  y.domain([0, d3.max(data, function(d) { return d.Categories; })]).nice();
+  y.domain(data.map(function(d) { return d.Categories; }));
+  x.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
   z.domain(keys);
 
   g.append("g")
