@@ -100,11 +100,11 @@ console.log(keys);
   console.log(z("Food"));
 
   g.append("g")
-    .selectAll("text")
     .append("text")
-    .attr("x", 200)
-    .attr("y", 620)
+    .attr("x", "200")
+    .attr("y", "200")
     .text("Closed Deals");
+
   g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"));
