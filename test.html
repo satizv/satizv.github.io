@@ -106,6 +106,7 @@ var x = d3.scaleLinear()
 var z = d3.scaleOrdinal()
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
 
+var tooltip = d3.select("#tooltip");
 
 console.log(data.map(function(d) { return d.Category; }));
 console.log(data.map(function(d) { return d.Closed; }));
@@ -177,8 +178,7 @@ console.log(keys);
     var tot = d3.sum(data, function(d) { return d.Closed; });
     console.log(tot);
 
-    var pcnt = angle/tot;
-
+    var formpcnt = d3.format(",%");  
   
     g.append("g")
     .attr("transform", "translate(440,38)")
@@ -202,7 +202,7 @@ console.log(keys);
     g.append("g")
     .attr("transform", "translate(440,120)")
     .append ("text")
-    .text((pcnt * 100)+ "%")
+    .text(formpcnt(angle/tot))
     .attr("class", "hsidebar");
 
     g.append("g")
