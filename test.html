@@ -20,6 +20,12 @@ a {
   font: 8px Arial;
 }
 
+.hsidebar {
+  color: black;
+  text-decoration: none;
+  font: 18px georgia, serif;
+}
+
 .sidebar {
   color: black;
   text-decoration: none;
@@ -159,9 +165,15 @@ console.log(keys);
 
   
     g.append("g")
-    .attr("transform", "translate(450,100)")
+    .attr("transform", "translate(420,80)")
     .append ("text")
-    .text(tot + " Closed Deals in 8 seasons.")
+    .text(tot)
+    .attr("class", "hsidebar");
+
+    g.append("g")
+    .attr("transform", "translate(400,100)")
+    .append ("text")
+    .text(tot + "Closed Deals in 8 seasons.")
     .attr("class", "sidebar");
 
 
