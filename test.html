@@ -126,6 +126,12 @@ console.log(keys);
 
 
   g.append("g")
+    .attr("transform", "translate(150,250)")
+    .append ("text")
+    .text("Number of Closed Deals")
+    .attr("class", "axistext");
+
+  g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"));
   
@@ -152,7 +158,7 @@ console.log(keys);
         tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html(d.data.Closed);
+               .html("Closed Deals - " + d.data.Closed);
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) })
   
@@ -178,7 +184,7 @@ console.log(keys);
     var tot = d3.sum(data, function(d) { return d.Closed; });
     console.log(tot);
 
-    var formpcnt = d3.format(",%");  
+    var formpcnt = d3.format(".2%");  
   
     g.append("g")
     .attr("transform", "translate(440,38)")
