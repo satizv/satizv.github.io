@@ -165,15 +165,21 @@ console.log(keys);
 
   
     g.append("g")
-    .attr("transform", "translate(420,80)")
+    .attr("transform", "translate(450,40)")
     .append ("text")
     .text(tot)
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,100)")
+    .attr("transform", "translate(400,60)")
     .append ("text")
-    .text(tot + "Closed Deals in 8 seasons.")
+    .text("Closed Deals in")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(400,85)")
+    .append ("text")
+    .text("8 seasons.")
     .attr("class", "sidebar");
 
 
