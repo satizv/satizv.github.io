@@ -165,7 +165,7 @@ console.log(keys);
 
   
     g.append("g")
-    .attr("transform", "translate(440,40)")
+    .attr("transform", "translate(440,38)")
     .append ("text")
     .text(tot)
     .attr("class", "hsidebar");
@@ -180,6 +180,19 @@ console.log(keys);
     .attr("transform", "translate(400,85)")
     .append ("text")
     .text("8 seasons.")
+    .attr("class", "sidebar");
+
+
+    g.append("g")
+    .attr("transform", "translate(440,120)")
+    .append ("text")
+    .text(tot + "%")
+    .attr("class", "hsidebar");
+
+    g.append("g")
+    .attr("transform", "translate(400,147)")
+    .append ("text")
+    .text("Top 3  Categories")
     .attr("class", "sidebar");
 
 
