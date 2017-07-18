@@ -88,6 +88,13 @@ body {
     width = 540 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+ 
+    svg.append("g")
+    .attr("transform", "translate(145,0)")
+    .append ("text")
+    .text("Shark Tank - Overview")
+    .attr("class", "hgraph");
+
 
 d3.csv("data/sharktotal.csv", function(d, i, columns) {
   console.log(d);
@@ -130,12 +137,7 @@ console.log(data.map(function(d) { return +d.Total; }));
   console.log(values);  
   console.log(values[0]);
 
-  g.append("g")
-    .attr("transform", "translate(145,0)")
-    .append ("text")
-    .text("Shark Tank - Overview")
-    .attr("class", "hgraph");
-
+ 
 
   g.append("g")
     .attr("transform", "translate(150,355)")
