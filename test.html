@@ -174,9 +174,9 @@ console.log(keys);
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) })
       .append("text")
-      .attr("x",x(d.data.Closed))
-      .attr("y",y(d.data.Category))
-      .text(d.data.Closed);
+      .attr("x",function(d) { return x(d.data.Closed); })
+      .attr("y",function(d) { return y(d.data.Category); })
+      .text(function(d) { return d.data.Closed; });
   
   var arc =  d3.arc()
             .innerRadius(30)
