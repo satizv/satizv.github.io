@@ -163,8 +163,8 @@ console.log(data.map(function(d) { return d.Total; }));
       //.attr("x", function(d) { return x(d.data.season); })
       .attr("fill", "#ACC7D1")
       .attr("x",0)
-      .attr("y", function(d) { return y(d.Category); })
-      .attr("width", function(d) { return x(d.Total); })
+      .attr("y", function(d) { console.log(d.Category); console.log(y(d.Category)); return y(d.Category); })
+      .attr("width", function(d) { console.log(d.Total); console.log(x(d.Total)); return x(d.Total); })
       .attr("height", y.bandwidth())
       .on("mouseover", function(d,i) {
         tooltip.style("opacity", 1)
