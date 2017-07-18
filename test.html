@@ -86,7 +86,7 @@ body {
 	var svg = d3.select("svg"),
     margin = {top: 40, right: 20, bottom: 35, left: 80},
     width = 540 - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
+    height = 400 - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data/sharktotal.csv", function(d, i, columns) {
