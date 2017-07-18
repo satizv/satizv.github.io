@@ -89,7 +89,7 @@ body {
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("data/sharktotal.csv", function(d, i, columns) {
+d3.csv("data/Shark.csv", function(d, i, columns) {
   console.log(d);
   return d; 
 }, function(error, data) {
@@ -116,15 +116,14 @@ var tooltip = d3.select("#tooltip");
 
 console.log(data.map(function(d) { return d.Category; }));
 console.log(data.map(function(d) { return d.Closed; }));
-console.log(data.map(function(d) { return d.Total; }));
 
-
+var keys = data.map(function(d) { return d.Category; })
   
 console.log(keys);
 
   y.domain(data.map(function(d) { return d.Category; }));
-  x.domain([0, d3.max(data, function(d) { return d.Total; })]).nice();
-
+  x.domain([0, d3.max(data, function(d) { return d.Closed; })]).nice();
+  z.domain(keys);
   console.log(z("Food"));
 
   var values = data.map(function(d) { return d.Closed; })
@@ -134,14 +133,14 @@ console.log(keys);
   g.append("g")
     .attr("transform", "translate(145,0)")
     .append ("text")
-    .text("Shark Tank - Overview")
+    .text("Closed Deals based on Category")
     .attr("class", "hgraph");
 
 
   g.append("g")
     .attr("transform", "translate(150,355)")
     .append ("text")
-    .text("Number of Deals")
+    .text("Number of Closed Deals")
     .attr("class", "axistext");
 
   g.append("g")
@@ -155,23 +154,23 @@ console.log(keys);
 
     g.append("g")
     .selectAll("g")
-    .data(data)
+    .data(d3.stack().keys(keys)(data))
     .enter().append("g")
     //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
       //.attr("x", function(d) { return x(d.data.season); })
-      .attr("fill", "#ACC7D1")
+      .attr("fill", function(d) { return z(d.data.Category); })
       .attr("x",0)
       .attr("y", function(d) { return y(d.data.Category); })
-      .attr("width", function(d) { return x(d.data.Total); })
+      .attr("width", function(d) { return x(d.data.Closed); })
       .attr("height", y.bandwidth())
       .on("mouseover", function(d,i) {
         tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Closed Deals - " + d.data.Total);
+               .html("Closed Deals - " + d.data.Closed);
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) });
 
