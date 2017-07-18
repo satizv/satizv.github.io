@@ -120,7 +120,6 @@ console.log(data.map(function(d) { return d.Total; }));
 
 
   
-console.log(keys);
 
   y.domain(data.map(function(d) { return d.Category; }));
   x.domain([0, d3.max(data, function(d) { return d.Total; })]).nice();
