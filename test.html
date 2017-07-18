@@ -126,7 +126,7 @@ console.log(data.map(function(d) { return d.Total; }));
 
   console.log(z("Food"));
 
-  var values = data.map(function(d) { return d.Closed; })
+  var values = data.map(function(d) { return d.Total; })
   console.log(values);  
   console.log(values[0]);
 
@@ -163,14 +163,14 @@ console.log(data.map(function(d) { return d.Total; }));
       //.attr("x", function(d) { return x(d.data.season); })
       .attr("fill", "#ACC7D1")
       .attr("x",0)
-      .attr("y", function(d) { return y(d.data.Category); })
-      .attr("width", function(d) { return x(d.data.Total); })
+      .attr("y", function(d) { return y(d.Category); })
+      .attr("width", function(d) { return x(d.Total); })
       .attr("height", y.bandwidth())
       .on("mouseover", function(d,i) {
         tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Closed Deals - " + d.data.Total);
+               .html("Closed Deals - " + d.Total);
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) });
 
