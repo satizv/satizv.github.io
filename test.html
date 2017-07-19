@@ -88,9 +88,9 @@ body {
     width = 540 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
- 
-    g.append("g")
-    .attr("transform", "translate(145,40)")
+    var h = svg.append("g").attr("transform", "translate(" + margin.left + ","0")");
+    h.append("g")
+    .attr("transform", "translate(145,20)")
     .append ("text")
     .text("Shark Tank - Overview")
     .attr("class", "hgraph");
