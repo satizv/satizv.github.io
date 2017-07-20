@@ -200,40 +200,28 @@ var keys = data.map(function(d) { return d.Category; });
       })
       .on("mouseout", function() { tooltip.style("opacity", 0) });
   
-  var arc =  d3.arc()
-            .innerRadius(30)
-            .outerRadius(50)
-            .startAngle(0)
-            .endAngle(2 * 3.141592653589793);
+
 
   
 
-    var tot = d3.sum(data, function(d) { return d.Closed; });
-    console.log(tot);
+    var totClosed = d3.sum(data, function(d) { return d.Closed; });
+    console.log(totClosed);
 
-    console.log(values[0]);
-    var angle = +values[0] + +values[1] + +values[2];
-    console.log(angle);
+    var totTotal = d3.sum(data, function(d) { return d.Total; });
+    console.log(totTotal);
 
-    console.log(values[0]);
-    var angle = +values[0] + +values[1] + +values[2];
-    console.log(angle);
-
-    var tot = d3.sum(data, function(d) { return d.Closed; });
-    console.log(tot);
-
-    var formpcnt = d3.format(".2%");  
+    var formpcnt = d3.format(".0%");  
   
     g.append("g")
     .attr("transform", "translate(435,38)")
     .append ("text")
-    .text(tot)
+    .text(totTotal)
     .attr("class", "hsidebar");
 
     g.append("g")
     .attr("transform", "translate(400,65)")
     .append ("text")
-    .text("Closed Deals in")
+    .text("Total Offers in")
     .attr("class", "sidebar");
 
     g.append("g")
@@ -244,17 +232,35 @@ var keys = data.map(function(d) { return d.Category; });
 
 
     g.append("g")
-    .attr("transform", "translate(435,120)")
+    .attr("transform", "translate(435,105)")
     .append ("text")
-    .text(formpcnt(angle/tot))
+    .text(totClosed)
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,147)")
+    .attr("transform", "translate(400,132)")
     .append ("text")
-    .text("Top 3  Categories")
+    .text("Deals closed in")
     .attr("class", "sidebar");
 
+    g.append("g")
+    .attr("transform", "translate(400,152)")
+    .append ("text")
+    .text("8 seasons.")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(450,250)")
+    .append ("text")
+    .text(formpcnt(totClosed/totTotal))
+    .attr("class", "hsidebar");
+
+
+  var arc =  d3.arc()
+            .innerRadius(30)
+            .outerRadius(50)
+            .startAngle(0)
+            .endAngle(2 * 3.141592653589793);
 
 
     g.append("g")
@@ -262,9 +268,6 @@ var keys = data.map(function(d) { return d.Category; });
     .append ("path")
     .attr("d", arc)
     .attr("class", "arc");
-
-
-
 
 
   var arc =  d3.arc()
