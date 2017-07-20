@@ -213,40 +213,52 @@ var keys = data.map(function(d) { return d.Category; });
     var formpcnt = d3.format(".0%");  
   
     g.append("g")
-    .attr("transform", "translate(435,38)")
+    .attr("transform", "translate(450,38)")
     .append ("text")
     .text(totTotal)
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,65)")
+    .attr("transform", "translate(450,65)")
     .append ("text")
     .text("Total Offers in")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,85)")
+    .attr("transform", "translate(450,85)")
     .append ("text")
     .text("8 seasons.")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
 
     g.append("g")
-    .attr("transform", "translate(435,105)")
+    .attr("transform", "translate(450,115)")
     .append ("text")
     .text(totClosed)
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,132)")
+    .attr("transform", "translate(450,142)")
     .append ("text")
     .text("Deals closed in")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(400,152)")
+    .attr("transform", "translate(450,162)")
     .append ("text")
     .text("8 seasons.")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
     g.append("g")
