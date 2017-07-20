@@ -213,7 +213,7 @@ var keys = data.map(function(d) { return d.Category; });
     var formpcnt = d3.format(".0%");  
   
     g.append("g")
-    .attr("transform", "translate(450,38)")
+    .attr("transform", "translate(450,88)")
     .append ("text")
     .text(totTotal)
     .attr("text-anchor","middle")
@@ -221,7 +221,7 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,65)")
+    .attr("transform", "translate(450,115)")
     .append ("text")
     .text("Total Offers in")
     .attr("text-anchor","middle")
@@ -229,7 +229,7 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,85)")
+    .attr("transform", "translate(450,135)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -238,7 +238,7 @@ var keys = data.map(function(d) { return d.Category; });
 
 
     g.append("g")
-    .attr("transform", "translate(450,115)")
+    .attr("transform", "translate(450,165)")
     .append ("text")
     .text(totClosed)
     .attr("text-anchor","middle")
@@ -246,7 +246,7 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,142)")
+    .attr("transform", "translate(450,192)")
     .append ("text")
     .text("Deals closed in")
     .attr("text-anchor","middle")
@@ -254,7 +254,7 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,162)")
+    .attr("transform", "translate(450,212)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -262,7 +262,7 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,250)")
+    .attr("transform", "translate(450,300)")
     .append ("text")
     .text(formpcnt(totClosed/totTotal))
     .attr("text-anchor","middle")
@@ -278,7 +278,7 @@ var keys = data.map(function(d) { return d.Category; });
 
 
     g.append("g")
-    .attr("transform", "translate(450,250)")
+    .attr("transform", "translate(450,300)")
     .append ("path")
     .attr("d", arc)
     .attr("class", "arc");
@@ -291,7 +291,7 @@ var keys = data.map(function(d) { return d.Category; });
             .endAngle(totClosed*2*3.141592653589793/totTotal);
 
     g.append("g")
-    .attr("transform", "translate(450,250)")
+    .attr("transform", "translate(450,300)")
     .append ("path")
     .attr("d", arc)
     .attr("class", "darc");
