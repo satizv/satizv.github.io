@@ -18,11 +18,17 @@
 	<div> Title </div>
 	</div>
 
+<ul id="menu">
+    <li data-menuanchor="title" class="active"><a href="#introduction">First slide</a></li>
+    <li data-menuanchor="introduction"><a href="#introduction">Second slide</a></li>
+    
+</ul>
 
 </div>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 		anchors: ['title', 'introduction'],
+		menu: '#menu',
 		css3:true,
 		navigation: true,
 		navigationPosition: 'right'
