@@ -253,6 +253,8 @@ var keys = data.map(function(d) { return d.Category; });
     .attr("transform", "translate(450,250)")
     .append ("text")
     .text(formpcnt(totClosed/totTotal))
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
 
 
@@ -274,7 +276,7 @@ var keys = data.map(function(d) { return d.Category; });
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
-            .endAngle(angle*2*3.141592653589793/tot);
+            .endAngle(totClosed*2*3.141592653589793/totTotal);
 
     g.append("g")
     .attr("transform", "translate(450,250)")
