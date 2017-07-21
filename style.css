@@ -37,6 +37,13 @@
 	text-align: center;	
 }
 
+.pg3floatleft {
+	float: left;
+}
+.zindex {
+	z-index: 1;
+}
+
 header {
   font: 24px impact, georgia, serif;
   align-content:center;
