@@ -15,4 +15,4 @@
     .text("Shark Tank - Overview")
     .attr("class", "hgraph");
 */
-d3.select("#pg3svg").append("h1").html("My beautiful text");
+d3.append("h1").html("My beautiful text");
