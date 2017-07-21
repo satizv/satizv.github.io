@@ -1,4 +1,4 @@
-/*var svg = d3.select("#pg3svg")
+var svg = d3.select("#pg3svg")
 			.append("svg")
 			.attr("width", 640)
 			.attr("height", 500)
@@ -14,5 +14,4 @@
     .append ("text")
     .text("Shark Tank - Overview")
     .attr("class", "hgraph");
-*/
-d3.select("#pg3svg").append("h1").html("My beautiful text");
+
