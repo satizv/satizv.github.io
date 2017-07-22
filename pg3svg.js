@@ -156,14 +156,8 @@ function drawpg3graph(data)
       .attr("height", y.bandwidth())
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
-      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
-         .append("g")
-      .attr("transform", "translate(450,68)")
-      .append("text")
-      .text(function(d) {d.data.Total})
-      .attr("text-anchor","middle")
-      .attr("alignment-baseline","central")
-      .attr("class", "hsidebar");
+      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); });
+
 
     g.append("g")
     .selectAll("g")
@@ -184,6 +178,18 @@ function drawpg3graph(data)
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
       ;
 
+    g.append("g")
+    .attr("transform", "translate(450,68)")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    .append ("text")
+    .data(function(d) { return d; })
+    .enter().append("text")
+    .text(function(d) { console.log(d.data.Total); return d.data.Total; })
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar");
 
 
 }
