@@ -67,6 +67,11 @@ a {
   text-decoration: none;
   font: 20px georgia, serif;
 }
+.hsidebarwhite {
+  color: white;
+  text-decoration: none;
+  font: 20px georgia, serif;
+}
 
 .hgraph {
   color: black;
