@@ -157,7 +157,7 @@ function drawpg3graph(data)
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
-      .call(function(d) {console.log("inside")});
+      .call(function(d) {console.log("inside");});
 
 
     g.append("g")
