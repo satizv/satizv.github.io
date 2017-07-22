@@ -18,13 +18,11 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
   
   load(data);
 
-    setTimeout(function(){
-      removegraph(data);
-    }, 3000);
+
 
 }); 
 
-function removegraph(data)
+function removegraph()
 {
 	d3.select("#pg3svgid").remove();
 }
