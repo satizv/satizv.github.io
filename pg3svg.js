@@ -190,10 +190,12 @@ function drawpg3graph(data)
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebarwhite")
+    .attr( "fill-opacity", 0 )
     .transition()
     .delay(function(d,i) {return (i*2000+2000)})
     .text(function(d) { console.log(d.data.Total); return d.data.Total; })
     .attr("class", "hsidebar")
+    .attr( "fill-opacity", 1 )
     .remove() 
 ;
 
