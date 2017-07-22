@@ -174,7 +174,7 @@ function drawpg3graph(data)
       .attr("height", y.bandwidth())
       .transition()
       .delay(function(d,i) {return (i*2000+3000)})
-      .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
+      .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); });
 
     g.append("g")
     .attr("transform", "translate(450,68)")
