@@ -23,12 +23,6 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 function load(data) {
 
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var h = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");
-    h.append("g")
-    .attr("transform", "translate(145,20)")
-    .append ("text")
-    .text("Shark Tank - Overview")
-    .attr("class", "hgraph");
 
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -76,4 +70,40 @@ function load(data) {
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
+}
+
+function runpg3()
+{
+
+  d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+    if (error) throw error;  
+  
+    drawpg3graph(data);
+
+  });
+
+}
+
+function drawpg3graph(data)
+{
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#ACC7D1")
+      .attr("x",0)
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", 0)
+      .attr("height", y.bandwidth())
+      .transition()
+      .delay(function(d,i) {return (i*2000+2000)})
+      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
 }
