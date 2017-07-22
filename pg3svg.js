@@ -185,7 +185,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(function(d,i) {return (i*2000+2000)})
-    .text(function(d,i) { return d.Total});
+    .text(function(d,i) { return d.data.Total});
 
 
 }
