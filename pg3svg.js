@@ -180,23 +180,6 @@ function drawpg3graph(data)
       ;
 
 
-    g.append("g")
-              .attr("transform", "translate(450,68)")
-              .append ("text")
-              .attr("id","pg3txt")
-              .attr("text-anchor","middle")
-              .attr("alignment-baseline","central")
-              .attr("class", "hsidebar");
-
-   // g.data(values).enter().each(function(d,i) {alert('inside' + i + d);} );
-    g.data(values).enter().each(function(d,i) {d3.interval(txtupdate(d),i*2000+2000); } );
-
-
-
-function txtupdate(d)
-{
-  console.log('inside' + d);
-  g.select("#pg3txt").data(d).append("text").text(d).attr("text-anchor","middle").attr("alignment-baseline","central");
-}
+ 
 
 }
