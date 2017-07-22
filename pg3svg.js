@@ -156,7 +156,8 @@ function drawpg3graph(data)
       .attr("height", y.bandwidth())
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
-      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); });
+      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
+      .call(function(d) {console.log("inside"+d.data.Total)});
 
 
     g.append("g")
@@ -178,25 +179,6 @@ function drawpg3graph(data)
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
       ;
 
-    g.append("g")
-    .attr("transform", "translate(450,68)")
-    .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
-    .enter().append("g")
-    .selectAll("text")
-    .data(function(d) { return d; })
-    .enter().append("text")
-    .text("0")
-    .attr("text-anchor","middle")
-    .attr("alignment-baseline","central")
-    .attr("class", "hsidebarwhite")
-    .attr( "fill-opacity", 0 )
-    .transition()
-    .delay(function(d,i) {return (i*2000+2000)})
-    .text(function(d) { console.log(d.data.Total); return d.data.Total; })
-    .attr("class", "hsidebar")
-    .attr( "fill-opacity", 1 )
-;
 
 
 }
