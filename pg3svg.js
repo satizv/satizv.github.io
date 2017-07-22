@@ -186,10 +186,14 @@ function drawpg3graph(data)
     .selectAll("text")
     .data(function(d) { return d; })
     .enter().append("text")
-    .text(function(d) { console.log(d.data.Total); return d.data.Total; })
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar");
+    .attr("class", "hsidebar")
+    .text("0")
+    .transition()
+    .delay(function(d,i) {return (i*2000+2000)})
+    .text(function(d) { console.log(d.data.Total); return d.data.Total; })
+;
 
 
 }
