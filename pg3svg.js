@@ -111,7 +111,7 @@ function drawpg3graph(data)
 
 
   console.log("max");
-  console.log(d3.max(data, function(d) { return d.Total; }));
+  console.log(d3.max(data, function(d) { return +d.Total; }));
   y.domain(data.map(function(d) { return d.Category; }));
   x.domain([0, d3.max(data, function(d) { return +d.Total; })]).nice();
 
@@ -157,7 +157,6 @@ function drawpg3graph(data)
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
-      .each(function(d,i) { alert('inside' + i + d.data.Total); })
       ;
 
 
@@ -180,6 +179,16 @@ function drawpg3graph(data)
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
       ;
 
+
+    g.append("g")
+              .attr("transform", "translate(450,68)")
+              .append ("text")
+              .attr("id","pg3txt")
+              .attr("text-anchor","middle")
+              .attr("alignment-baseline","central")
+              .attr("class", "hsidebar");
+
+    g.data(values).enter().each(for(d,i) {alert('inside' + i + d)}; );
 
 
 }
