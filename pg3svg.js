@@ -1,5 +1,6 @@
 var svg = d3.select("#pg3svg")
 			.append("svg")
+			.attr("id","pg3svgid")
 			.attr("width", 640)
 			.attr("height", 500)
 			.attr("class", "zindex");
@@ -7,13 +8,7 @@ var svg = d3.select("#pg3svg")
     margin = {top: 40, right: 20, bottom: 35, left: 80},
     width = 540 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var h = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");
-    h.append("g")
-    .attr("transform", "translate(145,20)")
-    .append ("text")
-    .text("Shark Tank - Overview")
-    .attr("class", "hgraph");
+
 
 d3.csv("data/sharktotal.csv", function(d, i, columns) {
   console.log(d);
@@ -22,10 +17,25 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
   if (error) throw error;  
   
   load(data);
+  setTimeout(function(){
+      delete(data);
+    }, 3000);
+
 }); 
 
+function delete(data)
+{
+	d3.select("pg3svgid").remove();
+}
 function load(data)
 {
+	g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var h = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");
+    h.append("g")
+    .attr("transform", "translate(145,20)")
+    .append ("text")
+    .text("Shark Tank - Overview")
+    .attr("class", "hgraph");
 
 	var y = d3.scaleBand()
     .rangeRound([0, height])
