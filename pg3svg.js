@@ -188,7 +188,7 @@ function drawpg3graph(data)
 
     g.select("#pg3tottext")
     .data(data)
-    .text(function(d,i) { return d.Total[i]});
+    .text(function(d,i) { console.log(d.Total) return d.Total});
 
 
 }
