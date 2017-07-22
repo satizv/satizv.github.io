@@ -178,14 +178,16 @@ function drawpg3graph(data)
 
     g.append("g")
     .attr("transform", "translate(450,68)")
-    .data(data)
     .append ("text")
+    .attr("id","pg3tottext")
     .text("0")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar")
-    .transition()
-    .delay(function(d,i) {return (i*2000+2000)})
+    .attr("class", "hsidebar");
+
+
+    g.select("#pg3tottext")
+    .data(data)
     .text(function(d,i) { return d.Total});
 
 
