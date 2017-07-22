@@ -154,10 +154,11 @@ function drawpg3graph(data)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
       .attr("height", y.bandwidth())
+      .each(function(d) { console.log(d.data.Category); })
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
-      .each(function(d) {console.log("inside");});
+      ;
 
 
     g.append("g")
