@@ -178,6 +178,7 @@ function drawpg3graph(data)
 
     g.append("g")
     .attr("transform", "translate(450,68)")
+    ..data(d3.stack().keys(keys)(data))
     .append ("text")
     .text("0")
     .attr("text-anchor","middle")
