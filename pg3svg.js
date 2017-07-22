@@ -89,6 +89,8 @@ function runpg3()
 
 function drawpg3graph(data)
 {
+    var keys = data.map(function(d) { return d.Category; });
+    
     g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
