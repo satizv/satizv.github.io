@@ -155,7 +155,7 @@ function drawpg3graph(data)
       .attr("width", 0)
       .attr("height", y.bandwidth())
       .transition()
-      .delay(function(d,i) {return (i*000+2000)})
+      .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
 
     g.append("g")
