@@ -25,6 +25,7 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 function removegraph()
 {
 	alert("inside");
+	d3.select("#pg3svgid").remove();
 }
 function load(data)
 {
