@@ -195,7 +195,7 @@ function drawpg3graph(data)
 
 function txtupdate(d)
 {
-  alert('inside' + d);
+  console.log('inside' + d);
 }
 
 }
