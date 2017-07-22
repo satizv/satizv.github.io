@@ -196,6 +196,7 @@ function drawpg3graph(data)
 function txtupdate(d)
 {
   console.log('inside' + d);
+  g.select("#pg3txt").data(d).append("text").text(d).attr("text-anchor","middle").attr("alignment-baseline","central");
 }
 
 }
