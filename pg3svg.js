@@ -178,7 +178,7 @@ function drawpg3graph(data)
 
     g.append("g")
     .attr("transform", "translate(450,68)")
-    .data(d3.stack().keys(keys)(data))
+    .data(data)
     .append ("text")
     .text("0")
     .attr("text-anchor","middle")
@@ -186,7 +186,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(function(d,i) {return (i*2000+2000)})
-    .text(function(d,i) { return d.data.Total});
+    .text(function(d,i) { return d.Total});
 
 
 }
