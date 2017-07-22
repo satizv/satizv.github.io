@@ -17,9 +17,7 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
   if (error) throw error;  
   
   load(data);
-  setTimeout(function(){
-      delete(data);
-    }, 3000);
+
 
 }); 
 
