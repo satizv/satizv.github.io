@@ -167,7 +167,7 @@ function drawpg3graph(data)
     .data(function(d) { return d; })
     .enter().append("rect")
       //.attr("x", function(d) { return x(d.data.season); })
-      .attr("fill", "##4A8393")
+      .attr("fill", "#4A8393")
       .attr("x",0)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
@@ -175,4 +175,17 @@ function drawpg3graph(data)
       .transition()
       .delay(function(d,i) {return (i*2000+3000)})
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
+
+    g.append("g")
+    .attr("transform", "translate(450,68)")
+    .append ("text")
+    .text("0")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar")
+    .transition()
+    .delay(function(d,i) {return (i*2000+2000)})
+    .text(function(d,i) { for (var sum=0;var x=0; x<= i;x++) {sum += +d[i];} return sum;});
+
+
 }
