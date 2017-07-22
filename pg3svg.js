@@ -188,7 +188,7 @@ function drawpg3graph(data)
               .attr("alignment-baseline","central")
               .attr("class", "hsidebar");
 
-    g.data(values).enter().each(for(d,i) {alert('inside' + i + d)}; );
+    g.data(values).enter().each(function(d,i) {alert('inside' + i + d)}; );
 
 
 }
