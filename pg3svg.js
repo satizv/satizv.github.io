@@ -196,7 +196,6 @@ function drawpg3graph(data)
     .text(function(d) { console.log(d.data.Total); return d.data.Total; })
     .attr("class", "hsidebar")
     .attr( "fill-opacity", 1 )
-    .remove() 
 ;
 
 
