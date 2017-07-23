@@ -295,7 +295,7 @@ function drawpg3graph(data)
       var a = +d;
       console.log("in" + a + "tot" + totTotal + "tau" + tau + "end" + d.endAngle );
       var x = d3.interpolate(d.endAngle,(d.endAngle + ((a/+totTotal)*tau)));
-      d.endAngle = interpolate(t);
+      d.endAngle = x(t);
       return function(t) { arc(format(x(t))); };
     });
 
