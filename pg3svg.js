@@ -189,6 +189,7 @@ function drawpg3graph(data)
     var formpcnt = d3.format("s");  
 
     var easement = d3.easeCubic;
+    var format = d3.format(",d");
 
     g.append("g")
     .attr("transform", "translate(450,68)")
@@ -198,16 +199,11 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .duration(2000)
-    .tween("text",testtween(totTotal));
-
-function testtween(a) {
-        console.log('in'+ a);
-        var i = d3.interpolateNumber(1, a);
-      return function(t) {
-        d3.select(this).text(i(t));
-      };
-}
-  
+    .tween("text", function() {
+            var that = d3.select(this),
+                i = d3.interpolateNumber(100,770);
+            return function(t) { that.text(format(i(t))); };
+          });
 
 
 } 
