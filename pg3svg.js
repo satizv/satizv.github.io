@@ -204,7 +204,7 @@ function drawpg3graph(data)
 
 function testtween(a) {
         console.log('in'+ a);
-        var i = d3.interpolate(0, a);
+        var i = d3.interpolateNumber(0, a);
       return function(t) {
         d3.select(this).text(i(t));
         console.log(i(100));
