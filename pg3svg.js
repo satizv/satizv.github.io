@@ -287,6 +287,7 @@ function drawpg3graph(data)
     values.forEach(function(d,i) {
     var del = i*2000+2000;
     d3.select("#pg3svgarc1")
+    .datum({endAngle: 0.127 * tau})
     .transition()
     .delay(del)
     .duration(250)
