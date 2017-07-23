@@ -281,7 +281,7 @@ function drawpg3graph(data)
     .attr("transform", "translate(450,280)")
     .append ("path")
     .attr("d", arc)
-    .attr("id","pg3svgarc1");
+    .attr("id","pg3svgarc1")
     .attr("class", "arc");
 
     values.forEach(function(d,i) {
