@@ -188,7 +188,7 @@ function drawpg3graph(data)
 
     var formpcnt = d3.format("s");  
 
-
+    var easement = d3.easeCubic;
   
     g.append("g")
     .attr("transform", "translate(450,68)")
@@ -198,7 +198,7 @@ function drawpg3graph(data)
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
     .transition()
-    .ease("quad-out")
+    .ease(easement)
     .delay(2000)
     .duration(2000)
     .tween("text",testtween(totTotal));
