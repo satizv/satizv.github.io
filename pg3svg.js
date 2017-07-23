@@ -199,9 +199,14 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .transition()
     .duration(2000)
-    .attrTween("text",function() { return d3.interpolateNumber(0,770);});
+    .tween("text", function(totTotal) {
+      console.log('in'+totTotal)
+      var i = d3.interpolate(0, totTotal);
+      return function(t) {
+        d3.select(this).text(formatPercent(i(t)));
+      };
+    });
 
 
 
