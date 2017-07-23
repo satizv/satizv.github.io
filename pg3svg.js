@@ -199,18 +199,14 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .duration(90000)
-    .tween("text",tweenText(totTotal));
+    .duration(2000)
+    .tween("text", function(totTotal) {
+      var i = d3.interpolate(0,totTotal);
+      return function(t) {
+        d3.select(this).text(i(t));
+      };
+    });
 
-function tweenText( newValue ) {
-   return function() {
-     var currentValue = 0;
-     var i = d3.interpolateRound( currentValue, newValue );
-     return function(t) {
-      this.textContent = i(t);
-    };
-  }
-}
 
 
 } 
