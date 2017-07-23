@@ -201,7 +201,7 @@ function drawpg3graph(data)
     .delay(2000)
     .duration(2000)
     .tween("text", function(totTotal) {
-      var i = d3.interpolate(0,totTotal);
+      var i = d3.interpolateNumber(0,totTotal);
       return function(t) {
         d3.select(this).text(i(t));
       };
