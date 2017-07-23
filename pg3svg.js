@@ -193,24 +193,15 @@ function drawpg3graph(data)
     g.append("g")
     .attr("transform", "translate(450,68)")
     .append ("text")
-    .text("0" )
+    .text("0")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .transition()
+    .transition().
     .duration(2000)
-    .tween("text", function(totTotal) {
-            var i = d3.interpolate(this.textContent, d),
-                prec = (d + "").split("."),
-                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
-
-            return function(t) {
-                this.textContent = Math.round(i(t) * round) / round;
-            };
-        });
-
+    .attr("text",function() { return d3.interpolateNumber(0,770);});
 
 
 
