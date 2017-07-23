@@ -290,7 +290,7 @@ function drawpg3graph(data)
     .transition()
     .delay(del)
     .duration(250)
-    .attrtween("d", function() {
+    .attrTween("d", function() {
       var a = +d;
       var x = d3.interpolate(d.endAngle,(d.endAngle + ((a/totTotal)*tau)));
       return function(t) { arc(format(x(t))); };
