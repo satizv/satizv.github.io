@@ -273,7 +273,7 @@ function drawpg3graph(data)
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
-            .endAngle(20);
+            .endAngle(2);
   
   var tau = 2 * 3.141592653589793;
 
@@ -295,7 +295,7 @@ function drawpg3graph(data)
       console.log("in" + a + "tot" + totTotal + "tau" + tau + "end" + d.endAngle );
       var x = d3.interpolate(0,(0 + ((a/+totTotal)*tau)));
       
-      return function(t) { arc(format(x(t))); };
+      return function(t) {d.endAngle = x(t); console.log(d.endAngle); return arc(x(t)); };
     });
 
   });
