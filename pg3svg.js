@@ -291,15 +291,20 @@ function drawpg3graph(data)
     .transition()
     .delay(del)
     .duration(250)
-    .attrTween("d", function() {
-      var a = +d;
-      console.log("in" + a + "tot" + totTotal + "tau" + tau + "end" + d.endAngle );
-      var x = d3.interpolate(0,(0 + ((a/+totTotal)*tau)));
-      
-      return function(t) {d.endAngle = x(t); console.log(d.endAngle); return arc(d); };
-    });
-
+    .attrTween("d", arcTween((d/totTotal)*tau))
   });
+
+function arcTween (newAngle) {
+  return function(d) {
+    console.log(newAngle);
+    var interpolate = d3.interpolate(0, newAngle);
+    return function(t) {
+      d.endAngle = interpolate(t);
+      console.log(d.endAngle);
+      return arc(d);
+      };
+  };
+}
 
   
 } 
