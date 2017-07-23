@@ -273,14 +273,15 @@ function drawpg3graph(data)
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
-            .endAngle(2);
+//            .endAngle(2)
+            ;
   
   var tau = 2 * 3.141592653589793;
 
     g.append("g")
     .attr("transform", "translate(450,280)")
     .append ("path")
-    .datum({endAngle: 0.127 * tau})
+//    .datum({endAngle: 0.127 * tau})
     .attr("d", arc)
     .attr("id","pg3svgarc1")
     .attr("class", "arc");
@@ -297,7 +298,8 @@ function drawpg3graph(data)
 function arcTween (newAngle) {
   return function(d) {
     console.log(newAngle);
-    var interpolate = d3.interpolate(0, newAngle);
+    console.log(d.endAngle);
+    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
     return function(t) {
       d.endAngle = interpolate(t);
       console.log(d.endAngle);
