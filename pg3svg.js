@@ -322,7 +322,7 @@ function arcTween (newAngle) {
     .transition()
     .delay(del)
     .duration(250)
-    .attrTween("d", arcTween1((d/totClosed)*tau))
+    .attrTween("d", arcTween1((d/totTotal)*tau))
   });
 
 function arcTween1 (newAngle) {
