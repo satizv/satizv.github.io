@@ -191,7 +191,6 @@ function drawpg3graph(data)
     var easement = d3.easeCubic;
 
     g.append("g")
-    .attr("transform", "translate(450,68)")
     .selectAll("g")
     .data(totTotal)
     .enter().append("g")
