@@ -199,7 +199,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .transition().
+    .transition()
     .duration(2000)
     .attr("text",function() { return d3.interpolateNumber(0,770);});
 
