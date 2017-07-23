@@ -191,18 +191,23 @@ function drawpg3graph(data)
     var easement = d3.easeCubic;
 
     g.append("g")
-    .selectAll("g")
-    .data(totTotal)
-    .enter().append("g")
-    .selectAll("text")
-    .data(totTotal)
-    .enter().append("text")
-    .text(function(d) {return d;})
     .attr("transform", "translate(450,68)")
+    .append ("text")
+    .text("0")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar");
+    .attr("class", "hsidebar")
+    .transition()
+    .duration(2000)
+    .tween("text",testtween(totTotal));
 
+function testtween(a) {
+        console.log('in'+ a);
+        var i = d3.interpolateNumber(0, a);
+      return function(t) {
+        d3.select(this).text(i(t));
+      };
+}
   
 
 
