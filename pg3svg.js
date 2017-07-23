@@ -198,7 +198,7 @@ function drawpg3graph(data)
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
     .transition()
-    .duration(2000)
+    .duration(4000)
     .tween("text", function() {
             var that = d3.select(this),
                 i = d3.interpolateNumber(100,770);
