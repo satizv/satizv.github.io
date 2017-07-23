@@ -189,28 +189,21 @@ function drawpg3graph(data)
     var formpcnt = d3.format("s");  
 
     var easement = d3.easeCubic;
-  
+
     g.append("g")
     .attr("transform", "translate(450,68)")
-    .append ("text")
-    .text("0")
+    .selectAll("g")
+    .data(totTotal)
+    .enter().append("g")
+    .selectAll(text)
+    .data(totTotal)
+    .enter().append("text")
+    .text(function(d) {return d;})
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar")
-    .transition()
-    .ease(easement)
-    .delay(2000)
-    .duration(2000)
-    .tween("text",testtween(totTotal));
+    .attr("class", "hsidebar");
 
-function testtween(a) {
-        console.log('in'+ a);
-        var i = d3.interpolateNumber(0, a);
-      return function(t) {
-        d3.select(this).text(i(t));
-        console.log(i(100));
-        console.log(i(700));
-      };
-}
+  
+
 
 } 
