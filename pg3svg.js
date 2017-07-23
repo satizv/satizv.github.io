@@ -308,5 +308,35 @@ function arcTween (newAngle) {
   };
 }
 
+    g.append("g")
+    .attr("transform", "translate(450,280)")
+    .append ("path")
+    .datum({endAngle: 0})
+    .attr("d", arc)
+    .attr("id","pg3svgarc2")
+    .attr("class", "darc");
+
+    valuesClosed.forEach(function(d,i) {
+    var del = i*2000+3000;
+    d3.select("#pg3svgarc2")
+    .transition()
+    .delay(del)
+    .duration(250)
+    .attrTween("d", arcTween1((d/totClosed)*tau))
+  });
+
+function arcTween1 (newAngle) {
+  return function(d) {
+    console.log(newAngle);
+    console.log(d.endAngle);
+    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+    return function(t) {
+      d.endAngle = interpolate(t);
+      console.log(d.endAngle);
+      return arc(d);
+      };
+  };
+}
+
   
 } 
