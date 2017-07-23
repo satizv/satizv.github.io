@@ -198,11 +198,66 @@ function drawpg3graph(data)
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("id","pg3svgtxt");
+    .attr("class", "hsidebar")
+    .attr("id","pg3svgtxt1");
+
+    g.append("g")
+    .attr("transform", "translate(450,95)")
+    .append ("text")
+    .text("Total Offers in")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(450,115)")
+    .append ("text")
+    .text("8 seasons.")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(450,145)")
+    .append ("text")
+    .attr("id","pg3svgtxt2");
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar");
+
+    g.append("g")
+    .attr("transform", "translate(450,172)")
+    .append ("text")
+    .text("Deals closed in")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(450,192)")
+    .append ("text")
+    .text("8 seasons.")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
 
     values.forEach(function(d,i) {
     var del = i*2000+2000;
-    d3.select("#pg3svgtxt")
+    d3.select("#pg3svgtxt1")
+    .transition()
+    .delay(del)
+    .duration(250)
+    .tween("text", function() {
+            var that = d3.select(this);
+            var a = +d;
+            var x = d3.interpolateNumber(that.text(),(a + +that.text()));
+            return function(t) { that.text(format(x(t))); };
+          });
+});
+
+    valuesClosed.forEach(function(d,i) {
+    var del = i*2000+3000;
+    d3.select("#pg3svgtxt2")
     .transition()
     .delay(del)
     .duration(250)
