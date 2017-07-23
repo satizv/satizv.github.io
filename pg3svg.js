@@ -201,7 +201,7 @@ function drawpg3graph(data)
     .delay(2000)
     .transition()
     .duration(2000)
-    .attr("text",function() { return d3.interpolateNumber(0,770);});
+    .attrTween("text",function() { return d3.interpolateNumber(0,770);});
 
 
 
