@@ -180,24 +180,6 @@ function drawpg3graph(data)
       ;
 
 
-    var totClosed = d3.sum(data, function(d) { return d.Closed; });
-    console.log(totClosed);
+ 
 
-    var totTotal = d3.sum(data, function(d) { return d.Total; });
-    console.log(totTotal);
-
-    var formpcnt = d3.format(".0%");  
-  
-    g.append("g")
-    .attr("transform", "translate(450,68)")
-    .append ("text")
-    .text("0")
-    .attr("text-anchor","middle")
-    .attr("alignment-baseline","central")
-    .attr("class", "hsidebar")
-    .transition()
-    .delay(2000)
-    .duration(90000)
-    .text("totTotal");
-
-} 
+}
