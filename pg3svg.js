@@ -187,6 +187,8 @@ function drawpg3graph(data)
     console.log(totTotal);
 
     var formpcnt = d3.format(".0%");  
+    var easement = d3.easeCubic;
+
   
     g.append("g")
     .attr("transform", "translate(450,68)")
@@ -198,6 +200,7 @@ function drawpg3graph(data)
     .transition()
     .delay(2000)
     .duration(90000)
-    .text(totTotal);
+    .text(totTotal)
+    .ease(easement);
 
 } 
