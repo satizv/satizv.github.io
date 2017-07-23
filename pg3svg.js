@@ -183,7 +183,8 @@ function drawpg3graph(data)
     var totClosed = d3.sum(data, function(d) { return d.Closed; });
     console.log(totClosed);
 
-    var totTotal = d3.sum(data, function(d) { return d.Total; });
+    //var totTotal = d3.sum(data, function(d) { return d.Total; });
+    var totTotal = [770,1000];
     console.log(totTotal);
 
     var formpcnt = d3.format("s");  
@@ -196,14 +197,21 @@ function drawpg3graph(data)
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar")
+    .attr("id","pg3svgtxt");
+
+    totTotal.forEach(function(d,i) {
+    var del = i*2000+2000;
+    d3.select("#pg3svgtxt")
     .transition()
-    .duration(4000)
+    .delay(del)
+    .duration(2000)
     .tween("text", function() {
-            var that = d3.select(this),
-                i = d3.interpolateNumber(100,+totTotal);
-            return function(t) { that.text(format(i(t))); };
+            var that = d3.select(this);
+            var a = +d;
+            var x = d3.interpolateNumber(that.text(),a);
+            return function(t) { that.text(format(x(t))); };
           });
+});
 
 
 } 
