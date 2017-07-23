@@ -269,5 +269,34 @@ function drawpg3graph(data)
           });
 });
 
+  var arc =  d3.arc()
+            .innerRadius(30)
+            .outerRadius(50)
+            .startAngle(0)
+            .endAngle(0);
+  
+  var tau = 2 * 3.141592653589793;
 
+    g.append("g")
+    .attr("transform", "translate(450,280)")
+    .append ("path")
+    .attr("d", arc)
+    .attr("id","pg3svgarc1");
+    .attr("class", "arc");
+
+    values.forEach(function(d,i) {
+    var del = i*2000+2000;
+    d3.select("#pg3svgtarc1")
+    .transition()
+    .delay(del)
+    .duration(250)
+    .attrtween("d", function() {
+      var a = +d;
+      var x = d3.interpolate(d.endAngle,(d.endAngle + ((a/totTotal)*tau)));
+      return function(t) { arc(format(x(t))); };
+    });
+
+  });
+
+  
 } 
