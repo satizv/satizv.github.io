@@ -117,7 +117,8 @@ function drawpg3graph(data)
 
   console.log(z("Food"));
 
-  var values = data.map(function(d) { return d.Total; })
+  var values = data.map(function(d) { return d.Total; });
+  var valuesClosed = data.map(function(d) { return d.Closed; })
   console.log(values);  
   console.log(values[0]);
 
@@ -204,7 +205,7 @@ function drawpg3graph(data)
     d3.select("#pg3svgtxt")
     .transition()
     .delay(del)
-    .duration(2000)
+    .duration(250)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +d;
