@@ -292,7 +292,7 @@ function drawpg3graph(data)
     .duration(250)
     .attrTween("d", function() {
       var a = +d;
-      console.log("in" + a + "tot" + totTotal + "tau" + tau + "end" + d.endAngle )
+      console.log("in" + a + "tot" + totTotal + "tau" + tau + "end" + d.endAngle );
       var x = d3.interpolate(d.endAngle,(d.endAngle + ((a/+totTotal)*tau)));
       return function(t) { arc(format(x(t))); };
     });
