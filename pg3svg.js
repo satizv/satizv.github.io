@@ -220,7 +220,7 @@ function drawpg3graph(data)
     g.append("g")
     .attr("transform", "translate(450,145)")
     .append ("text")
-    .attr("id","pg3svgtxt2");
+    .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
