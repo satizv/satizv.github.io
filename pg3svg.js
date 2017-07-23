@@ -198,6 +198,7 @@ function drawpg3graph(data)
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
     .transition()
+    .ease("quad-out")
     .delay(2000)
     .duration(2000)
     .tween("text",testtween(totTotal));
