@@ -193,12 +193,12 @@ function drawpg3graph(data)
     g.append("g")
     .attr("transform", "translate(450,68)")
     .append ("text")
-    .text("0")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
+    .transition()
     .duration(2000)
     .tween("text", function(totTotal) {
       var i = d3.interpolateNumber(0,totTotal);
