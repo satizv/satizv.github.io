@@ -273,7 +273,7 @@ function drawpg3graph(data)
             .innerRadius(30)
             .outerRadius(50)
             .startAngle(0)
-            .endAngle(0);
+            .endAngle(20);
   
   var tau = 2 * 3.141592653589793;
 
@@ -286,7 +286,7 @@ function drawpg3graph(data)
 
     values.forEach(function(d,i) {
     var del = i*2000+2000;
-    d3.select("#pg3svgtarc1")
+    d3.select("#pg3svgarc1")
     .transition()
     .delay(del)
     .duration(250)
