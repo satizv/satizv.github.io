@@ -204,7 +204,7 @@ function drawpg3graph(data)
       console.log('in'+totTotal);
       var i = d3.interpolate(0, totTotal);
       return function(t) {
-        d3.select(this).text(formatPercent(i(t)));
+        d3.select(this).text(i(t));
       };
     });
 
