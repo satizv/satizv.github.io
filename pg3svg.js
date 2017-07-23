@@ -208,7 +208,7 @@ function drawpg3graph(data)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +d;
-            var x = d3.interpolateNumber(that.text(),a+that.text());
+            var x = d3.interpolateNumber(that.text(),(a + +that.text());
             return function(t) { that.text(format(x(t))); };
           });
 });
