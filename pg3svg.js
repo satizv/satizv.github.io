@@ -183,7 +183,7 @@ function drawpg3graph(data)
     var totClosed = d3.sum(data, function(d) { return d.Closed; });
     console.log(totClosed);
 
-    //var totTotal = d3.sum(data, function(d) { return d.Total; });
+    var totTotal = d3.sum(data, function(d) { return d.Total; });
     var totTotal = [770,1000];
     console.log(totTotal);
 
@@ -199,7 +199,7 @@ function drawpg3graph(data)
     .attr("alignment-baseline","central")
     .attr("id","pg3svgtxt");
 
-    totTotal.forEach(function(d,i) {
+    values.forEach(function(d,i) {
     var del = i*2000+2000;
     d3.select("#pg3svgtxt")
     .transition()
