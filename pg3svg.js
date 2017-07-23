@@ -199,6 +199,7 @@ function drawpg3graph(data)
     .data(totTotal)
     .enter().append("text")
     .text(function(d) {return d;})
+    .attr("transform", "translate(450,68)")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
