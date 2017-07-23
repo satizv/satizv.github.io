@@ -193,7 +193,7 @@ function drawpg3graph(data)
     g.append("g")
     .attr("transform", "translate(450,68)")
     .append ("text")
-    .text(totTotal)
+    .text("0")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
@@ -203,7 +203,7 @@ function drawpg3graph(data)
 
 function testtween(a) {
         console.log('in'+ a);
-        var i = d3.interpolateNumber(0, a);
+        var i = d3.interpolateNumber(1, a);
       return function(t) {
         d3.select(this).text(i(t));
       };
