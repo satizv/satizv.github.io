@@ -200,14 +200,14 @@ function drawpg3graph(data)
     .transition()
     .delay(2000)
     .duration(2000)
-    .tween("text", function() {
-      console.log('in');
-      var i = d3.interpolate(0, 770);
+    .tween("text",testtween(totTotal));
+
+function testtween(a) {
+        console.log('in'+ a);
+        var i = d3.interpolate(0, a);
       return function(t) {
-        d3.select(this).text(i(t));
+        d3.select(this).text(formpcnt(i(t));
       };
-    });
-
-
+}
 
 } 
