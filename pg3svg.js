@@ -186,7 +186,7 @@ function drawpg3graph(data)
     var totTotal = d3.sum(data, function(d) { return d.Total; });
     console.log(totTotal);
 
-    var formpcnt = d3.format(".0%");  
+    var formpcnt = d3.format("s");  
 
 
   
