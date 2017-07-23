@@ -281,7 +281,7 @@ function drawpg3graph(data)
     g.append("g")
     .attr("transform", "translate(450,280)")
     .append ("path")
-//    .datum({endAngle: 0.127 * tau})
+    .datum({endAngle: 0.127 * tau})
     .attr("d", arc)
     .attr("id","pg3svgarc1")
     .attr("class", "arc");
