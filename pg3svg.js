@@ -200,7 +200,7 @@ function drawpg3graph(data)
     .transition()
     .delay(2000)
     .duration(90000)
-    .tween("text",tweenText(totTotal);
+    .tween("text",tweenText(totTotal));
 
 function tweenText( newValue ) {
    return function() {
