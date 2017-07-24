@@ -1,12 +1,12 @@
 var svg = d3.select("#pg3svg")
       .append("svg")
       .attr("id","pg3svgid")
-      .attr("width", 640)
+      .attr("width", 740)
       .attr("height", 500)
       .attr("class", "zindex");
 
-margin = {top: 40, right: 20, bottom: 35, left: 80},
-width = 540 - margin.left - margin.right,
+margin = {top: 40, right: 20, bottom: 35, left: 120},
+width = 640 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom,
 
 
@@ -194,7 +194,7 @@ function drawpg3graph(data)
     var format = d3.format(",d");
 
     g.append("g")
-    .attr("transform", "translate(450,68)")
+    .attr("transform", "translate(550,68)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -202,7 +202,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxt1");
 
     g.append("g")
-    .attr("transform", "translate(450,95)")
+    .attr("transform", "translate(550,95)")
     .append ("text")
     .text("Total Offers in")
     .attr("text-anchor","middle")
@@ -210,7 +210,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,115)")
+    .attr("transform", "translate(550,115)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -226,7 +226,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,172)")
+    .attr("transform", "translate(550,172)")
     .append ("text")
     .text("Deals closed in")
     .attr("text-anchor","middle")
@@ -234,7 +234,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,192)")
+    .attr("transform", "translate(550,192)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -279,7 +279,7 @@ function drawpg3graph(data)
   var tau = 2 * 3.141592653589793;
 
     g.append("g")
-    .attr("transform", "translate(450,280)")
+    .attr("transform", "translate(550,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
@@ -309,7 +309,7 @@ function arcTween (newAngle) {
 }
 
     g.append("g")
-    .attr("transform", "translate(450,280)")
+    .attr("transform", "translate(550,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
