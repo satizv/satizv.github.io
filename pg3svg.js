@@ -56,7 +56,7 @@ function load(data) {
  
 
   g.append("g")
-    .attr("transform", "translate(150,355)")
+    .attr("transform", "translate(200,355)")
     .append ("text")
     .text("Number of Deals")
     .attr("class", "axistext");
@@ -87,8 +87,16 @@ function runpg3()
 
 }
 
+function removegraph()
+{
+  alert("inside");
+  d3.select("#pg3svgid").remove();
+}
+
 function drawpg3graph(data)
 {
+
+  removegraph();
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -218,7 +226,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,145)")
+    .attr("transform", "translate(550,145)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
