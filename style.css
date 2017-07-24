@@ -40,6 +40,10 @@
 .pg3floatleft {
 	float: left;
 }
+
+.pg3button {
+	transform: translate(50px, 0px);
+}
 .zindex {
 	z-index: 1;
 }
