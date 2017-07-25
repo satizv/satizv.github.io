@@ -267,7 +267,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
     g.append("g")
-    .attr("transform", "translate(450,280)")
+    .attr("transform", "translate(550,280)")
     .append ("text")
     .text("0")
     .attr("text-anchor","middle")
@@ -277,11 +277,10 @@ function drawpg3graph(data)
     .transition()
     .delay(2000)
     .duration(2500)
-    .text(formpcnt(totClosed/totTotal))
     .tween("text", function() {
             var that = d3.select(this);
             var a = +totClosed/+totTotal;
-            var x = d3.interpolateNumber(0,formpcnt(+totClosed/+totTotal));
+            var x = d3.interpolateNumber(0,a);
             return function(t) { that.text(formpcnt(x(t))); };
           });
 
