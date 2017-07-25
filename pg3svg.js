@@ -20,6 +20,9 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 
 }); 
 
+document.getElementById("pg3mark1").onmouseover = function () {console.log("insidepg3mark1")};
+document.getElementById("pg3mark2").onmouseover = function () {console.log("insidepg3mark2")};
+
 
 function load(data) {
 
@@ -95,12 +98,6 @@ function drawpg3graph(data)
   var x = d3.scaleLinear()
     .rangeRound([0,width - 100]);
 
-   g.append("g")
-    .attr("transform", "translate(10,10)")
-    .append ("text")
-    .text("Category")
-    .attr("class", "axistext");
-    
   var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
@@ -137,11 +134,7 @@ function drawpg3graph(data)
   console.log(values);  
   console.log(values[0]);
 
-   g.append("g")
-    .attr("transform", "translate(10,10)")
-    .append ("text")
-    .text("Category")
-    .attr("class", "axistext");
+  
 
   g.append("g")
     .attr("transform", "translate(180,355)")
@@ -475,12 +468,6 @@ function drawpg3pcntgraph(data)
     .attr("transform", "translate(180,355)")
     .append ("text")
     .text("Percentage")
-    .attr("class", "axistext");
-
-  g.append("g")
-    .attr("transform", "translate(10,10)")
-    .append ("text")
-    .text("Category")
     .attr("class", "axistext");
 
   g.append("g")
