@@ -140,7 +140,7 @@ function drawpg3graph(data)
     .attr("class", "axistext");
 
   g.append("g")
-    .attr("transform", "translate(10,150)")
+    .attr("transform", "translate(10,10)")
     .append ("text")
     .text("Category")
     .attr("class", "baxistext");
@@ -472,7 +472,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "axistext");
 
   g.append("g")
-    .attr("transform", "translate(10,150)")
+    .attr("transform", "translate(10,10)")
     .append ("text")
     .text("Category")
     .attr("class", "baxistext");
