@@ -55,6 +55,22 @@ function runpg3()
 
 }
 
+function runpgpcnt3()
+{
+
+  d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+    if (error) throw error;  
+  
+    drawpg3pcntgraph(data);
+
+  });
+
+}
+
+
 function removegraph()
 {
   alert("inside");
