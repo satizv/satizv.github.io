@@ -7,7 +7,7 @@ var svg = d3.select("#pg3svg")
 
 margin = {top: 40, right: 20, bottom: 35, left: 120},
 width = 640 - margin.left - margin.right,
-height = 400 - margin.top - margin.bottom;
+height = 400 - margin.top - margin.bottom,
 
 
 d3.csv("data/sharktotal.csv", function(d, i, columns) {
@@ -74,17 +74,11 @@ function runpgpcnt3()
 function removegraph()
 {
   alert("inside");
-  d3.selectAll("rect").remove();
-  d3.selectAll("text").remove();
-  d3.selectAll("path").remove();
-  d3.selectAll("g").remove();
-
-
+  d3.select("#pg3svgid").remove();
 }
 
 function drawpg3graph(data)
 {
-
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -409,7 +403,7 @@ function drawpg3graph(data)
 
 function drawpg3pcntgraph(data)
 {
-  removegraph();
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -460,7 +454,7 @@ function drawpg3pcntgraph(data)
   g.append("g")
     .attr("transform", "translate(150,355)")
     .append ("text")
-    .text("Percentage")
+    .text("Number of Deals")
     .attr("class", "axistext");
 
   g.append("g")
