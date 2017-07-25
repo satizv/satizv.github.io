@@ -1,6 +1,3 @@
-pg3initialsvg();
-function pg3initialsvg {
-
 var svg = d3.select("#pg3svg")
       .append("svg")
       .attr("id","pg3svgid")
@@ -22,7 +19,7 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
   load(data);
 
 }); 
-}
+
 
 function load(data) {
 
@@ -57,20 +54,7 @@ function load(data) {
   console.log(values);  
   console.log(values[0]);
 
-  g.append("g")
-    .attr("transform", "translate(200,355)")
-    .append ("text")
-    .text("Number of Deals")
-    .attr("class", "axistext");
 
-  g.append("g")
-      .attr("class", "axis")
-      .call(d3.axisLeft(y).ticks(null, "s"));
-  
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
 
 }
 
@@ -98,7 +82,6 @@ function removegraph()
 function drawpg3graph(data)
 {
 
-  removegraph();
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
