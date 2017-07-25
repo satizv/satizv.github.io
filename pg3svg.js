@@ -276,7 +276,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .duration(2500)
+    .duration(5000)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +totClosed/+totTotal;
@@ -419,9 +419,9 @@ function pg3drawsidebar(cat,tot,clo,pct) {
 
   d3.select("#pg3svgarc2")
   .attr("d", arc2);
-
+  var formpcnt = d3.format(".0%");
   d3.select("#pg3svgtxt3")
-   .text(pct);
+   .text(formpcnt(pct);
 
 }
 
