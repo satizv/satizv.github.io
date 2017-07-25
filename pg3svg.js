@@ -80,7 +80,7 @@ function runpgval3() {
   }, function(error, data) {
     if (error) throw error;  
   
-    drawpg3pcntgraph(data);
+    drawpg3valgraph(data);
 
   });
 }
@@ -833,7 +833,7 @@ function pg3drawsidebar(cat,tot,clo,pct,val) {
 
 }
 
-function runpgval3() {
+function drawpg3valgraph(data) {
   removegraph();
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
