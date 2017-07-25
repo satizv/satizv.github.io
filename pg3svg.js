@@ -345,7 +345,7 @@ function arcTween1 (newAngle) {
   };
 }
 
-var pg3drawsidebar(d) {
+function pg3drawsidebar(d) {
   console.log(d);
   console.log(d.Category);
   console.log(d.Total);
