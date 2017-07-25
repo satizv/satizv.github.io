@@ -126,15 +126,18 @@ a {
 }
 
 .pg3floatright {
-      width: 25%;
+      width: 40%;
       padding-right: 55px;
 } 
 
-.h4 {
+.sidetitle {
     font: 16px sans-serif;
     font-family: 'Georgia', sans-serif;
 }
-.h5 {
+.sidetext {
       font: 12px sans-serif;
       font-family: 'Georgia', sans-serif;
+}
+.pg3mark {
+  background-color: "#ACC7D1";
 }

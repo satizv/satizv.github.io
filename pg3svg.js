@@ -1,12 +1,12 @@
 var svg = d3.select("#pg3svg")
       .append("svg")
       .attr("id","pg3svgid")
-      .attr("width", 740)
+      .attr("width", 800)
       .attr("height", 500)
       .attr("class", "zindex");
 
-margin = {top: 40, right: 20, bottom: 35, left: 120},
-width = 640 - margin.left - margin.right,
+margin = {top: 40, right: 20, bottom: 35, left: 150},
+width = 660 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
 
 
@@ -134,7 +134,7 @@ function drawpg3graph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(150,355)")
+    .attr("transform", "translate(180,355)")
     .append ("text")
     .text("Number of Deals")
     .attr("class", "axistext");
@@ -225,7 +225,7 @@ function drawpg3graph(data)
   var format = d3.format(",d");
 
   g.append("g")
-    .attr("transform", "translate(550,20)")
+    .attr("transform", "translate(600,20)")
     .append ("text")
     .text("Category")
     .attr("text-anchor","middle")
@@ -233,7 +233,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,40)")
+    .attr("transform", "translate(600,40)")
     .append ("text")
     .text("All")
     .attr("text-anchor","middle")
@@ -243,7 +243,7 @@ function drawpg3graph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(550,68)")
+    .attr("transform", "translate(600,68)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -251,7 +251,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(550,95)")
+    .attr("transform", "translate(600,95)")
     .append ("text")
     .text("Total Presented")
     .attr("text-anchor","middle")
@@ -259,7 +259,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,115)")
+    .attr("transform", "translate(600,115)")
     .append ("text")
     .text("in 8 seasons.")
     .attr("text-anchor","middle")
@@ -267,7 +267,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,145)")
+    .attr("transform", "translate(600,145)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -275,7 +275,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,172)")
+    .attr("transform", "translate(600,172)")
     .append ("text")
     .text("Deals closed in")
     .attr("text-anchor","middle")
@@ -283,7 +283,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,192)")
+    .attr("transform", "translate(600,192)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -291,7 +291,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("text")
     .text("0")
     .attr("text-anchor","middle")
@@ -347,7 +347,7 @@ function drawpg3graph(data)
   var tau = 2 * 3.141592653589793;
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
@@ -366,7 +366,7 @@ function drawpg3graph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
@@ -460,7 +460,7 @@ function drawpg3pcntgraph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(150,355)")
+    .attr("transform", "translate(180,355)")
     .append ("text")
     .text("Percentage")
     .attr("class", "axistext");
@@ -553,7 +553,7 @@ function drawpg3pcntgraph(data)
   var format = d3.format(",d");
 
   g.append("g")
-    .attr("transform", "translate(550,20)")
+    .attr("transform", "translate(600,20)")
     .append ("text")
     .text("Category")
     .attr("text-anchor","middle")
@@ -561,7 +561,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,40)")
+    .attr("transform", "translate(600,40)")
     .append ("text")
     .text("All")
     .attr("text-anchor","middle")
@@ -571,7 +571,7 @@ function drawpg3pcntgraph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(550,68)")
+    .attr("transform", "translate(600,68)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -579,7 +579,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(550,95)")
+    .attr("transform", "translate(600,95)")
     .append ("text")
     .text("Total Presented")
     .attr("text-anchor","middle")
@@ -587,7 +587,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,115)")
+    .attr("transform", "translate(600,115)")
     .append ("text")
     .text("in 8 seasons.")
     .attr("text-anchor","middle")
@@ -595,7 +595,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,145)")
+    .attr("transform", "translate(600,145)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -603,7 +603,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,172)")
+    .attr("transform", "translate(600,172)")
     .append ("text")
     .text("Deals closed in")
     .attr("text-anchor","middle")
@@ -611,7 +611,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,192)")
+    .attr("transform", "translate(600,192)")
     .append ("text")
     .text("8 seasons.")
     .attr("text-anchor","middle")
@@ -619,7 +619,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("text")
     .text("0")
     .attr("text-anchor","middle")
@@ -675,7 +675,7 @@ function drawpg3pcntgraph(data)
   var tau = 2 * 3.141592653589793;
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
@@ -694,7 +694,7 @@ function drawpg3pcntgraph(data)
 
 
   g.append("g")
-    .attr("transform", "translate(550,280)")
+    .attr("transform", "translate(600,280)")
     .append ("path")
     .datum({endAngle: 0})
     .attr("d", arc)
