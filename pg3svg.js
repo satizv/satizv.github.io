@@ -153,7 +153,7 @@ function drawpg3graph(data)
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
       .transition()
-      .delay(function(d,i) {return (i*2000+2000)})
+      .delay(function(d,i) {return (i*1000+1000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
       ;
 
@@ -183,7 +183,7 @@ function drawpg3graph(data)
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
       .transition()
-      .delay(function(d,i) {return (i*2000+3000)})
+      .delay(function(d,i) {return (i*1000+2000)})
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
       ;
 
@@ -195,7 +195,7 @@ function drawpg3graph(data)
  //   var totTotal = [770,1000];
     console.log(totTotal);
 
-    var formpcnt = d3.format("s");  
+    var formpcnt = d3.format(".0%");   
 
     var easement = d3.easeCubic;
     var format = d3.format(",d");
@@ -266,8 +266,28 @@ function drawpg3graph(data)
     .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
+    g.append("g")
+    .attr("transform", "translate(450,280)")
+    .append ("text")
+    .text("0")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("id","pg3svgtxt3")
+    .attr("class", "hsidebar")
+    .transition()
+    .delay(2000)
+    .duration(2500)
+    .text(formpcnt(totClosed/totTotal))
+    .tween("text", function() {
+            var that = d3.select(this);
+            var a = +totClosed/+totTotal;
+            var x = d3.interpolateNumber(0,formpcnt(+totClosed/+totTotal));
+            return function(t) { that.text(formpcnt(x(t))); };
+          });
+
+
     values.forEach(function(d,i) {
-    var del = i*2000+2000;
+    var del = i*1000+1000;
     d3.select("#pg3svgtxt1")
     .transition()
     .delay(del)
@@ -281,7 +301,7 @@ function drawpg3graph(data)
 });
 
     valuesClosed.forEach(function(d,i) {
-    var del = i*2000+3000;
+    var del = i*1000+2000;
     d3.select("#pg3svgtxt2")
     .transition()
     .delay(del)
@@ -312,7 +332,7 @@ function drawpg3graph(data)
     .attr("class", "arc");
 
     values.forEach(function(d,i) {
-    var del = i*2000+2000;
+    var del = i*1000+1000;
     d3.select("#pg3svgarc1")
     .transition()
     .delay(del)
@@ -342,7 +362,7 @@ function arcTween (newAngle) {
     .attr("class", "darc");
 
     valuesClosed.forEach(function(d,i) {
-    var del = i*2000+3000;
+    var del = i*1000+2000;
     d3.select("#pg3svgarc2")
     .transition()
     .delay(del)
@@ -400,6 +420,9 @@ function pg3drawsidebar(cat,tot,clo,pct) {
 
   d3.select("#pg3svgarc2")
   .attr("d", arc2);
+
+  d3.select("#pg3svgtxt3")
+   .text(pct);
 
 }
 
