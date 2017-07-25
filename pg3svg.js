@@ -152,7 +152,7 @@ function drawpg3graph(data)
         .text("Category")
         .attr("class", "axistext")
         .attr("transform", "rotate(-90)")
-        .attr("x", -10)
+        .attr("x", -50)
         .attr("y", -40);
   
   g.append("g")
