@@ -115,6 +115,12 @@ a {
     background: white;
     border: 0px;
 }
+.bar {
+	
+}
 .bar:hover {
+  fill: red ;
+}
+.bar:active {
   fill: red ;
 }
