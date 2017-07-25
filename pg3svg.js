@@ -234,12 +234,15 @@ function drawpg3graph(data)
   var totTotal = d3.sum(data, function(d) { return d.Total; });
  //   var totTotal = [770,1000];
   console.log(totTotal);
+    var totVal = d3.sum(data, function(d) { return d.Valuation; });
+  console.log("Val" + totVal);
 
   var formpcnt = d3.format(".0%");   
 
   var easement = d3.easeCubic;
   var format = d3.format(",d");
 
+  var formcrncy = d3.format(",.0f");
   g.append("g")
     .attr("transform", "translate(600,15)")
     .append ("text")
@@ -258,7 +261,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxtcat");    
 
     g.append("g")
-    .attr("transform", "translate(600,55)")
+    .attr("transform", "translate(600,60)")
     .append ("text")
     .text("Deals Presented")
     .attr("text-anchor","middle")
@@ -266,7 +269,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,75)")
+    .attr("transform", "translate(600,80)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -274,7 +277,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(600,95)")
+    .attr("transform", "translate(600,100)")
     .append ("text")
     .text("Deals closed")
     .attr("text-anchor","middle")
@@ -282,7 +285,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,115)")
+    .attr("transform", "translate(600,120)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -300,10 +303,20 @@ function drawpg3graph(data)
   g.append("g")
     .attr("transform", "translate(600,160)")
     .append ("text")
+    .text("0")
     .attr("id","pg3svgtxt4")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar");
+    .attr("class", "hsidebar")
+    .transition()
+    .delay(2000)
+    .duration(9500)
+    .tween("text", function() {
+            var that = d3.select(this);
+            var a = +totVal/10;
+            var x = d3.interpolateNumber(0,a);
+            return function(t) { that.text(formcrncy(x(t))); };
+          });
 
 
 
@@ -571,10 +584,11 @@ function drawpg3pcntgraph(data)
   console.log("Val" + totVal);
   
   var formpcnt = d3.format(".0%");   
-  var formcrncy = d3.format(",.0f");
+ 
   var easement = d3.easeCubic;
   var format = d3.format(",d");
 
+  var formcrncy = d3.format(",.0f");
   g.append("g")
     .attr("transform", "translate(600,15)")
     .append ("text")
