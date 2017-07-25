@@ -369,6 +369,13 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   console.log(tot);
   console.log(clo);
   console.log(pct);
+
+  d3.select("#pg3svgtxtcat")
+   .text(cat); 
+
+  d3.select("#pg3svgtxt1")
+   .text(tot); 
+
 }
 
 } 
