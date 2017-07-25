@@ -23,7 +23,7 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 
 function load(data) {
 
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -64,7 +64,7 @@ function removegraph()
 function drawpg3graph(data)
 {
 
-  g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
   
