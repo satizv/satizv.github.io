@@ -6,7 +6,7 @@ var svg = d3.select("#pg3svg")
       .attr("class", "zindex");
 
 margin = {top: 40, right: 20, bottom: 35, left: 150},
-width = 660 - margin.left - margin.right,
+width = 700 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
 
 
@@ -141,7 +141,7 @@ function drawpg3graph(data)
 
   g.append("g")
     .attr("transform", "translate(10,150)")
-    .attr("transform", "rotate(90deg)")
+    .attr("transform", "rotate(-90)")
     .append ("text")
     .text("Category")
     .attr("class", "axistext");
