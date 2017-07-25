@@ -138,22 +138,17 @@ function drawpg3graph(data)
     .append ("text")
     .text("Number of Deals")
     .attr("class", "axistext");
-/*
+
   g.append("g")
     .attr("transform", "translate(10,10)")
     .append ("text")
     .text("Category")
     .attr("class", "axistext");
-*/
+
   g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"))
-        .append("text")
-        .text("Category")
-        .attr("class", "axistext")
-        .attr("transform", "rotate(-90)")
-        .attr("x", -50)
-        .attr("y", -40);
+      ;
   
   g.append("g")
     .attr("class", "axis")
