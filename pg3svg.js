@@ -276,7 +276,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .duration(5000)
+    .duration(7500)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +totClosed/+totTotal;
