@@ -1,7 +1,3 @@
-initialsvg();
-
-function initialsvg() {
-
 var svg = d3.select("#pg3svg")
       .append("svg")
       .attr("id","pg3svgid")
@@ -24,7 +20,6 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 
 }); 
 
-}
 
 function load(data) {
 
