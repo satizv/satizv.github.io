@@ -638,7 +638,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxt4")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "hsidebar");
+    .attr("class", "hsidebar")
         .transition()
     .delay(2000)
     .duration(9500)
