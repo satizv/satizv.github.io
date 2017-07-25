@@ -374,6 +374,31 @@ function drawpg3graph(data)
     .attrTween("d", arcTween1((d/totTotal)*tau))
   });
 
+  function arcTween (newAngle) {
+    return function(d) {
+      console.log(newAngle);
+      console.log(d.endAngle);
+      var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
+        console.log(d.endAngle);
+        return arc(d);
+        };
+    };
+  }
+
+  function arcTween1 (newAngle) {
+    return function(d) {
+      console.log(newAngle);
+      console.log(d.endAngle);
+      var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
+        console.log(d.endAngle);
+        return arc(d);
+        };
+    };
+  }
 } 
 
 function drawpg3pcntgraph(data)
@@ -673,33 +698,35 @@ function drawpg3pcntgraph(data)
     .attrTween("d", arcTween1((d/totTotal)*tau))
   });
 
+  function arcTween (newAngle) {
+    return function(d) {
+      console.log(newAngle);
+      console.log(d.endAngle);
+      var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
+        console.log(d.endAngle);
+        return arc(d);
+        };
+    };
+  }
+
+  function arcTween1 (newAngle) {
+    return function(d) {
+      console.log(newAngle);
+      console.log(d.endAngle);
+      var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
+        console.log(d.endAngle);
+        return arc(d);
+        };
+    };
+  }
+
 } 
 
-function arcTween (newAngle) {
-  return function(d) {
-    console.log(newAngle);
-    console.log(d.endAngle);
-    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
-    return function(t) {
-      d.endAngle = interpolate(t);
-      console.log(d.endAngle);
-      return arc(d);
-      };
-  };
-}
 
-function arcTween1 (newAngle) {
-  return function(d) {
-    console.log(newAngle);
-    console.log(d.endAngle);
-    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
-    return function(t) {
-      d.endAngle = interpolate(t);
-      console.log(d.endAngle);
-      return arc(d);
-      };
-  };
-}
 
 function pg3drawsidebar(cat,tot,clo,pct) {
 
