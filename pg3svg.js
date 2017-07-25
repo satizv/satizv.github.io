@@ -376,6 +376,31 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   d3.select("#pg3svgtxt1")
    .text(tot); 
 
+  d3.select("#pg3svgtxt2")
+   .text(clo);
+
+  var tau = 2 * 3.141592653589793;
+
+  var arc1 =  d3.arc()
+              .innerRadius(30)
+              .outerRadius(50)
+              .startAngle(0)
+              .endAngle(tau)
+              ;
+  
+  var arc2 =  d3.arc()
+              .innerRadius(30)
+              .outerRadius(50)
+              .startAngle(0)
+              .endAngle(pct*tau/100)
+              ;
+  
+  d3.select("#pg3svgarc1")
+  .attr("d", arc1);
+
+  d3.select("#pg3svgarc2")
+  .attr("d", arc2);
+
 }
 
 } 
