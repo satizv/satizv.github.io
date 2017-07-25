@@ -568,7 +568,7 @@ function drawpg3pcntgraph(data)
   console.log(totTotal);
 
   var totVal = d3.sum(data, function(d) { return d.Valuation; });
-  console.log(totVal);
+  console.log("Val" + totVal);
   
   var formpcnt = d3.format(".0%");   
   var formcrncy = d3.format(",.0f");
@@ -593,7 +593,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxtcat");    
 
     g.append("g")
-    .attr("transform", "translate(600,55)")
+    .attr("transform", "translate(600,60)")
     .append ("text")
     .text("Deals Presented")
     .attr("text-anchor","middle")
@@ -601,7 +601,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,75)")
+    .attr("transform", "translate(600,80)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -609,7 +609,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(600,95)")
+    .attr("transform", "translate(600,100)")
     .append ("text")
     .text("Deals closed")
     .attr("text-anchor","middle")
@@ -617,7 +617,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,115)")
+    .attr("transform", "translate(600,120)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -640,14 +640,14 @@ function drawpg3pcntgraph(data)
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar")
-        .transition()
+    .transition()
     .delay(2000)
     .duration(9500)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +totVal/10;
             var x = d3.interpolateNumber(0,a);
-            return function(t) { that.text(formpcnt(x(t))); };
+            return function(t) { that.text(formcrncy(x(t))); };
           });
 
   g.append("g")
