@@ -293,7 +293,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,155)")
+    .attr("transform", "translate(600,160)")
     .append ("text")
     .text("Avg. Valuation")
     .attr("text-anchor","middle")
@@ -301,7 +301,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,175)")
+    .attr("transform", "translate(600,180)")
     .append ("text")
     .text("0")
     .attr("id","pg3svgtxt4")
@@ -566,7 +566,7 @@ function drawpg3pcntgraph(data)
                .html("Closed - " + d.data.PcntClosed + "%");
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
-      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
       .transition()
       .delay(function(d,i) {return (i*1000+2000)})
       .attr("width", function(d) { console.log(d.data.PcntClosed); console.log(x(d.data.PcntClosed)); return x(d.data.PcntClosed); })
@@ -639,7 +639,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,155)")
+    .attr("transform", "translate(600,160)")
     .append ("text")
     .text("Avg. Valuation")
     .attr("text-anchor","middle")
@@ -647,7 +647,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,175)")
+    .attr("transform", "translate(600,180)")
     .append ("text")
     .text("0")
     .attr("id","pg3svgtxt4")
