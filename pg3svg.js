@@ -36,7 +36,7 @@ function load(data) {
   var z = d3.scaleOrdinal()
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
 
-  var tooltip = d3.select("#pg3tooltip");
+  var pg3tooltip = d3.select("#pg3tooltip");
 
 }
 
@@ -64,6 +64,7 @@ function removegraph()
 function drawpg3graph(data)
 {
 
+     var pg3tooltip = d3.select("#pg3tooltip");
    var y = d3.scaleBand()
     .rangeRound([0, height])
     .paddingInner(0.05)
@@ -153,6 +154,14 @@ function drawpg3graph(data)
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html(d.data.Total);
+      })
       ;
 
 
@@ -182,6 +191,15 @@ function drawpg3graph(data)
       .transition()
       .delay(function(d,i) {return (i*2000+3000)})
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html(d.data.Closed);
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       ;
 
 
