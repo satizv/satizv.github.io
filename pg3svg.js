@@ -140,6 +140,13 @@ function drawpg3graph(data)
     .attr("class", "axistext");
 
   g.append("g")
+    .attr("transform", "translate(10,150)")
+    .attr("transform", "rotate(90deg)")
+    .append ("text")
+    .text("Category")
+    .attr("class", "axistext");
+
+  g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"));
   
@@ -463,6 +470,13 @@ function drawpg3pcntgraph(data)
     .attr("transform", "translate(180,355)")
     .append ("text")
     .text("Percentage")
+    .attr("class", "axistext");
+
+  g.append("g")
+    .attr("transform", "translate(10,150)")
+    .attr("transform", "rotate(90deg)")
+    .append ("text")
+    .text("Category")
     .attr("class", "axistext");
 
   g.append("g")
