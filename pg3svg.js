@@ -132,9 +132,8 @@ function drawpg3graph(data)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
       .attr("height", y.bandwidth())
-      .transition()
-      .delay(function(d,i) {return (i*2000+2000)})
-      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
       .on("mouseover", function(d,i) {
                 pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
@@ -142,6 +141,9 @@ function drawpg3graph(data)
                .html(d.data.Total);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      .transition()
+      .delay(function(d,i) {return (i*2000+2000)})
+      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
       ;
 
 
@@ -159,9 +161,8 @@ function drawpg3graph(data)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
       .attr("height", y.bandwidth())
-      .transition()
-      .delay(function(d,i) {return (i*2000+3000)})
-      .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
       .on("mouseover", function(d,i) {
                 pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
@@ -169,6 +170,9 @@ function drawpg3graph(data)
                .html(d.data.Closed);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      .transition()
+      .delay(function(d,i) {return (i*2000+3000)})
+      .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
       ;
 
 
