@@ -73,6 +73,17 @@ function runpgpcnt3()
 
 }
 
+function runpgval3() {
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+    if (error) throw error;  
+  
+    drawpg3pcntgraph(data);
+
+  });
+}
 
 function removegraph()
 {
@@ -230,7 +241,7 @@ function drawpg3graph(data)
   var format = d3.format(",d");
 
   g.append("g")
-    .attr("transform", "translate(600,20)")
+    .attr("transform", "translate(600,15)")
     .append ("text")
     .text("Category")
     .attr("text-anchor","middle")
@@ -238,17 +249,24 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,40)")
+    .attr("transform", "translate(600,35)")
     .append ("text")
     .text("All")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "sidebar")
+    .attr("class", "hsidebar")
     .attr("id","pg3svgtxtcat");    
 
+    g.append("g")
+    .attr("transform", "translate(600,55)")
+    .append ("text")
+    .text("Deals Presented")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,68)")
+    .attr("transform", "translate(600,75)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -258,7 +276,7 @@ function drawpg3graph(data)
   g.append("g")
     .attr("transform", "translate(600,95)")
     .append ("text")
-    .text("Total Presented")
+    .text("Deals closed")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "sidebar");
@@ -266,34 +284,31 @@ function drawpg3graph(data)
   g.append("g")
     .attr("transform", "translate(600,115)")
     .append ("text")
-    .text("in 8 seasons.")
-    .attr("text-anchor","middle")
-    .attr("alignment-baseline","central")
-    .attr("class", "sidebar");
-
-  g.append("g")
-    .attr("transform", "translate(600,145)")
-    .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,172)")
+    .attr("transform", "translate(600,140)")
     .append ("text")
-    .text("Deals closed in")
+    .text("Avg. Valuation")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,192)")
+    .attr("transform", "translate(600,160)")
     .append ("text")
-    .text("8 seasons.")
+    .attr("id","pg3svgtxt4")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "sidebar");
+    .attr("class", "hsidebar");
+
+
+
+
+
 
   g.append("g")
     .attr("transform", "translate(600,280)")
@@ -552,13 +567,16 @@ function drawpg3pcntgraph(data)
  //   var totTotal = [770,1000];
   console.log(totTotal);
 
+  var totVal = d3.sum(data, function(d) { return d.Valuation; });
+  console.log(totVal);
+  
   var formpcnt = d3.format(".0%");   
-
+  var formcrncy = d3.format(",.0f");
   var easement = d3.easeCubic;
   var format = d3.format(",d");
 
   g.append("g")
-    .attr("transform", "translate(600,20)")
+    .attr("transform", "translate(600,15)")
     .append ("text")
     .text("Category")
     .attr("text-anchor","middle")
@@ -566,17 +584,24 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,40)")
+    .attr("transform", "translate(600,35)")
     .append ("text")
     .text("All")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "sidebar")
+    .attr("class", "hsidebar")
     .attr("id","pg3svgtxtcat");    
 
+    g.append("g")
+    .attr("transform", "translate(600,55)")
+    .append ("text")
+    .text("Deals Presented")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,68)")
+    .attr("transform", "translate(600,75)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -586,7 +611,7 @@ function drawpg3pcntgraph(data)
   g.append("g")
     .attr("transform", "translate(600,95)")
     .append ("text")
-    .text("Total Presented")
+    .text("Deals closed")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "sidebar");
@@ -594,34 +619,35 @@ function drawpg3pcntgraph(data)
   g.append("g")
     .attr("transform", "translate(600,115)")
     .append ("text")
-    .text("in 8 seasons.")
-    .attr("text-anchor","middle")
-    .attr("alignment-baseline","central")
-    .attr("class", "sidebar");
-
-  g.append("g")
-    .attr("transform", "translate(600,145)")
-    .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,172)")
+    .attr("transform", "translate(600,140)")
     .append ("text")
-    .text("Deals closed in")
+    .text("Avg. Valuation")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,192)")
+    .attr("transform", "translate(600,160)")
     .append ("text")
-    .text("8 seasons.")
+    .attr("id","pg3svgtxt4")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
-    .attr("class", "sidebar");
+    .attr("class", "hsidebar");
+        .transition()
+    .delay(2000)
+    .duration(9500)
+    .tween("text", function() {
+            var that = d3.select(this);
+            var a = +totVal/10;
+            var x = d3.interpolateNumber(0,a);
+            return function(t) { that.text(formpcnt(x(t))); };
+          });
 
   g.append("g")
     .attr("transform", "translate(600,280)")
@@ -785,5 +811,9 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   var formpcnt = d3.format(".0%");
   d3.select("#pg3svgtxt3")
    .text(formpcnt(pct/100));
+
+}
+
+function runpgval3() {
 
 }
