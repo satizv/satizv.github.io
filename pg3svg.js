@@ -421,7 +421,7 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   .attr("d", arc2);
   var formpcnt = d3.format(".0%");
   d3.select("#pg3svgtxt3")
-   .text(formpcnt(pct);
+   .text(formpcnt(pct));
 
 }
 
