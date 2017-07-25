@@ -151,7 +151,7 @@ function drawpg3graph(data)
                .html("Presented - " + d.data.Total);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
-      .on("click", function (d) {pg3drawsidebar(d);})
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
       .transition()
       .delay(function(d,i) {return (i*2000+2000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
@@ -181,7 +181,7 @@ function drawpg3graph(data)
                .html("Closed - " + d.data.Closed);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
-      .on("click", function (d) {pg3drawsidebar(d);})
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
       .transition()
       .delay(function(d,i) {return (i*2000+3000)})
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
@@ -345,11 +345,12 @@ function arcTween1 (newAngle) {
   };
 }
 
-function pg3drawsidebar(d) {
-  console.log(d);
-  console.log(d.Category);
-  console.log(d.Total);
-  console.log(d.Closed);
+function pg3drawsidebar(cat,tot,clo,pct) {
+
+  console.log(cat);
+  console.log(tot);
+  console.log(clo);
+  console.log(pct);
 }
 
 } 
