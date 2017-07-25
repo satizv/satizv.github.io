@@ -85,19 +85,6 @@ function runpgval3() {
   });
 }
 
-function runpgshark3() {
-    d3.csv("data/sharkpercent.csv", function(d, i, columns) {
-  console.log(d);
-  return d; 
-  }, function(error, data) {
-    if (error) throw error;  
-  
-    drawpg3shgraph(data);
-
-  });
-
-}
-
 function removegraph()
 {
   //alert("inside");
@@ -108,73 +95,6 @@ function removegraph()
 
 
 }
-
-
-function drawpg3shgraph(data) {
-
-  removegraph();
-  var pg3tooltip = d3.select("#pg3tooltip");
-  var y = d3.scaleBand()
-    .rangeRound([0, height])
-    .paddingInner(0.05)
-    .align(0.1);
-
-  var x = d3.scaleLinear()
-    .rangeRound([0,width - 100]);
-
-  var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);  
-
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-  var keys = data.columns.slice(1);
-  console.log(keys);
-  
-  y.domain(data.map(function(d) { return d.Category; }));
-  
-  x.domain([0, 100]).nice();
-
-  z.domain(keys);
-
-
-  var pg3tooltip = d3.select("#pg3tooltip");
-
-  
-  g.append("g")
-    .attr("transform", "translate(180,355)")
-    .append ("text")
-    .text("Percentage")
-    .attr("class", "axistext");
-
-  
-  g.append("g")
-      .attr("class", "axis")
-      .call(d3.axisLeft(y).ticks(null, "s"))
-      ;
-  
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
-
-
-  g.append("g")
-    .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
-    .enter().append("g")
-    .selectAll("rect")
-    .data(function(d) { return d; })
-    .enter().append("rect")
-      //.attr("x", function(d) { return x(d.data.season); })
-      .attr("fill", "#ACC7D1")
-      .attr("x",function(d) { console.log(d[1]); console.log(x(d[1]));return x(d[1]); })
-      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
-      .attr("width", function(d) { return x(d[0]) - x(d[1]); })
-      .attr("height", y.bandwidth())
-      .attr("class", "bar")
-
-}
-
 
 function drawpg3graph(data)
 {
