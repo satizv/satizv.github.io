@@ -201,6 +201,24 @@ function drawpg3graph(data)
     var format = d3.format(",d");
 
     g.append("g")
+    .attr("transform", "translate(550,20)")
+    .append ("text")
+    .text("Category")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+    g.append("g")
+    .attr("transform", "translate(550,40)")
+    .append ("text")
+    .text("All")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar")
+    .attr("id","pg3svgtxtcat");    
+
+
+    g.append("g")
     .attr("transform", "translate(550,68)")
     .append ("text")
     .attr("text-anchor","middle")
