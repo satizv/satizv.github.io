@@ -128,7 +128,8 @@ function drawpg3shgraph(data) {
   var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var keys = data.columns.slice(1);
-  console.log(keys);
+  
+  console.log("Keys" + keys);
   
   y.domain(data.map(function(d) { return d.Category; }));
   
@@ -166,7 +167,7 @@ function drawpg3shgraph(data) {
     .data(function(d) { return d; })
     .enter().append("rect")
       //.attr("x", function(d) { return x(d.data.season); })
-      .attr("fill", function(d) { return z(d.key); })
+      .attr("fill", function(d) {console.log(d.key);console.log(z(d.key)); return z(d.key); })
       .attr("x",function(d) { console.log(d[0]); console.log(x(d[0]));return x(d[0]); })
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", function(d) { return x(d[1]) - x(d[0]); })
