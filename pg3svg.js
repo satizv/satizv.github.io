@@ -132,6 +132,11 @@ function drawpg3graph(data)
   console.log(values);  
   console.log(values[0]);
 
+   g.append("g")
+    .attr("transform", "translate(10,10)")
+    .append ("text")
+    .text("Category")
+    .attr("class", "axistext");
 
   g.append("g")
     .attr("transform", "translate(180,355)")
@@ -139,12 +144,7 @@ function drawpg3graph(data)
     .text("Number of Deals")
     .attr("class", "axistext");
 
-  g.append("g")
-    .attr("transform", "translate(10,10)")
-    .append ("text")
-    .text("Category")
-    .attr("class", "axistext");
-
+  
   g.append("g")
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"))
