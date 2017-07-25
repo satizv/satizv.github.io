@@ -190,7 +190,7 @@ function drawpg3graph(data)
                .html("Presented - " + d.data.Total);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
-      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
       .transition()
       .delay(function(d,i) {return (i*1000+1000)})
       .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
@@ -221,7 +221,7 @@ function drawpg3graph(data)
                .html("Closed - " + d.data.Closed);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
-      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed);})
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
       .transition()
       .delay(function(d,i) {return (i*1000+2000)})
       .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
@@ -261,7 +261,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxtcat");    
 
     g.append("g")
-    .attr("transform", "translate(600,60)")
+    .attr("transform", "translate(600,65)")
     .append ("text")
     .text("Deals Presented")
     .attr("text-anchor","middle")
@@ -269,7 +269,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,80)")
+    .attr("transform", "translate(600,85)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -277,7 +277,7 @@ function drawpg3graph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(600,100)")
+    .attr("transform", "translate(600,110)")
     .append ("text")
     .text("Deals closed")
     .attr("text-anchor","middle")
@@ -285,7 +285,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,120)")
+    .attr("transform", "translate(600,130)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -293,7 +293,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,140)")
+    .attr("transform", "translate(600,155)")
     .append ("text")
     .text("Avg. Valuation")
     .attr("text-anchor","middle")
@@ -301,7 +301,7 @@ function drawpg3graph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,160)")
+    .attr("transform", "translate(600,175)")
     .append ("text")
     .text("0")
     .attr("id","pg3svgtxt4")
@@ -315,7 +315,7 @@ function drawpg3graph(data)
             var that = d3.select(this);
             var a = +totVal/10;
             var x = d3.interpolateNumber(0,a);
-            return function(t) { that.text(formcrncy(x(t))); };
+            return function(t) { that.text("$" + formcrncy(x(t))); };
           });
 
 
@@ -607,7 +607,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxtcat");    
 
     g.append("g")
-    .attr("transform", "translate(600,60)")
+    .attr("transform", "translate(600,65)")
     .append ("text")
     .text("Deals Presented")
     .attr("text-anchor","middle")
@@ -615,7 +615,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,80)")
+    .attr("transform", "translate(600,85)")
     .append ("text")
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
@@ -623,7 +623,7 @@ function drawpg3pcntgraph(data)
     .attr("id","pg3svgtxt1");
 
   g.append("g")
-    .attr("transform", "translate(600,100)")
+    .attr("transform", "translate(600,110)")
     .append ("text")
     .text("Deals closed")
     .attr("text-anchor","middle")
@@ -631,7 +631,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,120)")
+    .attr("transform", "translate(600,130)")
     .append ("text")
     .attr("id","pg3svgtxt2")
     .attr("text-anchor","middle")
@@ -639,7 +639,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "hsidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,140)")
+    .attr("transform", "translate(600,155)")
     .append ("text")
     .text("Avg. Valuation")
     .attr("text-anchor","middle")
@@ -647,7 +647,7 @@ function drawpg3pcntgraph(data)
     .attr("class", "sidebar");
 
   g.append("g")
-    .attr("transform", "translate(600,160)")
+    .attr("transform", "translate(600,175)")
     .append ("text")
     .text("0")
     .attr("id","pg3svgtxt4")
@@ -661,7 +661,7 @@ function drawpg3pcntgraph(data)
             var that = d3.select(this);
             var a = +totVal/10;
             var x = d3.interpolateNumber(0,a);
-            return function(t) { that.text(formcrncy(x(t))); };
+            return function(t) { that.text("$" + formcrncy(x(t))); };
           });
 
   g.append("g")
@@ -786,13 +786,13 @@ function drawpg3pcntgraph(data)
 
 
 
-function pg3drawsidebar(cat,tot,clo,pct) {
+function pg3drawsidebar(cat,tot,clo,pct,val) {
 
   console.log(cat);
   console.log(tot);
   console.log(clo);
   console.log(pct);
-
+  console.log(val);
   d3.select("#pg3svgtxtcat")
    .text(cat); 
 
@@ -826,6 +826,10 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   var formpcnt = d3.format(".0%");
   d3.select("#pg3svgtxt3")
    .text(formpcnt(pct/100));
+   var formcrncy = d3.format(",.0f");
+    d3.select("#pg3svgtxt3")
+   .text(formcrncy("$" + formcrncy(val));
+
 
 }
 
