@@ -141,10 +141,9 @@ function drawpg3graph(data)
 
   g.append("g")
     .attr("transform", "translate(10,150)")
-    .attr("transform", "rotate(-90)")
     .append ("text")
     .text("Category")
-    .attr("class", "axistext");
+    .attr("class", "baxistext");
 
   g.append("g")
       .attr("class", "axis")
@@ -474,10 +473,9 @@ function drawpg3pcntgraph(data)
 
   g.append("g")
     .attr("transform", "translate(10,150)")
-    .attr("transform", "rotate(90deg)")
     .append ("text")
     .text("Category")
-    .attr("class", "axistext");
+    .attr("class", "baxistext");
 
   g.append("g")
       .attr("class", "axis")
