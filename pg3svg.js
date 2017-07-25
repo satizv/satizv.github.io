@@ -73,7 +73,7 @@ function runpgpcnt3()
 
 function removegraph()
 {
-  alert("inside");
+  //alert("inside");
   d3.selectAll("rect").remove();
   d3.selectAll("text").remove();
   d3.selectAll("path").remove();
