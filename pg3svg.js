@@ -95,7 +95,12 @@ function drawpg3graph(data)
   var x = d3.scaleLinear()
     .rangeRound([0,width - 100]);
 
-
+   g.append("g")
+    .attr("transform", "translate(10,10)")
+    .append ("text")
+    .text("Category")
+    .attr("class", "axistext");
+    
   var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
