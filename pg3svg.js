@@ -85,7 +85,7 @@ function removegraph()
 function drawpg3graph(data)
 {
 
-
+  removegraph();
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -476,6 +476,7 @@ function drawpg3pcntgraph(data)
 
   var keys = data.map(function(d) { return d.Category; });
 
+/*
   g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
@@ -506,6 +507,7 @@ function drawpg3pcntgraph(data)
       .attr("width", function(d) { console.log(d.data.PcntTotal); console.log(x(d.data.PcntTotal)); return x(d.data.PcntTotal); })
       ;
 
+*/
 
   g.append("g")
     .selectAll("g")
