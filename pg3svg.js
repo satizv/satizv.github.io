@@ -276,7 +276,7 @@ function drawpg3graph(data)
     .attr("class", "hsidebar")
     .transition()
     .delay(2000)
-    .duration(9500)
+    .duration(9 500)
     .tween("text", function() {
             var that = d3.select(this);
             var a = +totClosed/+totTotal;
@@ -339,18 +339,7 @@ function drawpg3graph(data)
     .attrTween("d", arcTween((d/totTotal)*tau))
   });
 
-function arcTween (newAngle) {
-  return function(d) {
-    console.log(newAngle);
-    console.log(d.endAngle);
-    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
-    return function(t) {
-      d.endAngle = interpolate(t);
-      console.log(d.endAngle);
-      return arc(d);
-      };
-  };
-}
+
 
     g.append("g")
     .attr("transform", "translate(550,280)")
@@ -369,6 +358,19 @@ function arcTween (newAngle) {
     .attrTween("d", arcTween1((d/totTotal)*tau))
   });
 
+function arcTween (newAngle) {
+  return function(d) {
+    console.log(newAngle);
+    console.log(d.endAngle);
+    var interpolate = d3.interpolate(+d.endAngle, +d.endAngle + +newAngle);
+    return function(t) {
+      d.endAngle = interpolate(t);
+      console.log(d.endAngle);
+      return arc(d);
+      };
+  };
+}
+
 function arcTween1 (newAngle) {
   return function(d) {
     console.log(newAngle);
@@ -381,6 +383,8 @@ function arcTween1 (newAngle) {
       };
   };
 }
+
+} 
 
 function pg3drawsidebar(cat,tot,clo,pct) {
 
@@ -421,8 +425,6 @@ function pg3drawsidebar(cat,tot,clo,pct) {
   .attr("d", arc2);
   var formpcnt = d3.format(".0%");
   d3.select("#pg3svgtxt3")
-   .text(formpcnt(pct));
+   .text(formpcnt(pct/100));
 
 }
-
-} 
