@@ -828,7 +828,7 @@ function pg3drawsidebar(cat,tot,clo,pct,val) {
    .text(formpcnt(pct/100));
    var formcrncy = d3.format(",.0f");
     d3.select("#pg3svgtxt3")
-   .text(formcrncy("$" + formcrncy(val));
+   .text("$" + formcrncy(val));
 
 
 }
