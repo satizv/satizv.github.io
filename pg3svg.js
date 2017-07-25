@@ -169,7 +169,7 @@ function drawpg3shgraph(data) {
       .attr("fill", "#ACC7D1")
       .attr("x",function(d) { console.log(d[1]); console.log(x(d[1]));return x(d[1]); })
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
-      .attr("width", function(d) { return x(d[0]) - x(d[1]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
       .attr("height", y.bandwidth())
       .attr("class", "bar")
 
