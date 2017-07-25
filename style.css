@@ -124,3 +124,17 @@ a {
 .bar:active {
   fill: red ;
 }
+
+.pg3floatright {
+      width: 25%;
+      padding-right: 55px;
+} 
+
+.h4 {
+    font: 16px sans-serif;
+    font-family: 'Georgia', sans-serif;
+}
+.h5 {
+      font: 12px sans-serif;
+      font-family: 'Georgia', sans-serif;
+}
