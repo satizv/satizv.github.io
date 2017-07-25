@@ -64,6 +64,15 @@ function removegraph()
 function drawpg3graph(data)
 {
 
+   var y = d3.scaleBand()
+    .rangeRound([0, height])
+    .paddingInner(0.05)
+    .align(0.1);
+
+  var x = d3.scaleLinear()
+    .rangeRound([0,width - 100]);
+
+
   var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
