@@ -115,3 +115,6 @@ a {
     background: white;
     border: 0px;
 }
+.bar:hover {
+  fill: red ;
+}
