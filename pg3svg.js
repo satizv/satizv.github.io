@@ -373,11 +373,7 @@ function loadpcnt(data) {
 
 
 
-  g.append("g")
-    .attr("transform", "translate("+ (x(valuesClosed[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
-    .append("path")
-    .attr("d",pathData)
-    .attr("fill","red");
+  
 
     console.log("Path" + x(valuesClosed[4]) + " Fitness" + y("Fitness") + "Tech" + y("Tech") );
     g.append("g")
