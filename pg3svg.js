@@ -83,6 +83,15 @@ function load(data) {
   console.log(values[0]);
 
   
+  var symbolGenerator = d3.symbol()
+  .type(d3.symbolStar)
+  .size(80);
+
+  var pathData = symbolGenerator();
+
+  g.append("g")
+    .attr("transform", "translate(100,355)")
+    .attr("d",pathData);
 
   g.append("g")
     .attr("transform", "translate(180,355)")
