@@ -1,4 +1,4 @@
-var svg = d3.select("#pg3svg")
+var svgpg3 = d3.select("#pg3svg")
       .append("svg")
       .attr("id","pg3svgid")
       .attr("width", 800)
@@ -26,7 +26,7 @@ document.getElementById("pg3mark2").onmouseover = function () {console.log("insi
 
 function load(data) {
 
-    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var g = svgpg3.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -101,7 +101,7 @@ function drawpg3graph(data)
   var x = d3.scaleLinear()
     .rangeRound([0,width - 100]);
 
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var g = svgpg3.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
   
@@ -447,7 +447,7 @@ function drawpg3pcntgraph(data)
     .rangeRound([0,width - 100]);
 
 
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var g = svgpg3.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
   

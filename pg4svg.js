@@ -1,4 +1,4 @@
-var svg = d3.select("#pg4svg")
+var svgpg4 = d3.select("#pg4svg")
       .append("svg")
       .attr("id","pg4svgid")
       .attr("width", 800)
@@ -111,7 +111,7 @@ function drawpg4valgraph(data) {
     .rangeRound([0,width - 100]);
 
 
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var g = svgpg4.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   y.domain(data.map(function(d) { return d.Category; }));
   

@@ -1,4 +1,4 @@
-var svg = d3.select("#pg5svg")
+var svgpg5 = d3.select("#pg5svg")
       .append("svg")
       .attr("id","pg5svgid")
       .attr("width", 800)
@@ -67,7 +67,7 @@ function drawpg5shgraph(data) {
   var z = d3.scaleOrdinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);  
 
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var g = svgpg5.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var keys = data.columns.slice(1);
   
