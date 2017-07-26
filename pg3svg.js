@@ -361,33 +361,41 @@ function loadpcnt(data) {
   console.log(z("Food"));
 
   var values = data.map(function(d) { return d.Total; });
-  var valuesClosed = data.map(function(d) { return d.Closed; })
+  var valuesClosed = data.map(function(d) { return d.Closed; });
+  var valuespcnt = data.map(function(d) { return d.PcntTotal; });
   console.log(values);  
   console.log(values[0]);
 
-  var symbolGenerator = d3.symbol()
+   var symbolGenerator = d3.symbol()
   .type(d3.symbolStar)
   .size(80);
+
+  
 
   var pathData = symbolGenerator();
 
   g.append("g")
-    .attr("transform", "translate("+ (x(values[0])+50) + "," + ((y("Food") + y("Fashion"))/2) + ")")
+    .attr("transform", "translate("+ (x(valuespcnt[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
 
-  g.append("g")
-    .attr("transform", "translate("+ (x(values[1])+50) + "," + ((y("Fashion") + y("Lifestyle"))/2) + ")")
-    .append("path")
-    .attr("d",pathData)
-    .attr("fill","red");
+       var symbolGenerator = d3.symbol()
+      .type(d3.symbolStar)
+      .size(80);
 
-  g.append("g")
-    .attr("transform", "translate("+ (x(values[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    var pathData1 = symbolGenerator();
+
+     g.append("g")
+    .attr("transform", "translate("+ (x(valuespcnt[4])+50) + "," + ((y("Tech") + y("Fitness"))/2) + ")")
     .append("path")
-    .attr("d",pathData)
-    .attr("fill","red");
+    .attr("d",pathData1)
+    .attr("fill","red"); 
+
+
+
+    console.log("Path" + x(valuesClosed[4]) + " Fitness" + y("Fitness") + "Tech" + y("Tech") );
+
 
   g.append("g")
     .attr("transform", "translate(180,355)")
