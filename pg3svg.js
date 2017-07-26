@@ -20,8 +20,8 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 
 }); 
 
-document.getElementById("pg3mark1").onmouseover = function () {console.log("insidepg3mark1") load(data);};
-document.getElementById("pg3mark2").onmouseover = function () {console.log("insidepg3mark2") loadpcnt(data)};
+document.getElementById("pg3mark1").onmouseover = function () {console.log("insidepg3mark1"); load(data);};
+document.getElementById("pg3mark2").onmouseover = function () {console.log("insidepg3mark2"); loadpcnt(data);};
 
 
 function load(data) {
