@@ -90,7 +90,19 @@ function load(data) {
   var pathData = symbolGenerator();
 
   g.append("g")
-    .attr("transform", "translate("+ x(values[0]) + "," + ((y("Food") + y("Fashion"))/2) + ")")
+    .attr("transform", "translate("+ (x(values[0])+50) + "," + ((y("Food") + y("Fashion"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
+
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[1])+50) + "," + ((y("Fashion") + y("Lifestyle"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
+
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[1])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
