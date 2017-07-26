@@ -780,12 +780,12 @@ function drawpg3shgraph(data) {
   
   y.domain(data.map(function(d) { return d.Category; }));
   
-  x1.domain([0, 30]).ticks(3).nice();
-  x2.domain([0, 30]).ticks(3).nice();
-  x3.domain([0, 30]).ticks(3).nice();
-  x4.domain([0, 30]).ticks(3).nice();
-  x5.domain([0, 30]).ticks(3).nice();
-  x6.domain([0, 30]).ticks(3).nice();
+  x1.domain([0, 30]).ticks(3);
+  x2.domain([0, 30]).ticks(3);
+  x3.domain([0, 30]).ticks(3);
+  x4.domain([0, 30]).ticks(3);
+  x5.domain([0, 30]).ticks(3);
+  x6.domain([0, 30]).ticks(3);
   
 
   z.domain(keys);
