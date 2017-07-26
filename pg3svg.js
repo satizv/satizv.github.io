@@ -780,12 +780,12 @@ function drawpg3shgraph(data) {
   
   y.domain(data.map(function(d) { return d.Category; }));
   
-  x1.domain([0, 30]).ticks(3);
-  x2.domain([0, 30]).ticks(3);
-  x3.domain([0, 30]).ticks(3);
-  x4.domain([0, 30]).ticks(3);
-  x5.domain([0, 30]).ticks(3);
-  x6.domain([0, 30]).ticks(3);
+  x1.domain([0, 30]).tickValues([0,15,30]);
+  x2.domain([0, 30]).tickValues([0,15,30]);
+  x3.domain([0, 30]).tickValues([0,15,30]);
+  x4.domain([0, 30]).tickValues([0,15,30]);
+  x5.domain([0, 30]).tickValues([0,15,30]);
+  x6.domain([0, 30]).tickValues([0,15,30]);
   
 
   z.domain(keys);
@@ -808,25 +808,7 @@ function drawpg3shgraph(data) {
     .attr("transform", "translate(" + +width/6 + "," + height + ")")
     .call(d3.axisBottom(x2));
 
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x1));
 
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(" + +width/6 + "," + height + ")")
-    .call(d3.axisBottom(x2));
-
-    g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x1));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(" + +width/6 + "," + height + ")")
-    .call(d3.axisBottom(x2)); 
 
 }
 
