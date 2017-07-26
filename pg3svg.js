@@ -380,7 +380,7 @@ function loadpcnt(data) {
     .attr("fill","red");
 
      g.append("g")
-    .attr("transform", "translate("+ (x(valuesClosed[0])+50) + "," + ((y("Food") + y("Fashion"))/2) + ")")
+    .attr("transform", "translate("+ (x(valuesClosed[3])+50) + "," + ((y("Education") + y("Fitness"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red"); 
