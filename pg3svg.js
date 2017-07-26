@@ -90,9 +90,10 @@ function load(data) {
   var pathData = symbolGenerator();
 
   g.append("g")
-    .attr("transform", "translate(100,355)")
+    .attr("transform", "translate("+ x("Food") + "," + y(values[0]) + ")")
     .append("path")
-    .attr("d",pathData);
+    .attr("d",pathData)
+    .attr("fill","red");
 
   g.append("g")
     .attr("transform", "translate(180,355)")
