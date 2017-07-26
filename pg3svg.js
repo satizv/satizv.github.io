@@ -20,9 +20,32 @@ d3.csv("data/sharktotal.csv", function(d, i, columns) {
 
 }); 
 
-document.getElementById("pg3mark1").onmouseover = function () {console.log("insidepg3mark1"); load(data);};
-document.getElementById("pg3mark2").onmouseover = function () {console.log("insidepg3mark2"); loadpcnt(data);};
+document.getElementById("pg3mark1").onmouseover = function () {
+  console.log("insidepg3mark1"); 
+  d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+  if (error) throw error;  
+  
+  load(data);
 
+  }); 
+
+};
+document.getElementById("pg3mark2").onmouseover = function () {  
+  console.log("insidepg3mark2"); 
+  d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+  if (error) throw error;  
+  
+  loadpcnt(data);
+
+  }); 
+
+};
 
 function load(data) {
 
