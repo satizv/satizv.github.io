@@ -803,6 +803,11 @@ function drawpg3shgraph(data) {
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x1));
 
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + +width/6 + "," + height + ")")
+    .call(d3.axisBottom(x2));
+
 
 }
 
