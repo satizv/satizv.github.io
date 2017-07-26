@@ -365,36 +365,29 @@ function loadpcnt(data) {
   console.log(values);  
   console.log(values[0]);
 
-   var symbolGenerator = d3.symbol()
+  var symbolGenerator = d3.symbol()
   .type(d3.symbolStar)
   .size(80);
-
-  
 
   var pathData = symbolGenerator();
 
   g.append("g")
-    .attr("transform", "translate("+ (x(valuesClosed[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    .attr("transform", "translate("+ (x(values[0])+50) + "," + ((y("Food") + y("Fashion"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
 
-       var symbolGenerator = d3.symbol()
-      .type(d3.symbolStar)
-      .size(80);
-
-    var pathData1 = symbolGenerator();
-    
-     g.append("g")
-    .attr("transform", "translate("+ (x(valuesClosed[3])+50) + "," + ((y("Education") + y("Fitness"))/2) + ")")
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[1])+50) + "," + ((y("Fashion") + y("Lifestyle"))/2) + ")")
     .append("path")
-    .attr("d",pathData1)
-    .attr("fill","red"); 
+    .attr("d",pathData)
+    .attr("fill","red");
 
-
-
-    console.log("Path" + x(valuesClosed[4]) + " Fitness" + y("Fitness") + "Tech" + y("Tech") );
-
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
 
   g.append("g")
     .attr("transform", "translate(180,355)")
