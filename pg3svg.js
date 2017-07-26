@@ -369,9 +369,9 @@ function loadpcnt(data) {
   .type(d3.symbolStar)
   .size(80);
 
+  
+
   var pathData = symbolGenerator();
-
-
 
   g.append("g")
     .attr("transform", "translate("+ (x(valuesClosed[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
@@ -379,10 +379,16 @@ function loadpcnt(data) {
     .attr("d",pathData)
     .attr("fill","red");
 
+       var symbolGenerator = d3.symbol()
+      .type(d3.symbolStar)
+      .size(80);
+
+    var pathData1 = symbolGenerator();
+    
      g.append("g")
     .attr("transform", "translate("+ (x(valuesClosed[3])+50) + "," + ((y("Education") + y("Fitness"))/2) + ")")
     .append("path")
-    .attr("d",pathData)
+    .attr("d",pathData1)
     .attr("fill","red"); 
 
 
