@@ -45,7 +45,7 @@
   width: 50%;
 }
 
-.pg3floatleft {
+.pg2floatleft {
 	float: left;
   width: 50%;
 }
@@ -135,13 +135,16 @@ a {
 .bar {
 	
 }
+
 .bar:hover {
   fill: red ;
 }
 .bar:active {
   fill: red ;
 }
-
+.pg3bar {
+  
+}
 .pg3floatright {
       width: 30%;
       padding-right: 55px;

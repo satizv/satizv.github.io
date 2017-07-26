@@ -78,7 +78,7 @@ function runpgpcnt3()
 function removegraph()
 {
   //alert("inside");
-  svgpg3.selectAll("rect").remove();
+  d3.selectAll("rect.pg3bar").remove();
   svgpg3.selectAll("text").remove();
   svgpg3.selectAll("path").remove();
   svgpg3.selectAll("g").remove();
@@ -172,7 +172,7 @@ function drawpg3graph(data)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
       .attr("height", y.bandwidth())
-      .attr("class", "bar")
+      .attr("class", "pg3bar")
       .on('mouseover', function() { console.log('mouseover'); })
       .on('mouseout', function() { console.log('mouseout'); })
       .on("mouseover", function(d,i) {
@@ -197,7 +197,7 @@ function drawpg3graph(data)
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
-    .attr("class", "bar")
+    .attr("class", "pg3bar")
       //.attr("x", function(d) { return x(d.data.season); })
       .attr("fill", "#4A8393")
       .attr("x",0)
@@ -517,7 +517,7 @@ function drawpg3pcntgraph(data)
       .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
       .attr("width", 0)
       .attr("height", y.bandwidth())
-      .attr("class", "bar")
+      .attr("class", "pg3bar")
       .on('mouseover', function() { console.log('mouseover'); })
       .on('mouseout', function() { console.log('mouseout'); })
       .on("mouseover", function(d,i) {
