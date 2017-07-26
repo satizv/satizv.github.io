@@ -91,6 +91,7 @@ function load(data) {
 
   g.append("g")
     .attr("transform", "translate(100,355)")
+    .append("path")
     .attr("d",pathData);
 
   g.append("g")
