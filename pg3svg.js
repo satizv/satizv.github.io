@@ -75,9 +75,6 @@ function runpgpcnt3()
 
 
 
-
-}
-
 function removegraph()
 {
   //alert("inside");
