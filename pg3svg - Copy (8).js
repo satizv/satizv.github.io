@@ -655,7 +655,7 @@ function runpgval3() {
 }
 
 function runpgshark3() {
-    d3.csv("data/sharkcount.csv", function(d, i, columns) {
+    d3.csv("data/sharkpercent.csv", function(d, i, columns) {
   console.log(d);
   return d; 
   }, function(error, data) {
@@ -678,7 +678,7 @@ function removegraph()
 
 }
 
-/*
+
 function drawpg3shgraph(data) {
 
   removegraph();
@@ -742,67 +742,6 @@ function drawpg3shgraph(data) {
       .attr("width", function(d) { return x(d[1]) - x(d[0]); })
       .attr("height", y.bandwidth())
       .attr("class", "bar")
-
-}
-*/
-
-function drawpg3shgraph(data) {
-
-  removegraph();
-  var pg3tooltip = d3.select("#pg3tooltip");
-  var y = d3.scaleBand()
-    .rangeRound([0, height])
-    .paddingInner(0.05)
-    .align(0.1);
-
-  var x1 = d3.scaleLinear()
-    .rangeRound([0,(+width/6)]);
-
-  var x2 = d3.scaleLinear()
-    .rangeRound([+width/6,((+width * 2)/6)]);
-  var x3 = d3.scaleLinear()
-    .rangeRound([(+width * 2)/6,((+width * 3)/6)]);
-  var x4 = d3.scaleLinear()
-    .rangeRound([(+width * 3)/6,((+width * 4)/6)]);
-  var x5 = d3.scaleLinear()
-    .rangeRound([(+width * 4)/6,((+width * 5)/3)]);
-  var x6 = d3.scaleLinear()
-    .rangeRound([((+width * 5)/3),+width]);
-
-  var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);  
-
-  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-  var keys = data.columns.slice(1);
-  
-  console.log("Keys" + keys);
-  
-  y.domain(data.map(function(d) { return d.Category; }));
-  
-  x1.domain([0, 30]).nice();
-  x2.domain([0, 30]).nice();
-  x3.domain([0, 30]).nice();
-  x4.domain([0, 30]).nice();
-  x5.domain([0, 30]).nice();
-  x6.domain([0, 30]).nice();
-  
-
-  z.domain(keys);
-
-
-  var pg3tooltip = d3.select("#pg3tooltip");
-
-    g.append("g")
-      .attr("class", "axis")
-      .call(d3.axisLeft(y).ticks(null, "s"))
-      ;
-  
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x1));
-
 
 }
 
