@@ -37,8 +37,17 @@
 	text-align: center;	
 }
 
+.pg2floatleft {
+  float: left;
+}
+.pg2floatright {
+  float: right;
+  width: 50%;
+}
+
 .pg3floatleft {
 	float: left;
+  width: 50%;
 }
 
 .pg3button {

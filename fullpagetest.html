@@ -19,8 +19,13 @@
 	<div class="section" id="section1" >
 		<div class="pg2title"> <b>Shark Tank</b> is an Emmy winning reality show that features a panel of potential investors, called "<b>sharks</b>," who consider offers from aspiring entrepreneurs seeking investments for their business or product. This analysis provides a view of the closed deals by the sharks and their top choice of category for investment. </div>
 	</div>
-		<div class="section" id="section2">
-		<div class="pg3title"> The Analysis <br> <br></div>
+	<div class="section" id="section2" >
+		<div class="pg3title"> The Essay <br> <br></div>
+		<div class="pg2floatleft"> <b>Shark Tank</b> is an Emmy winning reality show that features a panel of potential investors, called "<b>sharks</b>," who consider offers from aspiring entrepreneurs seeking investments for their business or product. This analysis provides a view of the closed deals by the sharks and their top choice of category for investment. </div>
+		<div class="pg2floatright"> <b>Shark Tank</b> is an Emmy winning reality show that features a panel of potential investors, called "<b>sharks</b>," who consider offers from aspiring entrepreneurs seeking investments for their business or product. This analysis provides a view of the closed deals by the sharks and their top choice of category for investment. </div>
+	</div>
+		<div class="section" id="section3">
+		<div class="pg3title">What are the Categories?<br> <br></div>
 		<div class="pg3floatleft" id="pg3svg">
 				<div id="pg3tooltip"></div>  
 				<div id="option1" class="pg3button">
@@ -34,11 +39,40 @@
            		value="Percentage Chart" 
            		onclick="runpgpcnt3()" 
            		/>
+				</div>
+		</div>
+		<div class="pg3floatright" style="float: right;">
+			<h4 class="sidebar">Deals in Numbers</h4>
+			<h5 class="sidebar">It is very evident from the graph that the <mark class="pg3mark" id="pg3mark1">top categories</mark> where deals are presented and closed are Food, Fashion and Lifestyle. <br> </h5>
+			<h4 class="sidebar">Conversion Rate</h4>
+			<h5 class="sidebar">The Categories look a little more close when we look at the percentages. The <mark class="pg3mark" id="pg3mark2">two categories</mark> that have similar deal conversion rates are Lifestyle and Fitness.<br> </h5>
+		</div> 
+		<div class="section" id="section4">
+		<div class="pg3title"> How much is being Invested?<br> <br></div>
+		<div class="pg3floatleft" id="pg3svg">
+				<div id="pg3tooltip"></div>  
+				<div id="option1" class="pg3button">
     			<input name="updateButton" 
            		type="button" 
            		value="Valuation Chart" 
            		onclick="runpgval3()" 
            		/>
+				</div>
+		</div>
+		<div class="pg3floatright" style="float: right;">
+			<h4 class="sidebar">Deals in Numbers</h4>
+			<h5 class="sidebar">It is very evident from the graph that the <mark class="pg3mark" id="pg3mark1">top categories</mark> where deals are presented and closed are Food, Fashion and Lifestyle. <br> </h5>
+			<h4 class="sidebar">Conversion Rate</h4>
+			<h5 class="sidebar">The Categories look a little more close when we look at the percentages. The <mark class="pg3mark" id="pg3mark2">two categories</mark> that have similar deal conversion rates are Lifestyle and Fitness.<br> </h5>
+			<h4 class="sidebar">Whats the Valuation</h4>
+			<h5 class="sidebar">The average valuation chart provides a view of how the valuation looks like for each of the categories. <mark class="pg3mark" id="pg3mark3">Media Companies</mark> are highly valued companies in show.  <br> </h5>
+		</div> 
+	</div>
+			<div class="section" id="section5">
+		<div class="pg3title">Which Shark?<br> <br></div>
+		<div class="pg3floatleft" id="pg3svg">
+				<div id="pg3tooltip"></div>  
+				<div id="option1" class="pg3button">
            		<input name="updateButton" 
            		type="button" 
            		value="Shark Chart" 
@@ -55,13 +89,15 @@
 			<h5 class="sidebar">The average valuation chart provides a view of how the valuation looks like for each of the categories. <mark class="pg3mark" id="pg3mark3">Media Companies</mark> are highly valued companies in show.  <br> </h5>
 		</div> 
 	</div>
+	</div>
 </div>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 		anchors: ['title', 'introduction','analysis'],
 		css3:true
-//		navigation: true,
-//		navigationPosition: 'right'
+		navigation: true,
+		navigationPosition: 'right'
+		navigationTooltips: ['Title','About Shark Tank','Essay','What Categories','How Much','Which Shark']
 	});
 	$(document).ready(function() {
 			$('#fullpage').fullpage({
