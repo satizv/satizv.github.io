@@ -26,8 +26,9 @@ document.getElementById("pg3mark2").onmouseover = function () {console.log("insi
 
 function load(data) {
 
-    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  removegraph();
 
+  
   var y = d3.scaleBand()
     .rangeRound([0, height])
     .paddingInner(0.05)
@@ -40,6 +41,232 @@ function load(data) {
     .range(["#4A8393","#4A8393","#4A8393", "#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1","#ACC7D1"]);
 
   var pg3tooltip = d3.select("#pg3tooltip");
+
+  console.log(data.map(function(d) { return d.Category; }));
+  console.log(data.map(function(d) { return d.Closed; }));
+  console.log(data.map(function(d) { return +d.Total; }));
+
+
+  console.log("max");
+  console.log(d3.max(data, function(d) { return +d.Total; }));
+  y.domain(data.map(function(d) { return d.Category; }));
+  x.domain([0, d3.max(data, function(d) { return +d.Total; })]).nice();
+
+  console.log(z("Food"));
+
+  var values = data.map(function(d) { return d.Total; });
+  var valuesClosed = data.map(function(d) { return d.Closed; })
+  console.log(values);  
+  console.log(values[0]);
+
+  
+
+  g.append("g")
+    .attr("transform", "translate(180,355)")
+    .append ("text")
+    .text("Number of Deals")
+    .attr("class", "axistext");
+
+  
+  g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+      ;
+  
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+  var keys = data.map(function(d) { return d.Category; });
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#ACC7D1")
+      .attr("x",0)
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Total); console.log(x(d.data.Total)); return x(d.data.Total); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Presented - " + d.data.Total);
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
+      ;
+
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+    .attr("class", "bar")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",0)
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Closed); console.log(x(d.data.Closed)); return x(d.data.Closed); })
+      .attr("height", y.bandwidth())
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Closed);
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
+      ;
+
+
+  var totClosed = d3.sum(data, function(d) { return d.Closed; });
+  console.log(totClosed);
+
+  var totTotal = d3.sum(data, function(d) { return d.Total; });
+ //   var totTotal = [770,1000];
+  console.log(totTotal);
+    var totVal = d3.sum(data, function(d) { return d.Valuation; });
+  console.log("Val" + totVal);
+
+  var formpcnt = d3.format(".0%");   
+
+  var easement = d3.easeCubic;
+  var format = d3.format(",d");
+
+  var formcrncy = d3.format(",.0f");
+  g.append("g")
+    .attr("transform", "translate(600,15)")
+    .append ("text")
+    .text("Category")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+  g.append("g")
+    .attr("transform", "translate(600,35)")
+    .append ("text")
+    .text("All")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar")
+    .attr("id","pg3svgtxtcat");    
+
+    g.append("g")
+    .attr("transform", "translate(600,65)")
+    .append ("text")
+    .text("Deals Presented")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+  g.append("g")
+    .attr("transform", "translate(600,85)")
+    .append ("text")
+    .text(format(+totTotal))
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar")
+    .attr("id","pg3svgtxt1");
+    
+
+  g.append("g")
+    .attr("transform", "translate(600,110)")
+    .append ("text")
+    .text("Deals closed")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+  g.append("g")
+    .attr("transform", "translate(600,130)")
+    .append ("text")
+    .attr("id","pg3svgtxt2")
+    .text(format(+totClosed))
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar");
+
+  g.append("g")
+    .attr("transform", "translate(600,160)")
+    .append ("text")
+    .text("Avg. Valuation")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "sidebar");
+
+  g.append("g")
+    .attr("transform", "translate(600,180)")
+    .append ("text")
+    .text(formcrncy(+totVal/10))
+    .attr("id","pg3svgtxt4")
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("class", "hsidebar");
+
+
+
+
+
+
+  g.append("g")
+    .attr("transform", "translate(600,280)")
+    .append ("text")
+    .text(formpcnt(+totClosed/+totTotal))
+    .attr("text-anchor","middle")
+    .attr("alignment-baseline","central")
+    .attr("id","pg3svgtxt3")
+    .attr("class", "hsidebar")
+    ;
+
+  var tau = 2 * 3.141592653589793;
+  var arc =  d3.arc()
+            .innerRadius(30)
+            .outerRadius(50)
+            .startAngle(0)
+            .endAngle(tau)
+            ;
+  
+
+
+  g.append("g")
+    .attr("transform", "translate(600,280)")
+    .append ("path")
+    .attr("d", arc)
+    .attr("id","pg3svgarc1")
+    .attr("class", "arc");
+
+    var arc =  d3.arc()
+            .innerRadius(30)
+            .outerRadius(50)
+            .startAngle(0)
+            .endAngle((+totClosed * tau)/+totTotal)
+            ;
+
+  g.append("g")
+    .attr("transform", "translate(600,280)")
+    .append ("path")
+    .attr("d", arc)
+    .attr("id","pg3svgarc2")
+    .attr("class", "darc");
+
+
 
 }
 
