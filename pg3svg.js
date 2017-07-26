@@ -78,10 +78,10 @@ function runpgpcnt3()
 function removegraph()
 {
   //alert("inside");
-  d3.select("#pg3svg").selectAll("rect").remove();
-  d3.select("#pg3svg").selectAll("text").remove();
-  d3.select("#pg3svg").selectAll("path").remove();
-  d3.select("#pg3svg").selectAll("g").remove();
+  d3.select("#pg3svg").select("#pg3svgid").selectAll("rect").remove();
+  d3.select("#pg3svg").select("#pg3svgid").selectAll("text").remove();
+  d3.select("#pg3svg").select("#pg3svgid").selectAll("path").remove();
+  d3.select("#pg3svg").select("#pg3svgid").selectAll("g").remove();
 
 
 }
