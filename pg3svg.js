@@ -372,13 +372,13 @@ function loadpcnt(data) {
   var pathData = symbolGenerator();
 
   g.append("g")
-    .attr("transform", "translate("+ (x(values[4])+50) + "," + ((y("Fitness") + y("Tech"))/2) + ")")
+    .attr("transform", "translate("+ (x(valuesClosed[4])+50) + "," + ((y("Fitness") + y("Tech"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
 
   g.append("g")
-    .attr("transform", "translate("+ (x(values[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    .attr("transform", "translate("+ (x(valuesClosed[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
