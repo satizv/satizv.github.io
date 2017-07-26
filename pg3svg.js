@@ -102,7 +102,7 @@ function load(data) {
     .attr("fill","red");
 
   g.append("g")
-    .attr("transform", "translate("+ (x(values[1])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    .attr("transform", "translate("+ (x(values[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
     .append("path")
     .attr("d",pathData)
     .attr("fill","red");
@@ -365,6 +365,23 @@ function loadpcnt(data) {
   console.log(values);  
   console.log(values[0]);
 
+   var symbolGenerator = d3.symbol()
+  .type(d3.symbolStar)
+  .size(80);
+
+  var pathData = symbolGenerator();
+
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[4])+50) + "," + ((y("Fitness") + y("Tech"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
+
+  g.append("g")
+    .attr("transform", "translate("+ (x(values[2])+50) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
 
   g.append("g")
     .attr("transform", "translate(180,355)")
