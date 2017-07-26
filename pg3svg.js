@@ -28,7 +28,7 @@ function load(data) {
 
   removegraph();
 
-  
+  g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
   var y = d3.scaleBand()
     .rangeRound([0, height])
     .paddingInner(0.05)
