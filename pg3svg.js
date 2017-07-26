@@ -83,6 +83,10 @@ function removegraph()
   svgpg3.selectAll("path").exit().remove();
   svgpg3.selectAll("g").exit().remove();
 
+  d3.select("#pg3svgid").selectAll("rect").exit().remove();
+  d3.select("#pg3svgid").selectAll("text").exit().remove();
+  d3.select("#pg3svgid").selectAll("path").exit().remove();
+  d3.select("#pg3svgid").selectAll("g").exit().remove();
 
 }
 
