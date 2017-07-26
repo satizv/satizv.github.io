@@ -78,10 +78,10 @@ function runpgpcnt3()
 function removegraph()
 {
   //alert("inside");
-  d3.selectAll("rect.pg3bar").remove();
-  svgpg3.selectAll("text").remove();
-  svgpg3.selectAll("path").remove();
-  svgpg3.selectAll("g").remove();
+  svgpg3.selectAll("rect").exit().remove();
+  svgpg3.selectAll("text").exit().remove();
+  svgpg3.selectAll("path").exit().remove();
+  svgpg3.selectAll("g").exit().remove();
 
 
 }
