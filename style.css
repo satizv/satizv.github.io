@@ -37,16 +37,6 @@
 	text-align: center;	
 }
 
-.pg2floatright {
-  float: right;
-  width: 50%;
-}
-
-.pg2floatleft {
-	float: left;
-  width: 50%;
-}
-
 .pg3floatleft {
 	float: left;
 }
@@ -151,8 +141,4 @@ a {
 
 .pg3mark {
   background-color: #ACC7D1;
-}
-
-.pg3bar {
-  
 }
