@@ -77,7 +77,7 @@ function runpgpcnt3()
 
 function removegraph()
 {
-
+  console.log("inside");
   d3.selectAll("#pg3svg").selectAll("#pg3svgid").selectAll("rect").remove();
   d3.selectAll("#pg3svg").selectAll("#pg3svgid").selectAll("text").remove();
   d3.selectAll("#pg3svg").selectAll("#pg3svgid").selectAll("path").remove();
