@@ -832,12 +832,12 @@ function drawpg3shgraph(data) {
     .attr("transform", "translate(401," + height + ")")
     .call(d3.axisBottom(x6).tickValues([0, 15, 30]));
 
-    console.log(x1(20));
-    console.log(x2(20));
-    console.log(x3(20));
-    console.log(x4(20));
-    console.log(x5(20));
-    console.log(x6(20));
+    console.log(x1(30));
+    console.log(x2(30));
+    console.log(x3(30));
+    console.log(x4(30));
+    console.log(x5(30));
+    console.log(x6(30));
 }
 
 
