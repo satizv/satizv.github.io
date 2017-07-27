@@ -843,8 +843,15 @@ function drawpg3shgraph(data) {
    
     g.append("path")
     .attr("d", lineGenerator)
-    .attr("stroke","black");
+    .style("stroke","black");
 
+
+g.append("line")
+    .attr("x1", 100)
+    .attr("y1", 50)
+    .attr("x2", 300) 
+    .attr("y2", 150)
+    .style("stroke","black");
 }
 
 
