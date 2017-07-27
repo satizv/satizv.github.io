@@ -879,6 +879,7 @@ g.append("g").append("line")
 
   console.log(data.map(function(d) { return d.Category; }));
   console.log(data.map(function(d) { return d.Cuban; }));
+  console.log(d3.stack().keys(data.map(function(d) { return d.Category; }))(data.map(function(d) { return d.Cuban; })));
 
 
 }
