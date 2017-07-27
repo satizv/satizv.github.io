@@ -787,10 +787,10 @@ function drawpg3shgraph(data) {
   
   x1.domain([0, 30]).nice();
   x2.domain([0, 30]).nice();
-  x3.domain([0, 30]).ticks(3);
-  x4.domain([0, 30]).ticks(3);
-  x5.domain([0, 30]).ticks(3);
-  x6.domain([0, 30]).ticks(3);
+  x3.domain([0, 30]).nice();
+  x4.domain([0, 30]).nice();
+  x5.domain([0, 30]).nice();
+  x6.domain([0, 30]).nice();
   
 
   z.domain(keys);
@@ -802,17 +802,11 @@ function drawpg3shgraph(data) {
       .attr("class", "axis")
       .call(d3.axisLeft(y).ticks(null, "s"))
       ;
-  
-  g.append("g")
+
+      g.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x1).tickValues([0, 15, 30]));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(81," + height + ")")
-    .call(d3.axisBottom(x1).tickValues([0, 15, 30]));
-
   
 }
 
