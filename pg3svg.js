@@ -9,6 +9,15 @@ margin = {top: 40, right: 20, bottom: 35, left: 150},
 width = 700 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
 
+var pg3dealcount = d3.select("#dealcount");
+var pg3conversion = d3.select("#conversion");
+var pg3valuation = d3.select("#valuation");
+var pg3investment = d3.select("#investment");
+pg3dealcount.style("opacity", 0);
+pg3conversion.style("opacity", 0);
+pg3valuation.style("opacity", 0);
+pg3investment.style("opacity", 0);
+
 
 d3.csv("data/sharktotal.csv", function(d, i, columns) {
   console.log(d);
@@ -64,6 +73,15 @@ document.getElementById("pg3mark3").onmouseover = function () {
 function load(data) {
 
   removegraph();
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 1);
+  pg3conversion.style("opacity", 0);
+  pg3valuation.style("opacity", 0);
+  pg3investment.style("opacity", 0);
+
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
   var y = d3.scaleBand()
@@ -333,6 +351,16 @@ function load(data) {
 function loadpcnt(data) {
 
   removegraph();
+
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 0);
+  pg3conversion.style("opacity", 1);
+  pg3valuation.style("opacity", 0);
+  pg3investment.style("opacity", 0);
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -763,6 +791,17 @@ function drawpg3shgraph(data) {
 function drawpg3shgraph(data) {
 
   removegraph();
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 0);
+  pg3conversion.style("opacity", 0);
+  pg3valuation.style("opacity", 0);
+  pg3investment.style("opacity", 1);
+
+
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -1087,6 +1126,16 @@ function drawpg3graph(data)
 {
 
   removegraph();
+
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 1);
+  pg3conversion.style("opacity", 0);
+  pg3valuation.style("opacity", 0);
+  pg3investment.style("opacity", 0);
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -1431,7 +1480,19 @@ function drawpg3graph(data)
 
 function drawpg3pcntgraph(data)
 {
+
+
   removegraph();
+
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 0);
+  pg3conversion.style("opacity", 1);
+  pg3valuation.style("opacity", 0);
+  pg3investment.style("opacity", 0);
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -1822,6 +1883,16 @@ function pg3drawsidebar(cat,tot,clo,pct,val) {
 
 function drawpg3valgraph(data) {
   removegraph();
+
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 0);
+  pg3conversion.style("opacity", 0);
+  pg3valuation.style("opacity", 1);
+  pg3investment.style("opacity", 0);
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -2131,6 +2202,16 @@ function drawpg3valgraph(data) {
 
 function loadval(data) {
   removegraph();
+
+  var pg3dealcount = d3.select("#dealcount");
+  var pg3conversion = d3.select("#conversion");
+  var pg3valuation = d3.select("#valuation");
+  var pg3investment = d3.select("#investment");
+  pg3dealcount.style("opacity", 0);
+  pg3conversion.style("opacity", 0);
+  pg3valuation.style("opacity", 1);
+  pg3investment.style("opacity", 0);
+
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -2320,10 +2401,6 @@ function loadval(data) {
     .attr("text-anchor","middle")
     .attr("alignment-baseline","central")
     .attr("class", "hsidebar");
-
-
-
-
 
 
   g.append("g")
