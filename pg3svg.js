@@ -834,6 +834,10 @@ function drawpg3shgraph(data) {
 
     console.log(x1(20));
     console.log(x2(20));
+    console.log(x3(20));
+    console.log(x4(20));
+    console.log(x5(20));
+    console.log(x6(20));
 }
 
 
