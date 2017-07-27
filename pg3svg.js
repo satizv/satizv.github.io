@@ -864,9 +864,9 @@ function drawpg3shgraph(data) {
     .attr("class", "axistext");
 
     g.append("g")
-    .attr("transform", "translate(120,355)")
+    .attr("transform", "translate(110,355)")
     .append ("text")
-    .text("Barbara Corcoran")
+    .text("Barb Corcoran")
     .attr("class", "axistext");
   g.append("g")
     .attr("transform", "translate(220,355)")
@@ -874,7 +874,7 @@ function drawpg3shgraph(data) {
     .text("Lori Greiner")
     .attr("class", "axistext");
   g.append("g")
-    .attr("transform", "translate(320,355)")
+    .attr("transform", "translate(310,355)")
     .append ("text")
     .text("Robert Herjavec")
     .attr("class", "axistext");
