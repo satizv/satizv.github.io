@@ -898,7 +898,7 @@ g.append("g").append("line")
         pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Closed - " + d.data.Cuban + "%");
+               .html("Closed - " + d.data.Cuban );
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       ;
@@ -924,11 +924,114 @@ g.append("g").append("line")
         pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Closed - " + d.data.Corcoran + "%");
+               .html("Closed - " + d.data.Corcoran );
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       ;
 
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x3(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Corcoran); console.log(x1(d.data.Lori)); return x1(d.data.Lori); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Lori );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x4(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Robert); console.log(x1(d.data.Robert)); return x1(d.data.Robert); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Robert );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x5(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.John); console.log(x1(d.data.John)); return x1(d.data.John); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.John );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x6(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Kevin); console.log(x1(d.data.Kevin)); return x1(d.data.Kevin); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Kevin );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;      
 }
 
 
