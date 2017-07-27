@@ -839,7 +839,7 @@ function drawpg3shgraph(data) {
     console.log(x5(30));
     console.log(x6(30));
 
-    var lineGenerator = d3.line().x([100,120]).y[200,220]);
+    var lineGenerator = d3.line().x([100,120]).y([200,220]);
    
     g.append("g")
     .append ("path")
