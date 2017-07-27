@@ -838,6 +838,15 @@ function drawpg3shgraph(data) {
     console.log(x4(30));
     console.log(x5(30));
     console.log(x6(30));
+
+    var lineGenerator = d3.line();
+
+    var pathString = lineGenerator([100,0],[100,+height]);
+    g.append("g")
+    .attr("transform", "translate(600,35)")
+    .append ("path")
+    .attr('d', pathString);
+
 }
 
 
