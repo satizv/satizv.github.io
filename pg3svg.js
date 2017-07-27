@@ -806,31 +806,31 @@ function drawpg3shgraph(data) {
       g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x1).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x1).tickValues([0, 10, 20]));
   
         g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(81," + height + ")")
-    .call(d3.axisBottom(x2).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x2).tickValues([0, 10, 20]));
         g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(161," + height + ")")
-    .call(d3.axisBottom(x3).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x3).tickValues([0, 10, 20]));
 
         g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(241," + height + ")")
-    .call(d3.axisBottom(x4).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x4).tickValues([0, 10, 20]));
 
           g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(321," + height + ")")
-    .call(d3.axisBottom(x5).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x5).tickValues([0, 10, 20]));
 
               g.append("g")
     .attr("class", "axis")
     //.attr("transform", "translate(401," + height + ")")
-    .call(d3.axisBottom(x6).tickValues([0, 10, 20]));
+    .call(d3.axisTop(x6).tickValues([0, 10, 20]));
 
     console.log(x1(30));
     console.log(x2(30));
