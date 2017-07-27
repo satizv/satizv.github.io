@@ -844,7 +844,7 @@ function drawpg3shgraph(data) {
 
 
 
-g.append("line")
+g.append("g").append("line")
     .attr("x1", 100)
     .attr("y1", 50)
     .attr("x2", 300) 
