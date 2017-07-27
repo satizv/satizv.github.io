@@ -841,8 +841,7 @@ function drawpg3shgraph(data) {
 
     var lineGenerator = d3.line().x([100,120]).y([200,220]);
    
-    g.append("g")
-    .append ("path")
+    g.append("path")
     .attr("d", lineGenerator)
     .attr("stroke","black");
 
