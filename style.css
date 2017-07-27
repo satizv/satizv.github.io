@@ -37,6 +37,15 @@
 	text-align: center;	
 }
 
+.pg3charthead {
+font: 20px sans-serif;
+  font-family: 'Georgia', sans-serif;
+    text-align: center; 
+  position: fixed;
+  color: black;
+  margin: 10% 25% 0% 25%;
+}
+
 .pg3floatleft {
 	float: left;
 }
