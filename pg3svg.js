@@ -756,22 +756,22 @@ function drawpg3shgraph(data) {
     .align(0.1);
 
   var x1 = d3.scaleLinear()
-    .rangeRound([0,80]);
+    .rangeRound([0,90]);
 
   var x2 = d3.scaleLinear()
-    .rangeRound([81,160]);
+    .rangeRound([100,190]);
 
   var x3 = d3.scaleLinear()
-    .rangeRound([161,240]);
+    .rangeRound([200,290]);
 
   var x4 = d3.scaleLinear()
-    .rangeRound([241,320]);
+    .rangeRound([300,390]);
 
   var x5 = d3.scaleLinear()
-    .rangeRound([321,400]);
+    .rangeRound([400,490]);
 
   var x6 = d3.scaleLinear()
-    .rangeRound([401,480]);
+    .rangeRound([500,590]);
 
 
   var z = d3.scaleOrdinal()
