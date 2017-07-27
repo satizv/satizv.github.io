@@ -839,7 +839,7 @@ function drawpg3shgraph(data) {
     console.log(x5(30));
     console.log(x6(30));
 
-    var lineGenerator = d3.line().x([100,120]).y([200,220]);
+  console.log(d3.stack().keys(keys)(data))
    
 
 
@@ -875,6 +875,9 @@ g.append("g").append("line")
     .attr("x2", 500) 
     .attr("y2", +height)
     .style("stroke","black");
+
+
+
 }
 
 
