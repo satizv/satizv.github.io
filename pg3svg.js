@@ -808,6 +808,26 @@ function drawpg3shgraph(data) {
     .attr("transform", "translate(" + +width/6 + "," + height + ")")
     .call(d3.axisBottom(x2).tickValues([0, 10, 20, 30]));
 
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + (+width * 2)/6 + "," + height + ")")
+    .call(d3.axisBottom(x3).tickValues([0, 10, 20, 30]));
+
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + (+width * 3)/6 + "," + height + ")")
+    .call(d3.axisBottom(x4).tickValues([0, 10, 20, 30]));
+
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + (+width * 4)/6 + "," + height + ")")
+    .call(d3.axisBottom(x5).tickValues([0, 10, 20, 30]));
+
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + (+width * 5)/6 + "," + height + ")")
+    .call(d3.axisBottom(x6).tickValues([0, 10, 20, 30]));
+
   
 }
 
