@@ -839,7 +839,8 @@ function drawpg3shgraph(data) {
     console.log(x5(30));
     console.log(x6(30));
 
-  console.log(d3.stack().keys(keys)(data))
+  console.log(d3.stack().keys(keys)(data));
+  console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
    
 
 
