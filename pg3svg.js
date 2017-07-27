@@ -839,11 +839,10 @@ function drawpg3shgraph(data) {
     console.log(x5(30));
     console.log(x6(30));
 
+  console.log(data)
   console.log(d3.stack().keys(keys)(data));
   console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
    
-
-
 
 g.append("g").append("line")
     .attr("x1", 100)
@@ -877,6 +876,9 @@ g.append("g").append("line")
     .attr("y2", +height)
     .style("stroke","black");
 
+
+  console.log(data.map(function(d) { return d.Category; }));
+  console.log(data.map(function(d) { return d.Cuban; }));
 
 
 }
