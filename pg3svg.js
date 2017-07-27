@@ -655,7 +655,7 @@ function runpgval3() {
 }
 
 function runpgshark3() {
-    d3.csv("data/sharkcount.csv", function(d, i, columns) {
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
   console.log(d);
   return d; 
   }, function(error, data) {
@@ -877,10 +877,57 @@ g.append("g").append("line")
     .style("stroke","black");
 
 
-  console.log(data.map(function(d) { return d.Category; }));
-  console.log(data.map(function(d) { return d.Cuban; }));
-  console.log(d3.stack().keys(data.map(function(d) { return d.Category; }))(data.map(function(d) { return d.Cuban; })));
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",0)
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Cuban); console.log(x1(d.data.Cuban)); return x1(d.data.Cuban); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Cuban + "%");
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
 
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x2(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Corcoran); console.log(x2(d.data.Corcoran)); return x2(d.data.Corcoran); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Corcoran + "%");
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
 
 }
 
