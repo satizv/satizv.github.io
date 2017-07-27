@@ -841,11 +841,12 @@ function drawpg3shgraph(data) {
 
     var lineGenerator = d3.line();
 
-    var pathString = lineGenerator([100,0],[100,+height]);
+    var dl = [[100,0],[100,+height]];
+    var pathString = lineGenerator(d1);
     g.append("g")
     .attr("transform", "translate(600,35)")
     .append ("path")
-    .attr('d', pathString);
+    .attr("d", pathString);
 
 }
 
