@@ -896,11 +896,7 @@ g.append("g").append("line")
     .attr("y2", +height)
     .style("stroke","black");
 
-  g.append("g")
-    .attr("transform", "translate(180,355)")
-    .append ("text")
-    .text("Number of Deals")
-    .attr("class", "axistext");
+
 
 g.append("g").append("line")
     .attr("x1", 200)
