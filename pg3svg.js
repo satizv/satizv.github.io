@@ -850,6 +850,31 @@ g.append("g").append("line")
     .attr("x2", 100) 
     .attr("y2", +height)
     .style("stroke","black");
+
+g.append("g").append("line")
+    .attr("x1", 200)
+    .attr("y1", 0)
+    .attr("x2", 200) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 300)
+    .attr("y1", 0)
+    .attr("x2", 300) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 400)
+    .attr("y1", 0)
+    .attr("x2", 400) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 500)
+    .attr("y1", 0)
+    .attr("x2", 500) 
+    .attr("y2", +height)
+    .style("stroke","black");
 }
 
 
