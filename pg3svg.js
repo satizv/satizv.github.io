@@ -846,9 +846,9 @@ function drawpg3shgraph(data) {
 
 g.append("g").append("line")
     .attr("x1", 100)
-    .attr("y1", 50)
-    .attr("x2", 300) 
-    .attr("y2", 150)
+    .attr("y1", 0)
+    .attr("x2", 100) 
+    .attr("y2", +height)
     .style("stroke","black");
 }
 
