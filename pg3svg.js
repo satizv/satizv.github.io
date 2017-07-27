@@ -808,6 +808,10 @@ function drawpg3shgraph(data) {
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x1).tickValues([0, 15, 30]));
   
+        g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(81," + height + ")")
+    .call(d3.axisBottom(x2).tickValues([0, 15, 30]));
 }
 
 
