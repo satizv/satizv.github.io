@@ -801,12 +801,12 @@ function drawpg3shgraph(data) {
   g.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x1).tickValues([0, 10, 20, 30]);
+    .call(d3.axisBottom(x1).tickValues([0, 10, 20, 30]));
 
   g.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(" + +width/6 + "," + height + ")")
-    .call(d3.axisBottom(x2).tickValues([0, 10, 20, 30]);
+    .call(d3.axisBottom(x2).tickValues([0, 10, 20, 30]));
 
   
 }
