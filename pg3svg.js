@@ -805,33 +805,13 @@ function drawpg3shgraph(data) {
   
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(0,80)")
-    .call(d3.axisBottom(x1).tickValues([0, 10, 20, 30]));
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x1).tickValues([0, 15, 30]));
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(81,160)")
-    .call(d3.axisBottom(x2).tickValues([0, 10, 20, 30]));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(161,240)")
-    .call(d3.axisBottom(x3).tickValues([0, 10, 20, 30]));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(241,320)")
-    .call(d3.axisBottom(x4).tickValues([0, 10, 20, 30]));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(321,400)")
-    .call(d3.axisBottom(x5).tickValues([0, 10, 20, 30]));
-
-  g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(401,480)")
-    .call(d3.axisBottom(x6).tickValues([0, 10, 20, 30]));
+    .attr("transform", "translate("81 ," + height + ")")
+    .call(d3.axisBottom(x2).tickValues([0, 15, 30]));
 
   
 }
