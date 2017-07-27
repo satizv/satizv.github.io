@@ -756,18 +756,18 @@ function drawpg3shgraph(data) {
     .align(0.1);
 
   var x1 = d3.scaleLinear()
-    .rangeRound([0,(+width/6)]);
+    .rangeRound([0,((+width-100)/6)]);
 
   var x2 = d3.scaleLinear()
-    .rangeRound([+width/6,((+width * 2)/6)]);
+    .rangeRound([(+width-100)/6,(((+width-100) * 2)/6)]);
   var x3 = d3.scaleLinear()
-    .rangeRound([(+width * 2)/6,((+width * 3)/6)]);
+    .rangeRound([((+width-100) * 2)/6,(((+width-100) * 3)/6)]);
   var x4 = d3.scaleLinear()
-    .rangeRound([(+width * 3)/6,((+width * 4)/6)]);
+    .rangeRound([((+width-100) * 3)/6,(((+width-100) * 4)/6)]);
   var x5 = d3.scaleLinear()
-    .rangeRound([(+width * 4)/6,((+width * 5)/3)]);
+    .rangeRound([((+width-100) * 4)/6,(((+width-100) * 5)/3)]);
   var x6 = d3.scaleLinear()
-    .rangeRound([((+width * 5)/3),+width]);
+    .rangeRound([(((+width-100) * 5)/3),(+width-100)]);
 
   var z = d3.scaleOrdinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);  
@@ -805,27 +805,27 @@ function drawpg3shgraph(data) {
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + +width/6 + "," + height + ")")
+    .attr("transform", "translate(" + (+width-100)/6 + "," + height + ")")
     .call(d3.axisBottom(x2).tickValues([0, 10, 20, 30]));
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + (+width * 2)/6 + "," + height + ")")
+    .attr("transform", "translate(" + ((+width-100) * 2)/6 + "," + height + ")")
     .call(d3.axisBottom(x3).tickValues([0, 10, 20, 30]));
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + (+width * 3)/6 + "," + height + ")")
+    .attr("transform", "translate(" + ((+width-100) * 3)/6 + "," + height + ")")
     .call(d3.axisBottom(x4).tickValues([0, 10, 20, 30]));
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + (+width * 4)/6 + "," + height + ")")
+    .attr("transform", "translate(" + ((+width-100) * 4)/6 + "," + height + ")")
     .call(d3.axisBottom(x5).tickValues([0, 10, 20, 30]));
 
   g.append("g")
     .attr("class", "axis")
-    .attr("transform", "translate(" + (+width * 5)/6 + "," + height + ")")
+    .attr("transform", "translate(" + ((+width-100) * 5)/6 + "," + height + ")")
     .call(d3.axisBottom(x6).tickValues([0, 10, 20, 30]));
 
   
