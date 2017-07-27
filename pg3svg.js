@@ -812,7 +812,28 @@ function drawpg3shgraph(data) {
     .attr("class", "axis")
     .attr("transform", "translate(81," + height + ")")
     .call(d3.axisBottom(x2).tickValues([0, 15, 30]));
+        g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(161," + height + ")")
+    .call(d3.axisBottom(x3).tickValues([0, 15, 30]));
+
+        g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(241," + height + ")")
+    .call(d3.axisBottom(x4).tickValues([0, 15, 30]));
+
+          g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(321," + height + ")")
+    .call(d3.axisBottom(x5).tickValues([0, 15, 30]));
+
+              g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(401," + height + ")")
+    .call(d3.axisBottom(x6).tickValues([0, 15, 30]));
+
 }
+
 
 
 function drawpg3graph(data)
