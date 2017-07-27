@@ -857,6 +857,37 @@ function drawpg3shgraph(data) {
   console.log(d3.stack().keys(keys)(data));
   console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
    
+  g.append("g")
+    .attr("transform", "translate(20,355)")
+    .append ("text")
+    .text("Mark Cuban")
+    .attr("class", "axistext");
+
+    g.append("g")
+    .attr("transform", "translate(120,355)")
+    .append ("text")
+    .text("Barbara Corcoran")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(220,355)")
+    .append ("text")
+    .text("Lori Greiner")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(320,355)")
+    .append ("text")
+    .text("Robert Herjavec")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(420,355)")
+    .append ("text")
+    .text("Daymond John")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(520,355)")
+    .append ("text")
+    .text("Kevin OLeary")
+    .attr("class", "axistext");
 
 g.append("g").append("line")
     .attr("x1", 100)
@@ -864,6 +895,12 @@ g.append("g").append("line")
     .attr("x2", 100) 
     .attr("y2", +height)
     .style("stroke","black");
+
+  g.append("g")
+    .attr("transform", "translate(180,355)")
+    .append ("text")
+    .text("Number of Deals")
+    .attr("class", "axistext");
 
 g.append("g").append("line")
     .attr("x1", 200)
