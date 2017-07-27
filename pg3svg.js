@@ -846,7 +846,8 @@ function drawpg3shgraph(data) {
     g.append("g")
     .attr("transform", "translate(600,35)")
     .append ("path")
-    .attr("d", pathString);
+    .attr("d", pathString)
+    .attr("stroke","black");
 
 }
 
