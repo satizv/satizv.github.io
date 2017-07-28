@@ -140,12 +140,7 @@ a {
 .bar {
 	
 }
-.bar:hover {
-  fill: red ;
-}
-.bar:active {
-  fill: red ;
-}
+
 
 .pg3floatright {
       width: 30%;
