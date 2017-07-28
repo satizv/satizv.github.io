@@ -954,6 +954,15 @@ function loadshgraph(data) {
     console.log(x5(30));
     console.log(x6(30));
 
+      var values = data.map(function(d) { return d.Total; });
+      var valuesClosed = data.map(function(d) { return d.Closed; });
+      var valuesCorcoran = data.map(function(d) { return d.Corcoran; });
+      var valuesCuban = data.map(function(d) { return d.Cuban; });
+      var valuesLori = data.map(function(d) { return d.Lori; });
+      var valuesRobert = data.map(function(d) { return d.Robert; });
+      var valuesJohn = data.map(function(d) { return d.John; });
+      var valuesKevin = data.map(function(d) { return d.Kevin; });
+      
   console.log(data)
   console.log(d3.stack().keys(keys)(data));
   console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
@@ -1190,7 +1199,7 @@ g.append("g").append("line")
       var pathData = symbolGenerator();
 
       g.append("g")
-        .attr("transform", "translate("+ (x3(values[2])+5) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+        .attr("transform", "translate("+ (x3(valuesLori[2])+5) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
         .append("path")
         .attr("d",pathData)
         .attr("fill","red");
