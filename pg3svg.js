@@ -155,7 +155,7 @@ function load(data) {
   //alert(pagenum);
   pagenum = 1;
 
-  svg.append("g").attr("transform", "translate(60,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
+  svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
 
 
 
@@ -461,6 +461,7 @@ function loadpcnt(data) {
   pg3charthead.html("Participants Conversion Rate");
   //alert(pagenum);
   pagenum = 2;
+  svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -896,6 +897,7 @@ function loadshgraph(data) {
   pg3charthead.html("Shark's Investments");
   //alert(pagenum);
   pagenum = 4
+  svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -1265,7 +1267,7 @@ function drawpg3shgraph(data) {
   pg3charthead.html("Shark's Investments");
 //alert(pagenum);
   pagenum = 4
-
+  svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -1595,7 +1597,7 @@ function drawpg3graph(data)
   pg3charthead.html("Shark Tank Participants Numbers");
 //alert(pagenum);
   pagenum = 1;
-
+svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -1948,7 +1950,7 @@ function drawpg3pcntgraph(data)
   pg3charthead.html("Participants Conversion Rate");
 //alert(pagenum);
   pagenum = 2
-
+svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -2344,7 +2346,7 @@ function drawpg3valgraph(data) {
   pg3charthead.html("Deal Valuations");
 //alert(pagenum);
   pagenum = 3;
-
+svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
@@ -2659,7 +2661,7 @@ function loadval(data) {
   pg3charthead.html("Deal Valuations");
 //alert(pagenum);
   pagenum = 3
-
+svg.append("g").attr("transform", "translate(65,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
     .rangeRound([0, height])
