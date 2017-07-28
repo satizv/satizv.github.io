@@ -606,6 +606,20 @@ function loadpcnt(data) {
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
+   g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(400,285)")
+    .append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", "#4A8393");
+   g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(415,293)") 
+    .append("text")
+    .text("- Deals Closed");
+
+
   var keys = data.map(function(d) { return d.Category; });
 
 
@@ -1821,6 +1835,20 @@ function loadpcntnoanno(data) {
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
+
+
+       g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(400,285)")
+    .append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", "#4A8393");
+   g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(415,293)") 
+    .append("text")
+    .text("- Deals Closed");
 
   var keys = data.map(function(d) { return d.Category; });
 
