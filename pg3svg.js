@@ -79,6 +79,10 @@ document.getElementById("pg3mark4").onmouseover = function () {
   }); 
 
 };
+function pg3slide(objButton) {
+  alert(objButton.value);
+  
+}
 
 function load(data) {
 
