@@ -51,7 +51,7 @@ document.getElementById("pg3mark2").onmouseover = function () {
 };
 
 document.getElementById("pg3mark3").onmouseover = function () {  
-  console.log("insidepg3mark2"); 
+  console.log("insidepg3mark3"); 
   d3.csv("data/sharktotal.csv", function(d, i, columns) {
   console.log(d);
   return d; 
@@ -59,6 +59,20 @@ document.getElementById("pg3mark3").onmouseover = function () {
   if (error) throw error;  
   
   loadval(data);
+
+  }); 
+
+};
+
+document.getElementById("pg3mark4").onmouseover = function () {  
+  console.log("insidepg3mark4"); 
+  d3.csv("data/sharktotal.csv", function(d, i, columns) {
+  console.log(d);
+  return d; 
+  }, function(error, data) {
+  if (error) throw error;  
+  
+  loadshgraph(data);
 
   }); 
 
@@ -769,6 +783,332 @@ function drawpg3shgraph(data) {
 
 }
 */
+
+function loadshgraph(data) {
+
+  removegraph();
+  var pg3charthead = d3.select("#charthead");
+  pg3charthead.html("Shark's Investments");
+
+
+
+  var pg3tooltip = d3.select("#pg3tooltip");
+  var y = d3.scaleBand()
+    .rangeRound([0, height])
+    .paddingInner(0.05)
+    .align(0.1);
+
+  var x1 = d3.scaleLinear()
+    .rangeRound([0,90]);
+
+  var x2 = d3.scaleLinear()
+    .rangeRound([100,190]);
+
+  var x3 = d3.scaleLinear()
+    .rangeRound([200,290]);
+
+  var x4 = d3.scaleLinear()
+    .rangeRound([300,390]);
+
+  var x5 = d3.scaleLinear()
+    .rangeRound([400,490]);
+
+  var x6 = d3.scaleLinear()
+    .rangeRound([500,590]);
+
+
+  var z = d3.scaleOrdinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);  
+
+  var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var keys = data.columns.slice(1);
+  
+  console.log("Keys" + keys);
+  
+  y.domain(data.map(function(d) { return d.Category; }));
+  
+  x1.domain([0, 30]).nice();
+  x2.domain([0, 30]).nice();
+  x3.domain([0, 30]).nice();
+  x4.domain([0, 30]).nice();
+  x5.domain([0, 30]).nice();
+  x6.domain([0, 30]).nice();
+  
+
+  z.domain(keys);
+
+
+  var pg3tooltip = d3.select("#pg3tooltip");
+
+    g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+      ;
+
+      g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(0," + height + ")")
+    .call(d3.axisTop(x1).tickValues([0, 10, 20]));
+  
+        g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(81," + height + ")")
+    .call(d3.axisTop(x2).tickValues([0, 10, 20]));
+        g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(161," + height + ")")
+    .call(d3.axisTop(x3).tickValues([0, 10, 20]));
+
+        g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(241," + height + ")")
+    .call(d3.axisTop(x4).tickValues([0, 10, 20]));
+
+          g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(321," + height + ")")
+    .call(d3.axisTop(x5).tickValues([0, 10, 20]));
+
+              g.append("g")
+    .attr("class", "axis")
+    //.attr("transform", "translate(401," + height + ")")
+    .call(d3.axisTop(x6).tickValues([0, 10, 20]));
+
+    console.log(x1(30));
+    console.log(x2(30));
+    console.log(x3(30));
+    console.log(x4(30));
+    console.log(x5(30));
+    console.log(x6(30));
+
+  console.log(data)
+  console.log(d3.stack().keys(keys)(data));
+  console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
+   
+  g.append("g")
+    .attr("transform", "translate(20,355)")
+    .append ("text")
+    .text("Mark Cuban")
+    .attr("class", "axistext");
+
+    g.append("g")
+    .attr("transform", "translate(110,355)")
+    .append ("text")
+    .text("Barb Corcoran")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(220,355)")
+    .append ("text")
+    .text("Lori Greiner")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(310,355)")
+    .append ("text")
+    .text("Robert Herjavec")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(420,355)")
+    .append ("text")
+    .text("Daymond John")
+    .attr("class", "axistext");
+  g.append("g")
+    .attr("transform", "translate(520,355)")
+    .append ("text")
+    .text("Kevin OLeary")
+    .attr("class", "axistext");
+
+g.append("g").append("line")
+    .attr("x1", 100)
+    .attr("y1", 0)
+    .attr("x2", 100) 
+    .attr("y2", +height)
+    .style("stroke","black");
+
+
+
+g.append("g").append("line")
+    .attr("x1", 200)
+    .attr("y1", 0)
+    .attr("x2", 200) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 300)
+    .attr("y1", 0)
+    .attr("x2", 300) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 400)
+    .attr("y1", 0)
+    .attr("x2", 400) 
+    .attr("y2", +height)
+    .style("stroke","black");
+g.append("g").append("line")
+    .attr("x1", 500)
+    .attr("y1", 0)
+    .attr("x2", 500) 
+    .attr("y2", +height)
+    .style("stroke","black");
+
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",0)
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Cuban); console.log(x1(d.data.Cuban)); return x1(d.data.Cuban); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Cuban );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x2(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Corcoran); console.log(x1(d.data.Corcoran)); return x1(d.data.Corcoran); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Corcoran );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x3(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Corcoran); console.log(x1(d.data.Lori)); return x1(d.data.Lori); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Lori );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x4(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Robert); console.log(x1(d.data.Robert)); return x1(d.data.Robert); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Robert );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x5(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.John); console.log(x1(d.data.John)); return x1(d.data.John); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.John );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;
+
+    g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+    //  .attr("fill", function(d) { console.log(z(d.key)); console.log(z(d.Category)); return z(d.Category); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      //.attr("x", function(d) { return x(d.data.season); })
+      .attr("fill", "#4A8393")
+      .attr("x",x6(0))
+      .attr("y", function(d) { console.log(d.data.Category); console.log(y(d.data.Category)); return y(d.data.Category); })
+      .attr("width", function(d) { console.log(d.data.Kevin); console.log(x1(d.data.Kevin)); return x1(d.data.Kevin); })
+      .attr("height", y.bandwidth())
+      .attr("class", "bar")
+      .on('mouseover', function() { console.log('mouseover'); })
+      .on('mouseout', function() { console.log('mouseout'); })
+      .on("mouseover", function(d,i) {
+        pg3tooltip.style("opacity", 1)
+               .style("left",(d3.event.pageX)+"px")
+               .style("top",(d3.event.pageY)+"px")
+               .html("Closed - " + d.data.Kevin );
+      })
+      .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
+      ;      
+}
 
 function drawpg3shgraph(data) {
 
