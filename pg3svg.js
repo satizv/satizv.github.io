@@ -246,7 +246,7 @@ function load(data) {
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#ACC7D1")
-    .text("- Participants");
+    .text("- Deals Presented");
 
 
   var keys = data.map(function(d) { return d.Category; });
