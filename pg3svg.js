@@ -230,28 +230,28 @@ function load(data) {
 
 
    g.append("g")
-    .attr("class", "axis")
+    .attr("class", "legend")
     .attr("transform", "translate(400,280)")
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#4A8393");
    g.append("g")
-    .attr("class", "axis")
+    .attr("class", "legend")
     .attr("transform", "translate(415,280)") 
     .append("text")
     .text("- Deals Closed");
 
    g.append("g")
-    .attr("class", "axis")
+    .attr("class", "legend")
     .attr("transform", "translate(400,265)")
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#ACC7D1");
    g.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(415,280)") 
+    .attr("class", "legend")
+    .attr("transform", "translate(415,265)") 
     .append("text")
     .text("- Deals Presented");
 

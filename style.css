@@ -74,6 +74,12 @@ a {
   font: 10px Arial;
   font-weight: bold;
 }
+
+.legend {
+  color: black;
+  text-decoration: none;
+  font: 10px Arial;
+}
 .baxistext {
   color: black;
   text-decoration: none;
