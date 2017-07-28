@@ -8,6 +8,8 @@ var svg = d3.select("#pg3svg")
 margin = {top: 40, right: 20, bottom: 35, left: 150},
 width = 700 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
+alert(pagenum);
+var pagenum = 1;
 
 var pg3charthead = d3.select("#charthead");
 
@@ -80,10 +82,13 @@ document.getElementById("pg3mark4").onmouseover = function () {
 
 function load(data) {
 
+
   removegraph();
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark Tank Participants Numbers");
 
+  alert(pagenum);
+  pagenum = 1;
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
   var y = d3.scaleBand()
@@ -356,6 +361,8 @@ function loadpcnt(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Participants Conversion Rate");
+  alert(pagenum);
+  pagenum = 2;
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -789,8 +796,8 @@ function loadshgraph(data) {
   removegraph();
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark's Investments");
-
-
+alert(pagenum);
+  pagenum = 4
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -1115,8 +1122,8 @@ function drawpg3shgraph(data) {
   removegraph();
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark's Investments");
-
-
+alert(pagenum);
+  pagenum = 4
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -1445,6 +1452,8 @@ function drawpg3graph(data)
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark Tank Participants Numbers");
+alert(pagenum);
+  pagenum = 1;
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -1796,6 +1805,8 @@ function drawpg3pcntgraph(data)
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Participants Conversion Rate");
+alert(pagenum);
+  pagenum = 2
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -2190,7 +2201,8 @@ function drawpg3valgraph(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Deal Valuations");
-
+alert(pagenum);
+  pagenum = 3;
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
@@ -2504,6 +2516,8 @@ function loadval(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Deal Valuations");
+alert(pagenum);
+  pagenum = 3
 
   var pg3tooltip = d3.select("#pg3tooltip");
   var y = d3.scaleBand()
