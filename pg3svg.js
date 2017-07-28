@@ -235,7 +235,10 @@ function load(data) {
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("fill", "#4A8393")
+    .attr("fill", "#4A8393");
+   g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(415,280)") 
     .append("text")
     .text("- Deals Closed");
 
@@ -245,7 +248,11 @@ function load(data) {
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("fill", "#ACC7D1")
+    .attr("fill", "#ACC7D1");
+   g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(415,280)") 
+    .append("text")
     .text("- Deals Presented");
 
 
