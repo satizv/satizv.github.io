@@ -1313,16 +1313,16 @@ svg.append("g").attr("transform", "translate(65,200)").append("text").text("Cate
     .call(d3.axisBottom(x));
 
 
-       g.append("g")
+   g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(400,285)")
+    .attr("transform", "translate(400,185)")
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#4A8393");
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(215,293)") 
+    .attr("transform", "translate(415,193)") 
     .append("text")
     .text("- Deals Closed");
   var keys = data.map(function(d) { return d.Category; });
@@ -2455,16 +2455,16 @@ svg.append("g").attr("transform", "translate(65,200)").append("text").text("Cate
     .call(d3.axisBottom(x));
 
 
-       g.append("g")
+   g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(400,285)")
+    .attr("transform", "translate(400,185)")
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#4A8393");
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(215,293)") 
+    .attr("transform", "translate(415,193)") 
     .append("text")
     .text("- Deals Closed");
 
