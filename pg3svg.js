@@ -231,14 +231,14 @@ function load(data) {
 
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(400,290)")
+    .attr("transform", "translate(400,285)")
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
     .attr("fill", "#4A8393");
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(415,298)") 
+    .attr("transform", "translate(415,293)") 
     .append("text")
     .text("- Deals Closed");
 
