@@ -962,7 +962,7 @@ function loadshgraph(data) {
       var valuesRobert = data.map(function(d) { return d.Robert; });
       var valuesJohn = data.map(function(d) { return d.John; });
       var valuesKevin = data.map(function(d) { return d.Kevin; });
-      
+
   console.log(data)
   console.log(d3.stack().keys(keys)(data));
   console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
@@ -1199,7 +1199,25 @@ g.append("g").append("line")
       var pathData = symbolGenerator();
 
       g.append("g")
-        .attr("transform", "translate("+ (x3(valuesLori[2])+5) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+        .attr("transform", "translate("+ (x3(valuesLori[2])+7) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
+        .append("path")
+        .attr("d",pathData)
+        .attr("fill","red");
+
+      g.append("g")
+        .attr("transform", "translate("+ (x5(valuesJohn[1])+7) + "," + ((y("Fashion") + y("Lifestyle"))/2) + ")")
+        .append("path")
+        .attr("d",pathData)
+        .attr("fill","red");
+
+      g.append("g")
+        .attr("transform", "translate("+ (x1(valuesCuban[1])+7) + "," + ((y("Fashion") + y("Lifestyle"))/2) + ")")
+        .append("path")
+        .attr("d",pathData)
+        .attr("fill","red");
+
+      g.append("g")
+        .attr("transform", "translate("+ (x1(valuesCuban[0])+7) + "," + ((y("Fashion") + y("Food"))/2) + ")")
         .append("path")
         .attr("d",pathData)
         .attr("fill","red");
