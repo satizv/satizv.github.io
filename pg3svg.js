@@ -2686,6 +2686,12 @@ function loadval(data) {
     .attr("d",pathData)
     .attr("fill","red");
 
+    g.append("g")
+    .attr("transform", "translate("+ (x(valuesVal[5])+10) + "," + ((y("Tech") + y("Healthcare"))/2) + ")")
+    .append("path")
+    .attr("d",pathData)
+    .attr("fill","red");
+
 
   g.append("g")
     .attr("transform", "translate(180,355)")
