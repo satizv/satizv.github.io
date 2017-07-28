@@ -155,7 +155,7 @@ function load(data) {
   //alert(pagenum);
   pagenum = 1;
 
-  
+  svg.append("g").attr("transform", "translate("10,10")).append("text").text("Category").attr("class", "axistext");
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
   var y = d3.scaleBand()
