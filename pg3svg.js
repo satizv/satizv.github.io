@@ -81,7 +81,68 @@ document.getElementById("pg3mark4").onmouseover = function () {
 };
 function pg3slide(objButton) {
   alert(objButton.value);
-  
+  var graphval = 0;
+
+  if (objButton.value == "1" or objButton.value == "2" or objButton.value == "3"  or objButton.value == "4" ) {
+    graphval = +objButton.value;
+  } else if (objButton.value == "Prev" and pagenum > 2) {
+    graphval = pagenum - 1;
+  } else if (objButton.value == "Next" and pagenum < 4) {
+    graphval = pagenum + 1;
+  } else {
+    graphval = 0;
+  }
+
+  alert(graphval);
+
+  if (graphval == 1) {
+    console.log("insidepg3mark1"); 
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
+    console.log(d);
+    return d; 
+    }, function(error, data) {
+    if (error) throw error;  
+    
+    load(data);
+
+    });     
+
+  } else if (graphval == 2) {
+    console.log("insidepg3mark2"); 
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
+    console.log(d);
+    return d; 
+    }, function(error, data) {
+    if (error) throw error;  
+    
+    loadpcnt(data);
+
+    }); 
+  } else if (graphval == 3) {
+    console.log("insidepg3mark2"); 
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
+    console.log(d);
+    return d; 
+    }, function(error, data) {
+    if (error) throw error;  
+    
+    loadval(data);
+
+    }); 
+  } else if (graphval == 4) {
+    console.log("insidepg3mark2"); 
+    d3.csv("data/sharktotal.csv", function(d, i, columns) {
+    console.log(d);
+    return d; 
+    }, function(error, data) {
+    if (error) throw error;  
+    
+    loadshgraph(data);
+
+    }); 
+  } else {console.log("not 1234");}
+
+
 }
 
 function load(data) {
