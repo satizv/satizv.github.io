@@ -83,11 +83,11 @@ function pg3slide(objButton) {
   alert(objButton.value);
   var graphval = 0;
 
-  if (objButton.value == "1" or objButton.value == "2" or objButton.value == "3"  or objButton.value == "4" ) {
+  if (objButton.value == "1" || objButton.value == "2" || objButton.value == "3"  || objButton.value == "4" ) {
     graphval = +objButton.value;
-  } else if (objButton.value == "Prev" and pagenum > 2) {
+  } else if (objButton.value == "Prev" && pagenum > 2) {
     graphval = pagenum - 1;
-  } else if (objButton.value == "Next" and pagenum < 4) {
+  } else if (objButton.value == "Next" && pagenum < 4) {
     graphval = pagenum + 1;
   } else {
     graphval = 0;
