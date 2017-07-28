@@ -957,8 +957,6 @@ function loadshgraph(data) {
   console.log(data)
   console.log(d3.stack().keys(keys)(data));
   console.log(d3.stack().keys(['Food','Fashion','Lifestyle','Education','Fitness','Tech','Healthcare','Pets','Media','Other'])(data));
-
-
    
   g.append("g")
     .attr("transform", "translate(20,355)")
@@ -1182,20 +1180,6 @@ g.append("g").append("line")
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       ;      
-
-      var symbolGenerator = d3.symbol()
-      .type(d3.symbolStar)
-      .size(80);
-
-      var pathData = symbolGenerator();
-
-      g.append("g")
-        .attr("transform", "translate("+ (x3(values[2])+5) + "," + ((y("Lifestyle") + y("Education"))/2) + ")")
-        .append("path")
-        .attr("d",pathData)
-        .attr("fill","red");
-
-
 }
 
 function drawpg3shgraph(data) {
