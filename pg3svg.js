@@ -8,7 +8,7 @@ var svg = d3.select("#pg3svg")
 margin = {top: 40, right: 20, bottom: 35, left: 150},
 width = 700 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
-alert(pagenum);
+//alert(pagenum);
 var pagenum = 1;
 
 var pg3charthead = d3.select("#charthead");
@@ -80,7 +80,7 @@ document.getElementById("pg3mark4").onmouseover = function () {
 
 };
 function pg3slide(objButton) {
-  alert(objButton.value);
+  //alert(objButton.value);
   var graphval = 0;
 
   if (objButton.value == "1" || objButton.value == "2" || objButton.value == "3"  || objButton.value == "4" ) {
@@ -93,7 +93,7 @@ function pg3slide(objButton) {
     graphval = 0;
   }
 
-  alert(graphval);
+  //alert(graphval);
 
   if (graphval == 1) {
     console.log("insidepg3mark1"); 
@@ -152,7 +152,7 @@ function load(data) {
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark Tank Participants Numbers");
 
-  alert(pagenum);
+  //alert(pagenum);
   pagenum = 1;
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
@@ -426,7 +426,7 @@ function loadpcnt(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Participants Conversion Rate");
-  alert(pagenum);
+  //alert(pagenum);
   pagenum = 2;
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -861,7 +861,7 @@ function loadshgraph(data) {
   removegraph();
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark's Investments");
-alert(pagenum);
+  //alert(pagenum);
   pagenum = 4
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -1187,7 +1187,7 @@ function drawpg3shgraph(data) {
   removegraph();
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark's Investments");
-alert(pagenum);
+//alert(pagenum);
   pagenum = 4
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -1517,7 +1517,7 @@ function drawpg3graph(data)
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Shark Tank Participants Numbers");
-alert(pagenum);
+//alert(pagenum);
   pagenum = 1;
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -1870,7 +1870,7 @@ function drawpg3pcntgraph(data)
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Participants Conversion Rate");
-alert(pagenum);
+//alert(pagenum);
   pagenum = 2
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -2266,7 +2266,7 @@ function drawpg3valgraph(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Deal Valuations");
-alert(pagenum);
+//alert(pagenum);
   pagenum = 3;
 
   var pg3tooltip = d3.select("#pg3tooltip");
@@ -2581,7 +2581,7 @@ function loadval(data) {
 
   var pg3charthead = d3.select("#charthead");
   pg3charthead.html("Deal Valuations");
-alert(pagenum);
+//alert(pagenum);
   pagenum = 3
 
   var pg3tooltip = d3.select("#pg3tooltip");
