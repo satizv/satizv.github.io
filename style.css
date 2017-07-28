@@ -25,7 +25,16 @@
     text-anchor: middle;
 	position: fixed;
 	color: black;
-	margin: 10% 25% 0% 25%;
+	margin: 10% 20% 0% 20%;
+}
+.pg2content
+{
+  font: 18px sans-serif;
+  font-family: 'Georgia', sans-serif;
+    text-anchor: middle;
+  position: fixed;
+  color: black;
+  margin: 10% 20% 0% 20%;
 }
 
 .pg3title
