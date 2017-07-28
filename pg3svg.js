@@ -238,7 +238,7 @@ function load(data) {
     .attr("fill", "#4A8393");
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(415,297)") 
+    .attr("transform", "translate(415,298)") 
     .append("text")
     .text("- Deals Closed");
 
@@ -251,7 +251,7 @@ function load(data) {
     .attr("fill", "#ACC7D1");
    g.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(415,272)") 
+    .attr("transform", "translate(415,273)") 
     .append("text")
     .text("- Deals Presented");
 
