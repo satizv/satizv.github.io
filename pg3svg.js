@@ -155,7 +155,15 @@ function load(data) {
   //alert(pagenum);
   pagenum = 1;
 
-  svg.append("g").attr("transform", "translate(10,10)").append("text").text("Category").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(30,50)").append("text").text("C").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(31,50)").append("text").text("a").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(32,50)").append("text").text("t").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(33,50)").append("text").text("e").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(34,50)").append("text").text("g").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(35,50)").append("text").text("o").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(36,50)").append("text").text("r").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(37,50)").append("text").text("y").attr("class", "axistext");
+
 
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
   var y = d3.scaleBand()
