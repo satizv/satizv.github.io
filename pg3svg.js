@@ -235,7 +235,9 @@ function load(data) {
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("fill", "#4A8393");
+    .attr("fill", "#4A8393")
+    .append("text")
+    .text("- Deals Closed");
 
    g.append("g")
     .attr("class", "axis")
@@ -243,7 +245,8 @@ function load(data) {
     .append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("fill", "#ACC7D1");
+    .attr("fill", "#ACC7D1")
+    .text("- Participants");
 
 
   var keys = data.map(function(d) { return d.Category; });
