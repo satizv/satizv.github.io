@@ -2398,7 +2398,7 @@ function drawpg3valgraph(data) {
         pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Valuation - $" + d.data.Valuation);
+               .html("$" + d.data.Valuation);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})
@@ -2732,7 +2732,7 @@ function loadval(data) {
         pg3tooltip.style("opacity", 1)
                .style("left",(d3.event.pageX)+"px")
                .style("top",(d3.event.pageY)+"px")
-               .html("Valuation - $" + d.data.Valuation);
+               .html("$" + d.data.Valuation);
       })
       .on("mouseout", function() { pg3tooltip.style("opacity", 0) })
       .on("click", function (d) {pg3drawsidebar(d.data.Category,d.data.Total,d.data.Closed,d.data.PcntClosed,d.data.Valuation);})      
