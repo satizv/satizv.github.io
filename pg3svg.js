@@ -228,6 +228,24 @@ function load(data) {
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
+
+   g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(400,280)")
+    .append("rect")
+    .attr("width", 19)
+    .attr("height", 19)
+    .attr("fill", "#4A8393");
+
+   g.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(400,265)")
+    .append("rect")
+    .attr("width", 19)
+    .attr("height", 19)
+    .attr("fill", "#ACC7D1");
+
+
   var keys = data.map(function(d) { return d.Category; });
 
   g.append("g")
