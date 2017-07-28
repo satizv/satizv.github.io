@@ -1312,6 +1312,19 @@ svg.append("g").attr("transform", "translate(65,200)").append("text").text("Cate
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
+
+       g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(400,285)")
+    .append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", "#4A8393");
+   g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(215,293)") 
+    .append("text")
+    .text("- Deals Closed");
   var keys = data.map(function(d) { return d.Category; });
 
 
@@ -2440,6 +2453,20 @@ svg.append("g").attr("transform", "translate(65,200)").append("text").text("Cate
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
+
+
+       g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(400,285)")
+    .append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", "#4A8393");
+   g.append("g")
+    .attr("class", "legend")
+    .attr("transform", "translate(215,293)") 
+    .append("text")
+    .text("- Deals Closed");
 
   var keys = data.map(function(d) { return d.Category; });
 
