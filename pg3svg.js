@@ -155,7 +155,7 @@ function load(data) {
   //alert(pagenum);
   pagenum = 1;
 
-  svg.append("g").attr("transform", "translate(20,50)").append("text").text("C").attr("class", "axistext");
+  svg.append("g").attr("transform", "translate(30,200)").append("text").text("Category").attr("class", "axistext").attr("transform", "rotate(-90)" );
 
 
 
