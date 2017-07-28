@@ -506,7 +506,7 @@ function loadpcnt(data) {
 
   var values = data.map(function(d) { return d.Total; });
   var valuesClosed = data.map(function(d) { return d.Closed; });
-  var valuespcnt = data.map(function(d) { return d.PcntTotal; });
+  var valuespcnt = data.map(function(d) { return d.PcntClosed; });
   console.log(values);  
   console.log(values[0]);
 
