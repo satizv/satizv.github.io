@@ -14,125 +14,36 @@
 <body>
 <div id="fullpage">
 	<div class="section" id="section0">
-	<div class="pg1title"><span style="color:black";>SHARK </span> TANK ANALYSIS <br> <span style="font:40px sans-serif";>What's the deal with the sharks!!</span>  </div>
-	</div>
-	<div class="section" id="section1" >
-		<div class="pg2title"> <b>Shark Tank</b> is an Emmy winning reality show that features a panel of potential investors, called "<b>sharks</b>," who consider offers from aspiring entrepreneurs seeking investments for their business or product. The show features 6 main sharks<br> <br>
-			<b>1. Kevin O'Leary</b> - A Tech Mogul<br>
-			<b>2. Barbara Corcoran</b> - A Real Estate Businesswoman<br>
-			<b>3. Daymond John</b> - Founder of FUBU apparel<br>
-			<b>4. Robert Herjavec</b> - A dynamic IT entrepreneur<br>
-			<b>5. Mark Cuban</b> - Investor<br>
-			<b>6. Lori Greiner</b> - The Queen of QVC<br><br>
-			This page provides an analysis of data from the first eight seasons of the show to answer the following questions <br><br>
-			<i><b>1. Are certain business category more attracted to the shark tank show? <br>
-			2. What is the conversion rate of the participants in these business categories? <br>
-			3. What is the average valuation of companies that close a deal? <br>
-			4. Does the sharks have a favorite category in which they like to invest in? </b></i>
-
-		</div>
-
+	<div class="pg1title"><span style="color:black";>MOVIE REVIEW</span> TANK ANALYSIS <br> <span style="font:40px sans-serif";>How Words Impact Numbers!!</span>  </div>
 	</div>
 	<div class="section" id="section2" >
-		<div class="pg3title">About the Visualization</div>
-		<div class="pg2content"> <b><br>Narrative Structure</b><br>
-								The narrative structure of the visualization follows an interactive slide show where the user can click on the next/previous buttons to go forward and backward within each slide/chart. Each of the charts has an author driven path and the reader can drill down to analyse other data points on press of the explore button. <br><br>
-								<b>Scenes</b><br>
-								The visualization has 4 scenes to answer each question cited in the previous page. All the scenes follow a consistent design and colors templates. The author driven inferences for each of the questions are provided in the right sidebar. Additional links to the visualization are provided in each of the inferences on mouseover of highlighted keywords.<br><br>
-								<b>Annotations</b><br>
-								There are number of annotation cue presented in the visualization. Each of the author driven charts provides red star symbols indicating the section of the chart that is discussed in the inferences. These red stars are cleared when the an user clicks on the explore button, in order to drill down further.<br> The first 3 charts also has additional annotations to provide context of the data in form of data summary and a donut chart. Tooltips and color also form basic annotation for all the charts. <br><br>
-								<b>Parameters</b><br>
-								All charts uses the category as the nominal data and uses various domain values to generate the bar charts. Color is also passed as a parameter in the first chart to create a stacked bar chart. The first 3 charts also has a summary and a donut chart. The summary chart is generated through a function where the data elements are passed as parameters. The buttons and mouseover of highlighted keywords in the inferences sidebar calls functions with the chart number as parameter to generate the appropriate chart. <br><br>	
-								<b>Triggers</b><br>
-								The website navigation works on scrolling, press of up/down arrow and clicking of the right side navigation circles. 
-								The chart navigation works onclick the buttons (Prev,1,2,3,4,Next,Explore). Additional chart navigation is provided through the mouseeover of the highlighed keywords on the inferences. Placing buttons and highlights provides information to the user to click on the button and/or highlights. <br>
-								Within the chart, every chart has mouseover tooltip providing the raw data used in the chart. The first 3 charts also provides user triggers in the form of mouse click on the bar chart. On click of the bars provide the summary and donut chart to provide view on that particular category. Information to mouseover and click is also provided in the sidebar.   
-
-		 </div>
+		<div class="pg3title">About the Analysis</div>
+		
 	</div>
 	<div class="section" id="section3">
-		<div class="pg3title"> The Analysis <br> <br></div>
+		<div class="pg3title"> Movie 1 <br> <br></div>
 		<div class="pg3floatleft" id="pg3svg">
 				<div id="pg3tooltip"></div>
 				<div class="pg3charthead" id="charthead"></div> 
+				<iframe src="http://www.the-numbers.com/movie/box-office-iframe/Geostorm" frameborder=0 height=480 width=700 scrolling="no">You need a Frames Capable browser to view this content.</iframe>
 		</div>
 		<div class="pg3floatright" style="float: right;">
-			<div id="option1" class="pg3button">
-    			<input name="updateButton" 
-           		type="button" 
-           		value="Prev" 
-           		title="Previous Page"
-           		onclick="pg3slide(this)" 
-           		/>
-    			<input name="updateButton" 
-           		type="button" 
-           		value="1" 
-           		title="Shark Tank Totals"
-           		onclick="pg3slide(this)" 
-           		/>
-    			<input name="updateButton" 
-           		type="button" 
-           		value="2" 
-           		title="Shark Tank Conversion Rate"
-           		onclick="pg3slide(this)" 
-           		/>
-           		<input name="updateButton" 
-           		type="button" 
-           		value="3" 
-           		title="Shark Tank Valuation"
-           		onclick="pg3slide(this)" 
-           		/>
-				<input name="updateButton" 
-           		type="button" 
-           		value="4" 
-           		title="Shark's Investments"
-           		onclick="pg3slide(this)" 
-           		/>
-				<input name="updateButton" 
-           		type="button" 
-           		value="Next" 
-           		title="Next Page"
-           		onclick="pg3slide(this)" 
-           		/>
-				<input name="updateButton" 
-           		type="button" 
-           		value="Explore" 
-           		title="Explore the Chart"
-           		onclick="pg3slide(this)" 
-           		/>	
-			</div>
-			<div class="sidebar"><b><br>1. Are certain business category more attracted to the shark tank show?</b></div>
-			<div class="sidebar">The first chart provides a clear evidence that the show attracts businesses from the <mark class="pg3mark" id="pg3mark1">Food, Fashion and Lifestyle </mark>industry. It is very evident that over 50% of the show participants are from these businesses. </div>
-			<div class="sidebar"><b><br>2. What is the conversion rate of the participants in these business categories?</b></div>
-			<div class="sidebar">Businesses from <mark class="pg3mark" id="pg3mark2">Lifestyle and Fitness</mark> categories have the top deal closure conversion. However the other top categories are not very far behind them. </div>
-			<div class="sidebar"><b><br>3. What is the average valuation of companies that close a deal?</b></div>
-			<div class="sidebar">Businesses from <mark class="pg3mark" id="pg3mark3">Media and Tech</mark> are highly valued companies in the show. Entertainment/Media has the some of the most valuation in the companies that closed deals. Tech companies comes a far second.</div>
-			<div class="sidebar"><b><br>4. Does the sharks have a favorite category in which they like to invest in?</b></div>
-			<div class="sidebar"><mark class="pg3mark" id="pg3mark4">The Shark Investment Chart</mark> clearly depicts the preference of the sharks. Lori invests in more lifestyle and Raymond invest more in Fashion inline with their background. Also to note that Mark Cuban is more diverse in his investments.<br>
-			<br> <i>Mouseover and Click Bars to view summary</i> 
-
+			
+			<div class="sidebar"><b><br>Movie 1 Sentiment Analysis Results</b></div>
+			
 			</div>
 		</div> 
 	</div>
-	<div class="section" id="section4" >
-		<div class="pg3title">Thank You </div>
-		<div class="pg2title"><br><b>About the Dataset</b><br>
-							The data used in the dataset comprises of data provided by halletecco and by sharkalytics website.<br><br>
-							<b>Website layout</b><br>
-							The website uses <b>fullpages template</b> for slide navigation. The site uses html/css/javascript. The website was tested in chrome  at zoom of 100%. <br><br>
-							<b>Charting layout</b><br>
-							d3.js and templates from bl.ocks.org are extensively used for charting.
-		</div>
-	</div>
+
 </div>
 <script type="text/javascript">
 	var headerColor = '#ddd';
 	fullpage.initialize('#fullpage', {
-		anchors: ['title', 'introduction','essay','analysis','Thanks'],
+		anchors: ['title', 'introduction','analysis'],
 		css3:true,
 		navigation: true,
 		navigationPosition: 'right',
-		navigationTooltips: ['Title','About Shark Tank','Essay','Analysis','Thank You']
+		navigationTooltips: ['Title','About','Analysis']
 	});
 	$(document).ready(function() {
 			$('#fullpage').fullpage({
