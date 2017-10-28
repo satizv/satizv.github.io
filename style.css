@@ -1,7 +1,8 @@
 
 #section0 {
-	background-image: url(sharktank.jpg);
+	
 	background-size: cover;
+  background-color: blue;
 }
 
 .pg1title

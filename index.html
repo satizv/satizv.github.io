@@ -13,7 +13,7 @@
 
 <body>
 <div id="fullpage">
-	<div class="section" id="section0">
+	<div class="section" >
 	<div class="pg1title"><span style="color:black";>MOVIE REVIEW</span>  ANALYSIS <br> <span style="font:40px sans-serif";>How Words Impact Numbers!!</span>  </div>
 	</div>
 	<div class="section" id="section2" >
@@ -21,7 +21,7 @@
 		
 	</div>
 	<div class="section" id="section3">
-		<div class="pg3title"> Movie 1 Review<br> <br></div>
+		<div class="pg3title"> Geostorm Review<br> <br></div>
 		<div class="pg3floatleft" id="pg3svg">
 				<div id="pg3tooltip"></div>
 				<div class="pg3charthead" id="charthead"></div> 
@@ -29,21 +29,34 @@
 		</div>
 		<div class="pg3floatright" style="float: right;">
 			
-			<div class="sidebar"><b><br>Movie 1 Sentiment Analysis Results</b></div>
+			<div class="sidebar"><b><br>Geostorm Sentiment Analysis Results</b></div>
 			
 			</div>
 		</div> 
 	</div>
-
+	<div class="section" id="section4">
+		<div class="pg3title"> Geostorm Review<br> <br></div>
+		<div class="pg3floatleft" id="pg3svg">
+				<div id="pg3tooltip"></div>
+				<div class="pg3charthead" id="charthead"></div> 
+				<iframe src="http://www.the-numbers.com/movie/box-office-iframe/Blade-Runner-2049" frameborder=0 height=370 width=600 scrolling="no" class="pg3floatleft" id="charthead">You need a Frames Capable browser to view this content.</iframe>
+		</div>
+		<div class="pg3floatright" style="float: right;">
+			
+			<div class="sidebar"><b><br>Blade Runner Sentiment Analysis Results</b></div>
+			
+			</div>
+		</div> 
+	</div>
 </div>
 <script type="text/javascript">
 	var headerColor = '#ddd';
 	fullpage.initialize('#fullpage', {
-		anchors: ['title', 'introduction','analysis'],
+		anchors: ['title', 'introduction','analysis1','analysis2'],
 		css3:true,
 		navigation: true,
 		navigationPosition: 'right',
-		navigationTooltips: ['Title','About','Analysis']
+		navigationTooltips: ['Title','About','Analysis1','Analysis2']
 	});
 	$(document).ready(function() {
 			$('#fullpage').fullpage({
