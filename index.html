@@ -13,14 +13,14 @@
 
 <body>
 <div id="fullpage">
-	<div class="section" >
+	<div class="section" id="section0">
 	<div class="pg1title"><span style="color:black";>MOVIE REVIEW</span>  ANALYSIS <br> <span style="font:40px sans-serif";>How Words Impact Numbers!!</span>  </div>
 	</div>
-	<div class="section" id="section2" >
+	<div class="section" id="section1" >
 		<div class="pg3title">About the Analysis</div>
 		
 	</div>
-	<div class="section" id="section3">
+	<div class="section" id="section2">
 		<div class="pg3title"> Geostorm Review<br> <br></div>
 		<div class="pg3floatleft" id="pg3svg">
 				<div id="pg3tooltip"></div>
@@ -29,13 +29,13 @@
 		</div>
 		<div class="pg3floatright" style="float: right;">
 			
-			<div class="sidebar"><b><br>Geostorm Sentiment Analysis Results</b></div>
+			<div class="sidebar"><b><br>Geostorm Sentiment Review Analysis Results</b></div>
 			
 			</div>
 		</div> 
 	</div>
-	<div class="section" id="section4">
-		<div class="pg3title"> Geostorm Review<br> <br></div>
+	<div class="section" id="section3">
+		<div class="pg3title"> Blade Runner Review<br> <br></div>
 		<div class="pg3floatleft" id="pg3svg">
 				<div id="pg3tooltip"></div>
 				<div class="pg3charthead" id="charthead"></div> 
@@ -43,7 +43,7 @@
 		</div>
 		<div class="pg3floatright" style="float: right;">
 			
-			<div class="sidebar"><b><br>Blade Runner Sentiment Analysis Results</b></div>
+			<div class="sidebar"><b><br>Blade Runner Review Sentiment Analysis Results</b></div>
 			
 			</div>
 		</div> 
@@ -52,11 +52,11 @@
 <script type="text/javascript">
 	var headerColor = '#ddd';
 	fullpage.initialize('#fullpage', {
-		anchors: ['title', 'introduction','analysis1','analysis2'],
+		anchors: ['title', 'introduction','analysis'],
 		css3:true,
 		navigation: true,
 		navigationPosition: 'right',
-		navigationTooltips: ['Title','About','Analysis1','Analysis2']
+		navigationTooltips: ['Title','About','Analysis']
 	});
 	$(document).ready(function() {
 			$('#fullpage').fullpage({
