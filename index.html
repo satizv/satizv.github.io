@@ -37,12 +37,7 @@
 		<div id="pg3table"></div>
 		   <script type="text/javascript"charset="utf-8">
             d3.text("movieoutput.txt", function(data) {
-                var parsedCSV = d3.dsvFormat("|").parse(data, function (d) {
-				return {
-					moviename: d.moviename,
-					Gross: d.Gross
-				};
-				});
+                var parsedCSV = d3.dsvFormat("|").parseRows(data);
 
                 var container = d3.select("#pg3table")
                     .append("table")
