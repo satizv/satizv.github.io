@@ -20,44 +20,37 @@
 		<div class="pg3title">About the Analysis</div>
 		
 	</div>
+	<div class="section" id="section2" >
+		<div class="pg3title">Top Movies for the week</div>
+		   <script type="text/javascript"charset="utf-8">
+            d3.text("movieoutput.txt", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
 
-	<div class="section" id="section2">
-		<div class="pg3title"> Blade Runner Review<br> <br></div>
-		<div class="pg3floatleft" id="pg4svg">
-				<div id="pg3tooltip"></div>
-				<div class="pg3charthead" id="charthead1"></div> 
-				<iframe src="https://www.the-numbers.com/movie/box-office-iframe/Blade-Runner-2049" frameborder=0 height=370 width=600 scrolling="no" class="pg3floatleft" id="charthead1">You need a Frames Capable browser to view this content.</iframe>
-		</div>
-		<div class="pg3floatright" style="float: right;">
-			
-			<div class="sidebar"><b><br>Blade Runner Review Sentiment Analysis Results</b></div>
-			
-			</div>
-		</div> 
+                var container = d3.select("body")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
 	</div>
-	<div class="section" id="section3">
-		<div class="pg3title"> Geostorm Review<br> <br></div>
-		<div class="pg3floatleft" id="pg3svg">
-				
-				<div class="pg3charthead" id="charthead"></div> 
-				<iframe src="https://www.the-numbers.com/movie/box-office-iframe/Geostorm" frameborder=0 height=370 width=600 scrolling="no" class="pg3floatleft" id="charthead">You need a Frames Capable browser to view this content.</iframe>
-		</div>
-		<div class="pg3floatright" style="float: right;">
-			
-			<div class="sidebar"><b><br>Geostorm Sentiment Review Analysis Results</b></div>
-			
-			</div>
-		</div> 
-	</div>
+	
+	
 </div>
 <script type="text/javascript">
 	var headerColor = '#ddd';
 	fullpage.initialize('#fullpage', {
-		anchors: ['title', 'introduction','analysis','movie'],
+		anchors: ['title', 'introduction','analysis'],
 		css3:true,
 		navigation: true,
 		navigationPosition: 'right',
-		navigationTooltips: ['Title','About','Analysis','Movie']
+		navigationTooltips: ['Title','About','Analysis']
 	});
 	$(document).ready(function() {
 			$('#fullpage').fullpage({
