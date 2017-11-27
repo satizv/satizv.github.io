@@ -43,7 +43,7 @@
                        // .text(function(d) { return d; });
             //});
 			d3.csv("movieoutput.txt", function(d, i, columns) {
-			  console.log("data");
+			  console.log("daata");
 			  return d; 
 			}, function(error, data) {
 			  if (error) throw error;  
@@ -55,6 +55,7 @@
 			
 			function load(data) {
 			//	var parsedCSV = d3.dsvFormat("|").parseRows(data);
+				
 				console.log("inside");
 				console.log(data.map(function(d) { return d.moviename; }));
 				console.log(data.map(function(d) { return d.Gross; }));
