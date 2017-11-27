@@ -43,8 +43,9 @@
                         .text(function(d) { return d; });
             });
 			d3.text("movieoutput.txt", function(data) {
-				//var parsedCSV = d3.dsvFormat("|").parseRows(d);
+				var parsedCSV = d3.dsvFormat("|").parseRows(data);
 				console.log(data);
+				console.log(parsedCSV);
 				return data; 
 			}, function(error, data) {
 				if (error) throw error;  
