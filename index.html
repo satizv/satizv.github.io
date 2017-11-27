@@ -27,21 +27,21 @@
 		<div></div>
 		<div id="pg3table"></div>
 		   <script type="text/javascript"charset="utf-8">
-            d3.text("movieoutput.txt", function(data) {
-                var parsedCSV = d3.dsvFormat("|").parseRows(data);
+  //          d3.text("movieoutput.txt", function(data) {
+  //              var parsedCSV = d3.dsvFormat("|").parseRows(data);
 
-                var container = d3.select("#pg3table")
-                    .append("table")
+  //              var container = d3.select("#pg3table")
+  //                  .append("table")
 
-                    .selectAll("tr")
-                        .data(parsedCSV).enter()
-                        .append("tr")
+  //                  .selectAll("tr")
+  //                      .data(parsedCSV).enter()
+  //                      .append("tr")
 
-                    .selectAll("td")
-                        .data(function(d) { return d; }).enter()
-                        .append("td")
-                        .text(function(d) { return d; });
-            });
+                  //  .selectAll("td")
+                    //    .data(function(d) { return d; }).enter()
+                      //  .append("td")
+                       // .text(function(d) { return d; });
+            //});
 			d3.csv("movieoutput.txt", function(d, i, columns) {
 			  console.log("data");
 			  return d; 
@@ -56,10 +56,20 @@
 			function load(data) {
 			//	var parsedCSV = d3.dsvFormat("|").parseRows(data);
 				console.log("inside");
-				console.log(data.map(function(d) { return d }));
-				//console.log(data.map(function(d) { return d.Gross; }));
-				//console.log(data.map(function(d) { return +d.totalcriticsscore; }));
-			
+				console.log(data.map(function(d) { return d.moviename; }));
+				console.log(data.map(function(d) { return d.Gross; }));
+				console.log(data.map(function(d) { return +d.totalcriticsscore; }));
+				var container = d3.select("#pg3table")
+				.append("table")
+				.selectAll("tr")
+                        .data(data.map(function(d) { return d.moviename; })).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+				
 			}
 			
 			
