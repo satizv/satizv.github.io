@@ -4,7 +4,9 @@
 <head>
 
 <title>Movie Analysis</title>
+<link rel="stylesheet" type="text/css" href="javascript.fullPage.css"/>
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<script type="text/javascript" src="javascript.fullPage.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
       <style>
             table {
@@ -22,6 +24,14 @@
 </head>
 
 <body>
+<div id="fullpage">
+	<div class="section" id="section0">
+	<div class="pg1title"><span style="color:black";>MOVIE REVIEW</span>  ANALYSIS <br> <span style="font:40px sans-serif";>How Words Impact Numbers!!</span>  </div>
+	</div>
+	<div class="section" id="section1" >
+		<div class="pg3title">About the Analysis</div>
+		
+	</div>
 	<div class="section" id="section2" >
 		<div class="pg3title">Top Movies for the week <br><br></div>
 		<div></div>
@@ -47,6 +57,23 @@
 	
 	
 </div>
+<script type="text/javascript">
+	var headerColor = '#ddd';
+	fullpage.initialize('#fullpage', {
+		anchors: ['title', 'introduction','analysis'],
+		css3:true,
+		navigation: true,
+		navigationPosition: 'right',
+		navigationTooltips: ['Title','About','Analysis']
+	});
+	$(document).ready(function() {
+			$('#fullpage').fullpage({
+
+			});
+		});
+
+</script>
+
 
 </body>
 
