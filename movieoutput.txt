@@ -1,6 +1,6 @@
-movienamert|moviename|Gross|Change pcnt|Total Gross|Week|link|totalcriticsscore|totaluserscore
-thor_ragnarok_2017|Thor: Ragnarok|$122,744,989||$122,744,989|1|/movie/Thor-Ragnarok#tab=box-office|11.1441|8.6318
-a_bad_moms_christmas|A Bad Moms Christmas|$16,759,161||$21,285,267|1|/movie/Bad-Moms-Christmas-A#tab=box-office|2.2646|6.0783
-jigsaw_2017|Jigsaw|$6,558,146|-61%|$28,694,617|2|/movie/Jigsaw-(2017)#tab=box-office|-1.0518|6.653
-tyler_perrys_boo_2_a_madea_halloween|Tyler Perrys Boo 2! A Ma|$4,541,190|-55%|$42,849,613|3|/movie/Tyler-Perrys-Boo-2-A-Madea-Halloween#tab=box-office|-1.0165|1.8894
-geostorm|Geostorm|$3,194,031|-46%|$28,929,372|3|/movie/Geostorm#tab=box-office|-5.8929|5.991
+movienamert,moviename,Gross,Change pcnt,Total Gross,Week,link,totalcriticsscore,totaluserscore
+thor_ragnarok_2017,Thor: Ragnarok,$122,744,989,,$122,744,989,1,/movie/Thor-Ragnarok#tab=box-office,11.1441,8.6318
+a_bad_moms_christmas,A Bad Moms Christmas,$16,759,161,,$21,285,267,1,/movie/Bad-Moms-Christmas-A#tab=box-office,2.2646,6.0783
+jigsaw_2017,Jigsaw,$6,558,146,-61%,$28,694,617,2,/movie/Jigsaw-(2017)#tab=box-office,-1.0518,6.653
+tyler_perrys_boo_2_a_madea_halloween,Tyler Perrys Boo 2! A Ma,$4,541,190,-55%,$42,849,613,3,/movie/Tyler-Perrys-Boo-2-A-Madea-Halloween#tab=box-office,-1.0165,1.8894
+geostorm,Geostorm,$3,194,031,-46%,$28,929,372,3,/movie/Geostorm#tab=box-office,-5.8929,5.991

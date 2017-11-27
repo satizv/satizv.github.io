@@ -54,11 +54,11 @@
 			});
 			
 			function load(data) {
-				var parsedCSV = d3.dsvFormat("|").parseRows(data);
+			//	var parsedCSV = d3.dsvFormat("|").parseRows(data);
 				console.log("inside");
-				console.log(parsedCSV.map(function(d) { return d.moviename; }));
-				console.log(parsedCSV.map(function(d) { return d.Gross; }));
-				console.log(parsedCSV.map(function(d) { return +d.totalcriticsscore; }));
+				console.log(data.map(function(d) { return d.moviename; }));
+				console.log(data.map(function(d) { return d.Gross; }));
+				console.log(data.map(function(d) { return +d.totalcriticsscore; }));
 			
 			}
 			
