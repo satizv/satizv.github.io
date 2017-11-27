@@ -42,6 +42,16 @@
                         .append("td")
                         .text(function(d) { return d; });
             });
+			d3.text("movieoutput.txt", function(d, i, columns) {
+				//var parsedCSV = d3.dsvFormat("|").parseRows(d);
+				console.log(d);
+				return d; 
+			}, function(error, data) {
+				if (error) throw error;  
+  
+				alert("done");
+
+			});
         </script>
 	</div>
 	
