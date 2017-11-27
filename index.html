@@ -42,11 +42,12 @@
                         .append("td")
                         .text(function(d) { return d; });
             });
-			d3.text("movieoutput.txt", function(d, i, columns) {
+			d3.csv("movieoutput.txt", function(d, i, columns) {
 			  console.log("data");
 			  return d; 
 			}, function(error, data) {
 			  if (error) throw error;  
+			  
 			  console.log("out");
 			  load(data);
 
