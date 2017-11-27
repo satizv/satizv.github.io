@@ -44,15 +44,24 @@
             });
 			d3.text("movieoutput.txt", function(data) {
 				var parsedCSV = d3.dsvFormat("|").parseRows(data);
-				console.log(data);
-				console.log(parsedCSV);
-				return data; 
+				//console.log(data);
+				//console.log(parsedCSV);
+				return parsedCSV; 
 			}, function(error, data) {
 				if (error) throw error;  
   
-				alert("done");
+				load(data);
 
 			});
+			
+			function load(data) {
+				console.log(data.map(function(d) { return d.moviename; }));
+				console.log(data.map(function(d) { return d.Gross; }));
+				console.log(data.map(function(d) { return +d.totalcriticsscore; }));
+			
+			}
+			
+			
         </script>
 	</div>
 	
