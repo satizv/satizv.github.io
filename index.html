@@ -42,16 +42,13 @@
                         .append("td")
                         .text(function(d) { return d; });
             });
-			d3.text("movieoutput.txt", function(data) {
-				//var parsedCSV = d3.dsvFormat("|").parseRows(data);
-				//console.log(data);
-				//console.log(parsedCSV);
-				console.log("data");
-				return data; 
+			d3.text("movieoutput.txt", function(d, i, columns) {
+			  console.log("data");
+			  return d; 
 			}, function(error, data) {
-				if (error) throw error;  
-				console.log("out");
-				load(data);
+			  if (error) throw error;  
+			  console.log("out");
+			  load(data);
 
 			});
 			
