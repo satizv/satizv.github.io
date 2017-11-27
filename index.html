@@ -43,21 +43,22 @@
                         .text(function(d) { return d; });
             });
 			d3.text("movieoutput.txt", function(data) {
-				var parsedCSV = d3.dsvFormat("|").parseRows(data);
+				//var parsedCSV = d3.dsvFormat("|").parseRows(data);
 				//console.log(data);
 				//console.log(parsedCSV);
-				return parsedCSV; 
-			}, function(error, parsedCSV) {
+				return data; 
+			}, function(error, data) {
 				if (error) throw error;  
   
-				load(parsedCSV);
+				load(data);
 
 			});
 			
 			function load(data) {
-				console.log(data.map(function(d) { return d.moviename; }));
-				console.log(data.map(function(d) { return d.Gross; }));
-				console.log(data.map(function(d) { return +d.totalcriticsscore; }));
+				var parsedCSV = d3.dsvFormat("|").parseRows(data);
+				console.log(parsedCSV.map(function(d) { return d.moviename; }));
+				console.log(parsedCSV.map(function(d) { return d.Gross; }));
+				console.log(parsedCSV.map(function(d) { return +d.totalcriticsscore; }));
 			
 			}
 			
