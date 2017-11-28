@@ -1,43 +1,11 @@
-
-#section0 {
-	
-	background-size: cover;
-  background-color: lightblue;
+.pg3floatleft {
+	float: left;
 }
-
-.pg1title
-{
-	font: 50px sans-serif;
-	font-family: 'Impact', sans-serif;
-    text-anchor: middle;
-    text-align: center;	
-	position: fixed;
-	top: 43%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	white-space: nowrap;
-	color: white;
-}
-
-.pg2title
-{
-	font: 18px sans-serif;
-	font-family: 'Georgia', sans-serif;
-    text-anchor: middle;
-	position: fixed;
-	color: black;
-	margin: 10% 20% 0% 20%;
-}
-.pg2content
-{
-  font: 14px sans-serif;
-  font-family: 'Georgia', sans-serif;
-    text-anchor: middle;
-  position: fixed;
-  color: black;
-  margin: 0% 10% 0% 10%;
-}
-
+.pg3floatright {
+      width: 50%;
+      padding-right: 55px;
+	  padding-top: 55px;
+} 
 .pg3title
 {
 	font: 30px sans-serif;
@@ -47,119 +15,40 @@
 	text-align: center;	
 }
 
-.pg3charthead {
-font: 20px sans-serif;
-  font-family: 'Georgia', sans-serif;
-    text-align: center; 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: right;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
     text-anchor: middle;
-  color: black;
+    text-align: center;	
 }
-
-.pg3floatleft {
-	float: left;
-}
-
-.pg3button {
-	
-}
-.zindex {
-	z-index: 1;
-}
-
-header {
-  font: 24px impact, georgia, serif;
-  align-content:center;
-  text-align: center;
-}
-
-a {
-	color: black;
-	text-decoration: none;
-	font: 12px georgia, serif;
-}
-
-.axistext {
-  color: black;
-  text-decoration: none;
-  font: 10px Arial;
-  font-weight: bold;
-}
-
-.legend {
-  color: black;
-  text-decoration: none;
-  font: 10px Arial;
-}
-.baxistext {
-  color: black;
-  text-decoration: none;
-  font: 10px Arial;
-  text-align: right;
-  font-weight: bold;
-}
-
-.hsidebar {
-  color: black;
-  text-decoration: none;
-  font: 20px georgia, serif;
-}
-.hsidebarwhite {
-  color: white;
-  text-decoration: none;
-  font: 20px georgia, serif;
-}
-
-.hgraph {
-  color: black;
-  text-decoration: none;
-  font: 18px georgia, serif;
-}
-
-.sidebar {
-  color: black;
-  text-decoration: none;
-  font: 12px georgia, serif;
-}
-
-.arc {
-    fill: #ACC7D1;
+li a:hover {
+    background-color: #111111;
 }
 
 
-.darc {
-    fill: #4A8393;
-}
+table {
+    border-collapse: collapse;
+	margin: auto;
+    border: 2px black solid;
+    font: 12px sans-serif;
+    }
 
-/*body {
-
-	width: 640px;  border: 1px solid black; margin: 20px 	auto}
-*/
-
-.axis .domain {
-  display: none;
-}
-
-#pg3tooltip {
-    opacity: 0;
-    position: absolute;
-    text-align: center;
-    width: 80px; height: 40px;
-    background: white;
-    border: 0px;
-}
-.bar {
-	
-}
-
-
-.pg3floatright {
-      width: 30%;
-      padding-right: 55px;
-} 
-
-
-.pg3mark {
-  background-color: #ACC7D1;
-}
-
-table { margin: auto; }
+    td {
+        border: 1px black solid;
+        padding: 5px;
+    }

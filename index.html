@@ -1,88 +1,154 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <title>Movie Analysis</title>
 <link rel="stylesheet" type="text/css" href="style.css"/>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-      <style>
-            table {
-                border-collapse: collapse;
-                border: 2px black solid;
-                font: 12px sans-serif;
-            }
-
-            td {
-                border: 1px black solid;
-                padding: 5px;
-            }
-        </style>
-
 </head>
-
 <body>
-	<div class="section" id="section2" >
-		<div class="pg3title">Top Movies for the week <br><br></div>
-		<div></div>
-		<div id="pg3table"></div>
-		   <script type="text/javascript"charset="utf-8">
-  //          d3.text("movieoutput.txt", function(data) {
-  //              var parsedCSV = d3.dsvFormat("|").parseRows(data);
-
-  //              var container = d3.select("#pg3table")
-  //                  .append("table")
-
-  //                  .selectAll("tr")
-  //                      .data(parsedCSV).enter()
-  //                      .append("tr")
-
-                  //  .selectAll("td")
-                    //    .data(function(d) { return d; }).enter()
-                      //  .append("td")
-                       // .text(function(d) { return d; });
-            //});
-			d3.csv("movieoutput.txt", function(d, i, columns) {
-			  console.log("daata");
-			  return d; 
-			}, function(error, data) {
-			  if (error) throw error;  
-			  
-			  console.log("out");
-			  load(data);
-
-			});
-			
-			function load(data) {
-			//	var parsedCSV = d3.dsvFormat("|").parseRows(data);
-				
-				console.log("inside");
-				console.log(data.map(function(d) { return d.moviename; }));
-				console.log(data.map(function(d) { return d.Gross; }));
-				console.log(data.map(function(d) { return +d.totalcriticsscore; }));
-				var container = d3.select("#pg3table")
-				.append("table")
-				.selectAll("tr")
-                        .data(data.map(function(d) { return d.moviename; })).enter()
-                        .append("tr")
-
-                    .selectAll("td")
-                        .data(function(d) { return d; }).enter()
-                        .append("td")
-                        .text(function(d) { return d; });
-				
-			}
-			
-			
-        </script>
-	</div>
-	
-	
+<div>
+<ul>
+<li> <a href="about.html">About</a></li>
+<li> <a href="index.html">Home</a></li>
+</ul>
+<br>
 </div>
-
+<div class="section" id="section2">
+<div class="pg3title">Top Movies for the week <br><br></div><div id="pg3table"></div>
+<table><tr><td><b>Movie Name</b></td><td><b>Gross</b></td><td><b>Change Pcnt</b></td><td><b>Total Gross</b></td><td><b>Week</b></td><td><b>Avg. Critics Review Score</b></td><td><b>Avg. User Review Score</b></td></tr><tr>
+<td> <a href="coco_2017_numbers.html">Coco</a></td>
+<td>$50,802,605</td>
+<td></td>
+<td>$72,908,930</td>
+<td>1</td>
+<td> <a href="coco_2017_critics_results.html">0.270385</a></td>
+<td><a href="coco_2017_user_results.html">0.438565</a></td>
+</tr>
+<tr>
+<td> <a href="justice_league_2017_numbers.html">Justice League</a></td>
+<td>$41,090,491</td>
+<td>-56%</td>
+<td>$171,903,874</td>
+<td>2</td>
+<td> <a href="justice_league_2017_critics_results.html">0.169655</a></td>
+<td><a href="justice_league_2017_user_results.html">0.42263</a></td>
+</tr>
+<tr>
+<td> <a href="wonder_numbers.html">Wonder</a></td>
+<td>$22,674,238</td>
+<td>-18%</td>
+<td>$69,807,297</td>
+<td>2</td>
+<td> <a href="wonder_critics_results.html">0.325505</a></td>
+<td><a href="wonder_user_results.html">0.605584210526</a></td>
+</tr>
+<tr>
+<td> <a href="thor_ragnarok_2017_numbers.html">Thor: Ragnarok</a></td>
+<td>$16,863,294</td>
+<td>-22%</td>
+<td>$277,650,571</td>
+<td>4</td>
+<td> <a href="thor_ragnarok_2017_critics_results.html">0.233375</a></td>
+<td><a href="thor_ragnarok_2017_user_results.html">0.63717</a></td>
+</tr>
+<tr>
+<td> <a href="daddys_home_2_numbers.html">Daddys Home 2</a></td>
+<td>$13,217,419</td>
+<td>-8%</td>
+<td>$72,636,870</td>
+<td>3</td>
+<td> <a href="daddys_home_2_critics_results.html">0.152485</a></td>
+<td><a href="daddys_home_2_user_results.html">0.570005263158</a></td>
+</tr>
+<tr>
+<td> <a href="murder_on_the_orient_express_2017_numbers.html">Murder on the Orient Express</a></td>
+<td>$13,170,932</td>
+<td>-5%</td>
+<td>$74,364,192</td>
+<td>3</td>
+<td> <a href="murder_on_the_orient_express_2017_critics_results.html">-0.09983</a></td>
+<td><a href="murder_on_the_orient_express_2017_user_results.html">0.4451</a></td>
+</tr>
+<tr>
+<td> <a href="the_star_2017_numbers.html">The Star</a></td>
+<td>$6,930,919</td>
+<td>-29%</td>
+<td>$22,088,115</td>
+<td>2</td>
+<td> <a href="the_star_2017_critics_results.html">0.47562</a></td>
+<td><a href="the_star_2017_user_results.html">0.547089473684</a></td>
+</tr>
+<tr>
+<td> <a href="a_bad_moms_christmas_numbers.html">A Bad Moms Christmas</a></td>
+<td>$4,895,568</td>
+<td>-30%</td>
+<td>$59,645,610</td>
+<td>4</td>
+<td> <a href="a_bad_moms_christmas_critics_results.html">0.07086</a></td>
+<td><a href="a_bad_moms_christmas_user_results.html">0.417605</a></td>
+</tr>
+<tr>
+<td> <a href="roman_j_israel_esq_numbers.html">Roman J. Israel, Esq.</a></td>
+<td>$4,447,070</td>
+<td>+7,073%</td>
+<td>$6,201,114</td>
+<td>2</td>
+<td> <a href="roman_j_israel_esq_critics_results.html">0.362965</a></td>
+<td><a href="roman_j_israel_esq_user_results.html">0.4</a></td>
+</tr>
+<tr>
+<td> <a href="three_billboards_outside_ebbing_missouri_numbers.html">Three Billboards Outside Eb</a></td>
+<td>$4,403,003</td>
+<td>+299%</td>
+<td>$7,614,532</td>
+<td>3</td>
+<td> <a href="three_billboards_outside_ebbing_missouri_critics_results.html">0.28861</a></td>
+<td><a href="three_billboards_outside_ebbing_missouri_user_results.html">0.30217</a></td>
+</tr>
+<tr>
+<td> <a href="lady_bird_numbers.html">Lady Bird</a></td>
+<td>$4,057,559</td>
+<td>+61%</td>
+<td>$10,726,097</td>
+<td>4</td>
+<td> <a href="lady_bird_critics_results.html">0.47259</a></td>
+<td><a href="lady_bird_user_results.html">0.336755</a></td>
+</tr>
+<tr>
+<td> <a href="the_man_who_invented_christmas_numbers.html">The Man Who Invented Christmas</a></td>
+<td>$1,353,298</td>
+<td></td>
+<td>$1,809,024</td>
+<td>1</td>
+<td> <a href="the_man_who_invented_christmas_critics_results.html">0.269075</a></td>
+<td><a href="the_man_who_invented_christmas_user_results.html">0.617410526316</a></td>
+</tr>
+<tr>
+<td> <a href="blade_runner_2049_numbers.html">Blade Runner 2049</a></td>
+<td>$541,078</td>
+<td>-14%</td>
+<td>$90,201,869</td>
+<td>8</td>
+<td> <a href="blade_runner_2049_critics_results.html">0.42406</a></td>
+<td><a href="blade_runner_2049_user_results.html">0.54979</a></td>
+</tr>
+<tr>
+<td> <a href="call_me_by_your_name_numbers.html">Call Me by Your Name</a></td>
+<td>$412,932</td>
+<td></td>
+<td>$412,932</td>
+<td>1</td>
+<td> <a href="call_me_by_your_name_critics_results.html">0.66196</a></td>
+<td><a href="call_me_by_your_name_user_results.html">0.75107</a></td>
+</tr>
+<tr>
+<td> <a href="jigsaw_2017_numbers.html">Jigsaw</a></td>
+<td>$371,110</td>
+<td>-66%</td>
+<td>$37,267,847</td>
+<td>5</td>
+<td> <a href="jigsaw_2017_critics_results.html">-0.133205</a></td>
+<td><a href="jigsaw_2017_user_results.html">0.34658</a></td>
+</tr>
+</table></div>
 </body>
-
 </html>
-
-
-
